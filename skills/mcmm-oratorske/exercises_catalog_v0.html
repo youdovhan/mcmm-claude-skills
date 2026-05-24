@@ -1,0 +1,1603 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCMM Ораторське — Каталог вправ · Юрій Довган</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f4efe6;
+        --paper2: #ede5d4;
+        --paper-dark: #c8b998;
+        --ink: #1a1410;
+        --ink-soft: #4a3f33;
+        --mute: #7a6a55;
+        --accent: #5c1a1b;
+        --accent-soft: #8a3a3b;
+
+        /* Type badge palette */
+        --t-warmup: #c2691f;
+        --t-voice: #2c5d8a;
+        --t-breath: #2c8a8a;
+        --t-structure: #5d3a8a;
+        --t-presence: #2d6a3e;
+        --t-articulation: #a07e1f;
+        --t-rhythm: #a02e7a;
+        --t-other: #777;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.5;
+        background-image:
+          radial-gradient(rgba(140, 110, 70, 0.04) 1px, transparent 1px),
+          radial-gradient(rgba(140, 110, 70, 0.03) 1px, transparent 1px);
+        background-size:
+          24px 24px,
+          48px 48px;
+        background-position:
+          0 0,
+          12px 12px;
+      }
+
+      header {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px 24px;
+        border-bottom: 2px solid var(--paper-dark);
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: 36px;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        color: var(--mute);
+        font-size: 14px;
+        margin: 0 0 16px;
+      }
+
+      .status-banner {
+        background: linear-gradient(
+          90deg,
+          rgba(92, 26, 27, 0.08),
+          rgba(92, 26, 27, 0.02)
+        );
+        border-left: 3px solid var(--accent);
+        padding: 12px 16px;
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin: 16px 0;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .progress {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--mute);
+        margin-top: 12px;
+      }
+
+      .progress strong {
+        color: var(--ink);
+      }
+
+      /* Filters */
+      .filters {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        background: var(--paper2);
+        border-bottom: 1px solid var(--paper-dark);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(4px);
+      }
+
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .filter-group {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+
+      .filter-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--mute);
+        margin-right: 4px;
+      }
+
+      .filter-btn {
+        background: transparent;
+        border: 1px solid var(--paper-dark);
+        padding: 4px 10px;
+        font-size: 12px;
+        font-family: "JetBrains Mono", monospace;
+        color: var(--ink-soft);
+        cursor: pointer;
+        border-radius: 2px;
+        transition: all 0.15s;
+      }
+
+      .filter-btn:hover {
+        background: var(--paper);
+        border-color: var(--accent-soft);
+      }
+
+      .filter-btn.active {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+
+      .search-input {
+        background: var(--paper);
+        border: 1px solid var(--paper-dark);
+        padding: 6px 10px;
+        font-size: 13px;
+        font-family: "Inter", sans-serif;
+        min-width: 180px;
+        border-radius: 2px;
+      }
+
+      .action-btns {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+      }
+
+      .action-btn {
+        background: var(--ink);
+        color: var(--paper);
+        border: none;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+      .action-btn.secondary {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid var(--ink);
+      }
+
+      /* Grid */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 20px;
+      }
+
+      /* Card */
+      .card {
+        background: #fbf8f1;
+        border: 1px solid var(--paper-dark);
+        border-radius: 4px;
+        padding: 20px;
+        position: relative;
+        box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.03);
+      }
+
+      .card[data-status="done"] {
+        background: rgba(45, 106, 62, 0.04);
+        border-left: 3px solid var(--t-presence);
+      }
+
+      .card[data-status="in_progress"] {
+        background: rgba(194, 105, 31, 0.04);
+        border-left: 3px solid var(--t-warmup);
+      }
+
+      .card.hidden {
+        display: none;
+      }
+
+      .card-header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .card-id {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--mute);
+        letter-spacing: 0.08em;
+      }
+
+      .card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 4px 0 8px;
+        line-height: 1.3;
+        color: var(--ink);
+        width: 100%;
+      }
+
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .badge {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 2px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+      }
+
+      .badge-lesson {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .badge-type[data-type="warmup"] {
+        background: var(--t-warmup);
+        color: white;
+      }
+      .badge-type[data-type="voice"] {
+        background: var(--t-voice);
+        color: white;
+      }
+      .badge-type[data-type="breath"] {
+        background: var(--t-breath);
+        color: white;
+      }
+      .badge-type[data-type="structure"] {
+        background: var(--t-structure);
+        color: white;
+      }
+      .badge-type[data-type="presence"] {
+        background: var(--t-presence);
+        color: white;
+      }
+      .badge-type[data-type="articulation"] {
+        background: var(--t-articulation);
+        color: white;
+      }
+      .badge-type[data-type="rhythm"] {
+        background: var(--t-rhythm);
+        color: white;
+      }
+      .badge-type[data-type="other"] {
+        background: var(--t-other);
+        color: white;
+      }
+
+      .badge-conf {
+        border: 1px solid var(--paper-dark);
+        color: var(--mute);
+      }
+
+      .meta-line {
+        font-size: 12px;
+        color: var(--mute);
+        font-family: "JetBrains Mono", monospace;
+        margin: 8px 0;
+      }
+
+      details.slide-detail {
+        margin: 12px 0;
+        border: 1px solid var(--paper-dark);
+        border-radius: 2px;
+        padding: 6px 10px;
+        background: var(--paper2);
+      }
+
+      details.slide-detail summary {
+        cursor: pointer;
+        font-size: 12px;
+        color: var(--ink-soft);
+        font-weight: 500;
+        user-select: none;
+      }
+
+      details.slide-detail summary:hover {
+        color: var(--accent);
+      }
+
+      .verbatim {
+        margin-top: 10px;
+        padding: 10px 12px;
+        background: var(--paper);
+        border-left: 2px solid var(--accent-soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        line-height: 1.55;
+        color: var(--ink-soft);
+        white-space: pre-wrap;
+      }
+
+      .tbd-note {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--mute);
+        font-style: italic;
+        margin: 8px 0;
+        padding: 6px 10px;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 6px,
+          rgba(140, 110, 70, 0.05) 6px,
+          rgba(140, 110, 70, 0.05) 12px
+        );
+      }
+
+      /* Personal section */
+      .personal-section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px dashed var(--paper-dark);
+      }
+
+      .personal-section h4 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--mute);
+        margin: 0 0 10px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin: 8px 0;
+      }
+
+      .status-select {
+        background: var(--paper);
+        border: 1px solid var(--paper-dark);
+        padding: 5px 8px;
+        font-size: 12px;
+        font-family: "Inter", sans-serif;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      .notes-input,
+      .transcript-input {
+        width: 100%;
+        border: 1px solid var(--paper-dark);
+        background: var(--paper);
+        padding: 8px;
+        font-size: 12px;
+        font-family: "Inter", sans-serif;
+        border-radius: 2px;
+        resize: vertical;
+        margin: 4px 0 8px;
+      }
+
+      .notes-input {
+        min-height: 56px;
+      }
+      .transcript-input {
+        min-height: 72px;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .input-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--mute);
+        margin-top: 4px;
+        display: block;
+      }
+
+      .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 8px 0;
+      }
+
+      .rating-slider {
+        flex: 1;
+        accent-color: var(--accent);
+      }
+
+      .rating-value {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--ink);
+        font-weight: 600;
+        min-width: 36px;
+      }
+
+      .date-stamp {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--mute);
+        margin-top: 6px;
+      }
+
+      /* AI feedback */
+      .ai-block {
+        margin-top: 14px;
+        padding: 10px 12px;
+        background: rgba(92, 26, 27, 0.05);
+        border: 1px dashed var(--accent-soft);
+        border-radius: 2px;
+      }
+
+      .ai-block .hint {
+        font-size: 11px;
+        color: var(--ink-soft);
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      .copy-btn {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        border-radius: 2px;
+        width: 100%;
+      }
+
+      .copy-btn:hover {
+        background: var(--accent-soft);
+      }
+
+      /* Footer */
+      footer {
+        max-width: 1200px;
+        margin: 40px auto 80px;
+        padding: 32px 24px;
+        background: var(--paper2);
+        border-top: 2px solid var(--paper-dark);
+        border-radius: 4px;
+      }
+
+      footer h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        margin: 0 0 16px;
+      }
+
+      footer h3 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--mute);
+        margin: 24px 0 12px;
+      }
+
+      footer ol,
+      footer ul {
+        font-size: 14px;
+        color: var(--ink-soft);
+        line-height: 1.7;
+      }
+
+      .roadmap {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        background: var(--paper);
+        padding: 12px 16px;
+        border-left: 3px solid var(--accent);
+        color: var(--ink-soft);
+        margin: 12px 0;
+      }
+
+      .stamp {
+        margin-top: 24px;
+        text-align: right;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--mute);
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 26px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .filter-row {
+          gap: 8px;
+        }
+        .action-btns {
+          margin-left: 0;
+          width: 100%;
+        }
+        .filters {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MCMM Ораторське мистецтво — Каталог вправ</h1>
+      <p class="subtitle">
+        Personal training tracker для Юрія Довгана · v0 (preliminary from
+        slides)
+      </p>
+      <div class="status-banner">
+        <strong>PRELIMINARY</strong> — детальні інструкції додадуться після
+        whisper L1/L2/L3 (~6h у фоні)
+      </div>
+      <div class="progress">
+        Вправ identified: <strong>33</strong> · Lessons: <strong>3</strong> ·
+        Whisper: <strong>1/3 у фоні</strong> · Updated:
+        <strong>2026-05-16</strong>
+      </div>
+    </header>
+
+    <nav class="filters">
+      <div class="filter-row">
+        <div class="filter-group">
+          <span class="filter-label">Урок</span>
+          <button
+            class="filter-btn active"
+            data-filter="lesson"
+            data-value="all"
+          >
+            Усі
+          </button>
+          <button class="filter-btn" data-filter="lesson" data-value="l05">
+            L1 Основи
+          </button>
+          <button class="filter-btn" data-filter="lesson" data-value="l07">
+            L2 Голос
+          </button>
+          <button class="filter-btn" data-filter="lesson" data-value="l08">
+            L3 Сила
+          </button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Тип</span>
+          <button class="filter-btn active" data-filter="type" data-value="all">
+            Усі
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="warmup">
+            warmup
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="voice">
+            voice
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="breath">
+            breath
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="structure">
+            structure
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="presence">
+            presence
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="type"
+            data-value="articulation"
+          >
+            articulation
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="rhythm">
+            rhythm
+          </button>
+          <button class="filter-btn" data-filter="type" data-value="other">
+            other
+          </button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Статус</span>
+          <button
+            class="filter-btn active"
+            data-filter="status"
+            data-value="all"
+          >
+            Усі
+          </button>
+          <button class="filter-btn" data-filter="status" data-value="todo">
+            Не виконано
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="status"
+            data-value="in_progress"
+          >
+            В процесі
+          </button>
+          <button class="filter-btn" data-filter="status" data-value="done">
+            Виконано
+          </button>
+        </div>
+        <input
+          class="search-input"
+          id="search"
+          placeholder="Пошук за назвою…"
+          type="text"
+        />
+        <div class="action-btns">
+          <button class="action-btn secondary" onclick="exportState()">
+            Export JSON
+          </button>
+          <button
+            class="action-btn secondary"
+            onclick="document.getElementById('importFile').click()"
+          >
+            Import
+          </button>
+          <input
+            type="file"
+            id="importFile"
+            style="display: none"
+            accept="application/json"
+            onchange="importState(event)"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="grid" id="grid"></div>
+    </main>
+
+    <footer>
+      <h2>Як працювати з каталогом</h2>
+      <ol>
+        <li>
+          Відкрий вправу та прочитай <em>slide reference</em> + verbatim content
+          (клік на «Slide content»).
+        </li>
+        <li>Виконай вправу — текст або голосом через Wispr Flow.</li>
+        <li>
+          Запиши результат у <strong>Notes</strong> та встав транскрипт у
+          <strong>Wispr paste</strong>.
+        </li>
+        <li>Постав self-rating та status.</li>
+        <li>
+          Натисни <strong>«Скопіювати в чат до Claude»</strong> — встав у мій
+          чат — я дам фідбек.
+        </li>
+      </ol>
+
+      <h3>Roadmap</h3>
+      <div class="roadmap">
+        v0 (поточна) → preliminary catalog з slides.md, особисті nоути + Wispr
+        paste v1 (~6h) → detailed instructions з whisper transcripts L1/L2/L3 v2
+        (later) → client handout export mode (toggle: hide Personal section)
+      </div>
+
+      <h3>Type legend</h3>
+      <ul style="list-style: none; padding: 0">
+        <li>
+          <span class="badge badge-type" data-type="warmup">warmup</span> —
+          розігрів, тіло, голос-старт
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="voice">voice</span> — тон,
+          інтонація, висота
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="breath">breath</span> —
+          дихальні техніки
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="structure">structure</span>
+          — структури виступу, історії, фреймворки
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="presence">presence</span> —
+          стан, контакт, опора
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="articulation"
+            >articulation</span
+          >
+          — дикція
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="rhythm">rhythm</span> —
+          паузи, темп
+        </li>
+        <li>
+          <span class="badge badge-type" data-type="other">other</span> — інше /
+          reflection
+        </li>
+      </ul>
+
+      <div class="stamp">
+        v0.1 · build mcmm-orat-cat-2026051601 · file://exercises_catalog.html
+      </div>
+    </footer>
+
+    <script>
+      // =====================================================================
+      // EXERCISE DATA (from preliminary catalogs)
+      // =====================================================================
+
+      const EXERCISES = [
+        // L05 — Основи
+        {
+          id: "l05-PE-01",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Практика оживлення сцени",
+          type: "presence",
+          slideRef: "slide 4",
+          verbatim: "Формує: Мета:\nПобічний ефект:",
+          needsWhisper: true,
+          duration: "TBD",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "low",
+        },
+        {
+          id: "l05-PE-02",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Самопрезентація через 4 запитання",
+          type: "structure",
+          slideRef: "slide 5",
+          verbatim:
+            "Хто ви?\nЧим займаєтесь і в чому допомагаєте іншим?\nЯкі труднощі маєте з публічними виступами та проявленістю (якщо є)?\nЯку користь хочете отримати?",
+          needsWhisper: true,
+          duration: "3-5 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "medium",
+        },
+        {
+          id: "l05-PE-03",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Якорі оратора перед виходом — 3 запитання",
+          type: "presence",
+          slideRef: "slide 15",
+          verbatim:
+            "У якій ролі я зараз?\nКому я зараз корисний?\nЩо я хочу змінити в людях? (який імпульс або стан передати).\nЦе миттєво збирає тіло, голос, погляд.",
+          needsWhisper: false,
+          duration: "2-3 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-04",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Історія предмета",
+          type: "structure",
+          slideRef: "slides 27-29",
+          verbatim:
+            "ПРАКТИКА Історія предмета\n1 Пролог (я + походження)\n2 Шлях (як я сюди потрапив)\n3 Конфлікт (внутрішній або зовнішній)\n4 Кульмінація (прорив, момент істини)\n5 Розв'язка (новий стан)\n6 Фінал (подарунок слухачеві)\nПриклад: «Я – олівець. Я народився на фабриці в…»",
+          needsWhisper: true,
+          duration: "10-15 хв",
+          needsPartner: "TBD",
+          needsRecording: "TBD",
+          conf: "high",
+        },
+        {
+          id: "l05-PE-05",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Хто я і що я несу — підготовчі запитання",
+          type: "structure",
+          slideRef: "slide 30",
+          verbatim:
+            "питання підготовчі для особистих історій\n1 Хто я зараз? — як я позиціоную себе в суспільстві;\n2 Шлях (як я сюди потрапив) — яка була моя головна проблема в минулому;\n3 ЩО Я НЕСУ? — які головні цінності, стани та повідомлення я хочу передати через свої проекти.",
+          needsWhisper: false,
+          duration: "15-20 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-06",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Налаштування — дихання + візуалізація",
+          type: "breath",
+          slideRef: "slide 32",
+          verbatim:
+            "Заплющте очі, зробіть 3 глибоких вдихи.\nУявіть, що ваше життя – це фільм.\nІ зараз ми знайдемо ту сцену, з якої почнеться ваша історія.",
+          needsWhisper: true,
+          duration: "3-5 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-07",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Написати свою Арку Героя",
+          type: "structure",
+          slideRef: "slides 33-35",
+          verbatim:
+            "Арка Героя\n0 Зараз я….\n1 Хто я був «до»?\n2 Що зламалось / перестало працювати?\n3 Чому я чинив опір змінам?\n4 Що мене развернуло?\n5 Який шлях я пройшов?\n6 Що тепер я можу дати людям?",
+          needsWhisper: true,
+          duration: "30-45 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-08",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Фраза «Мені потрібна допомога» в 4 станах",
+          type: "voice",
+          slideRef: "slide 45",
+          verbatim:
+            "Скажіть одну фразу: «Мені потрібна допомога»\n1 Без емоції, логічно.\n2 Із страхом та вразливістю.\n3 З упевненістю.\n4 З вдячністю.\nАудиторія миттєво відчує 4 різні світи. Хоча слова НЕ змінилися.",
+          needsWhisper: false,
+          duration: "3-5 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-09",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Розповідь у парах + чек-лист слухача",
+          type: "structure",
+          slideRef: "slide 48",
+          verbatim:
+            "Один розповідає — другий слухає і дає зворотний зв'язок за чек-листом:\n- Зрозуміло, яким був «світ до»?\n- Я відчув кризу?\n- Було ясно, у чому був страх?\n- Я почув поворотний момент?\n- Трансформація була живою, не абстрактною?\n- Дар прозвучав чітко?",
+          needsWhisper: false,
+          duration: "20-30 хв",
+          needsPartner: true,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-10",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Фінальна історія — 5 повторів на камеру",
+          type: "structure",
+          slideRef: "slide 49",
+          verbatim:
+            "Тепер розкажіть ту ж історію знову, але у форматі: коротше, чесніше, сміливіше.\nВідрепетуйте її щонайменше 5 разів (на камеру, без правок і зупинок).\nЦе і буде ваша робоча версія історії для виступів.",
+          needsWhisper: false,
+          duration: "25-40 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-11",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Дихання перед сценою (3+3)",
+          type: "breath",
+          slideRef: "slide 52",
+          verbatim:
+            "3 глибоких видихи → 3 спокійні вдихи.\nВидих завжди довший.\nЦе переводить зі «страху» в «зібраність».",
+          needsWhisper: false,
+          duration: "1-2 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-12",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Міні-розтяжка перед сценою",
+          type: "warmup",
+          slideRef: "slide 52",
+          verbatim:
+            "3 Міні-розтяжка 30–60 секунд\nШия, плечі, грудна клітка, щелепа. Простукати тіло.\nЗнімає затиски, відкриває голос і дихання.",
+          needsWhisper: false,
+          duration: "1 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l05-PE-13",
+          lesson: "l05",
+          lessonName: "L1 Основи",
+          title: "Зоровий контакт з трьома людьми",
+          type: "presence",
+          slideRef: "slide 53",
+          verbatim:
+            "Встанови зоровий контакт із трьома людьми:\nОдин справа, один у центрі, один зліва.\nТак створюється ефект зв'язку з усім залом.",
+          needsWhisper: true,
+          duration: "TBD",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "medium",
+        },
+
+        // L07 — Голос
+        {
+          id: "l07-PE-01",
+          lesson: "l07",
+          lessonName: "L2 Голос",
+          title: "Виступ за структурою 6+1 хв",
+          type: "structure",
+          slideRef: "slide 8",
+          verbatim:
+            "Структура виступу — 6+1 хв:\n1 Привітання (щире, просте + хук)\n2 3 цікавих факти про себе\n3 План, що чекає на людей (чітке речення-анонс)\n4 Метод або ідея + особиста історія\n5 Взаємодія з аудиторією\n6 Підсумок, що ми пройшли",
+          needsWhisper: true,
+          duration: "7 хв",
+          needsPartner: "TBD",
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l07-PE-02",
+          lesson: "l07",
+          lessonName: "L2 Голос",
+          title: "Зворотний зв'язок «Бутерброд»",
+          type: "structure",
+          slideRef: "slides 9, 13-22, 24",
+          verbatim:
+            "Похвала / Корекція / Похвала\nНижня булочка — Визнання: «Я бачу і визнаю…»\nНачинка — Точка росту: «Якщо ви зробите X → аудиторія відчує Y → результат буде Z»\nВерхня булочка — Закріплення сили: «При цьому твоя сильна сторона — ось тут…»",
+          needsWhisper: true,
+          duration: "TBD",
+          needsPartner: "TBD",
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l07-PE-03",
+          lesson: "l07",
+          lessonName: "L2 Голос",
+          title: "Практика оживлення сцени (розгорнута)",
+          type: "presence",
+          slideRef: "slide 25",
+          verbatim:
+            "Головна мета: упевненість при виході на сцену; відчуття опори та внутрішнього спокою; уміння «зчитувати» простір; вільне дихання; ясна стійка подача.\nМета: свідомо входити в простір сцени, відчувати його як живий, перестати боятися перших секунд виступу.\nПобічний ефект: голос стає вільнішим, глибшим, теплішим.",
+          needsWhisper: true,
+          duration: "TBD",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l07-PE-04",
+          lesson: "l07",
+          lessonName: "L2 Голос",
+          title: "Персональний адресат — 2-3 фото біля камери",
+          type: "presence",
+          slideRef: "slide 27",
+          verbatim:
+            "Уявіть (або прикріпіть фото біля камери) 2–3 людей, які:\n- реально існують;\n- добре вам знайомі;\n- є ідеальними клієнтами або учнями;\n- викликають тепло, а не страх.\nМозок сам увімкнеться, налаштується й адаптується.",
+          needsWhisper: false,
+          duration: "5 хв підготовка",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l07-PE-05",
+          lesson: "l07",
+          lessonName: "L2 Голос",
+          title: "Тост за 3 опорами",
+          type: "structure",
+          slideRef: "slides 28-30",
+          verbatim:
+            "Сильна промова — завжди персональна.\n3 опори:\n- Вдячність: «Завдяки тобі я...»\n- Визнання: підкреслення конкретної риси або вчинку людини\n- Особистий вплив: коротка історія про те, як ця людина змінила вас або світ навколо",
+          needsWhisper: true,
+          duration: "5-10 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l07-PE-06",
+          lesson: "l07",
+          lessonName: "L2 Голос",
+          title: "«Що людина забере після розмови?»",
+          type: "other",
+          slideRef: "slide 10",
+          verbatim:
+            "Працюючи з людьми, ви щомиті впливаєте на їхню самооцінку.\nбажання зростати ↔ бажання закритися",
+          needsWhisper: true,
+          duration: "TBD",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "low",
+        },
+
+        // L08 — Сила
+        {
+          id: "l08-PE-01",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Структура за 30 секунд — 4 кроки",
+          type: "structure",
+          slideRef: "slides 39-43",
+          verbatim:
+            "Не обирайте структуру за настроєм. Обирайте за метою.\nКрок 1: Що має змінитися в аудиторії? (купити/замислитися/надихнутися/отримати систему/змінити переконання)\nКрок 2: Тип аудиторії (холодна/тепла/корпоративна/особиста/конференція)\nКрок 3: Структура за завданням\nКрок 4: Перевірка — чіткий початок? куди веду? сильний фінал?",
+          needsWhisper: false,
+          duration: "2-5 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-02",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Публічний ефір 15-25 хв (домашка)",
+          type: "structure",
+          slideRef: "slide 45",
+          verbatim:
+            "1 Оберіть реальну тему з вашого досвіду\n2 Оберіть ОДНУ структуру: AIDA, ескалація, живе коло або арка героя\n3 Підготовка: структура письмово (опорні тези, не текст дослівно)\n4 Ефір (Zoom/Instagram/Telegram/YouTube): 15-25 хв, наживо, без монтажу\nВажливо: ви не робите ефір заради переглядів — ви робите це заради навички.",
+          needsWhisper: false,
+          duration: "60-90 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-03",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон — Мудрець",
+          type: "voice",
+          slideRef: "slides 49, 58",
+          verbatim:
+            "Мудрець: спокійна, уповільнена, впевнена. Повільний темп; зниження голосу; довгі паузи.\nФраза: «Іноді найважливіші рішення приймаються в повній тиші та внутрішній ясності.»\nЯк читати: повільно, з паузами, трохи нижче звичайного темпу.",
+          needsWhisper: false,
+          duration: "2-3 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-04",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон — Воїн",
+          type: "voice",
+          slideRef: "slides 51, 58",
+          verbatim:
+            "Воїн: зібраність, фокус, внутрішня сила. Коротші фрази; твердий голос; чітка дикція.\nФраза: «Або ви починаєте діяти сьогодні, або продовжуєте пояснювати собі причини.»\nЯк читати: коротко, твердо, без усмішки, фрази різкіші.",
+          needsWhisper: false,
+          duration: "2-3 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-05",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон — Друг",
+          type: "voice",
+          slideRef: "slides 53, 58",
+          verbatim:
+            "Друг: підтримка, прийняття, м'якість. М'який темп; легка усмішка; більше «ми».\nФраза: «Я розумію, як складно зробити перший крок, особливо коли страшно.»\nЯк читати: м'яко, трохи тепліше, з легкою підтримкою в голосі.",
+          needsWhisper: false,
+          duration: "2-3 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-06",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон — Чарівник",
+          type: "voice",
+          slideRef: "slides 55, 58",
+          verbatim:
+            "Чарівник: розширення, уява, перспектива. Трохи вищий тон; образні фрази; паузи перед сильними словами.\nФраза: «Уявіть, яким стане ваш рік, якщо ви дозволите собі рости.»\nЯк читати: натхненно, з легким підйомом інтонації на слові «уявіть».",
+          needsWhisper: false,
+          duration: "2-3 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-07",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон-марафон — 25+ персонажів",
+          type: "voice",
+          slideRef: "slides 58-63",
+          verbatim:
+            "Серія коротких фраз від імені різних персонажів:\nП'яний, Замерзлий, Найгірший актор, Після марафону, Найкращий актор, Спокусник, Батюшка, Кошеня, Старий, Злий начальник, Ось-ось чхнеш, Стартапер, Таємний агент, Поліцейський, Виграв мільйон, Втомлений батько, Програв усе, Саркастично, Кажеш секрет, Закоханий підліток, Оратор на стадіоні, Після важкого рішення, Щоб не розбудити дитину, Сором'язливий, Лідер, Мотиваційний спікер 2000-х.",
+          needsWhisper: true,
+          duration: "15-30 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-08",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон в AIDA — Воїн→Друг→Чарівник→Воїн",
+          type: "voice",
+          slideRef: "slide 64",
+          verbatim:
+            "Структура продажів та роботи з холодною аудиторією.\nAttention — ВОЇН: твердий, чіткий, без зайвих емоцій\nInterest — ДРУГ: теплий, розуміючий\nDesire — ЧАРІВНИК: натхненний, розширює горизонти\nAction — ВОЇН (спокійний): впевнений, без агресії",
+          needsWhisper: true,
+          duration: "5-10 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-09",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон у Ескалації — Мудрець→Друг/Воїн→Воїн→Мудрець",
+          type: "voice",
+          slideRef: "slide 65",
+          verbatim:
+            "Структура емоційна. Тон — головний інструмент.\nПроблема — МУДРЕЦЬ: без крику, без тиску\nЗагострення — ДРУГ→ВОЇН: спочатку емпатія, потім посилення\nТочка кипіння — ВОЇН: коротко, чітко\nРішення — МУДРЕЦЬ: повернення до розуму",
+          needsWhisper: true,
+          duration: "5-10 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-10",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тон у Живому колі — Друг→Мудрець→Воїн→Мудрець→Чарівник",
+          type: "voice",
+          slideRef: "slide 66",
+          verbatim:
+            "Найлюдяніша структура.\nІсторія — ДРУГ: тон теплий, розповідаєте як людина\nУсвідомлення — МУДРЕЦЬ: уповільнюєтеся, тут глибина\nПерелом — ВОЇН: точка вибору\nПринцип — МУДРЕЦЬ: спокійний висновок\nЗавершення — ЧАРІВНИК: м'яке натхнення",
+          needsWhisper: true,
+          duration: "5-10 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-11",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Один фокус — «сьогодні я треную ...»",
+          type: "presence",
+          slideRef: "slide 68",
+          verbatim:
+            "Формула: Не «виступаю ідеально». А «сьогодні я треную ...».\nЯк проводити:\n1 Перед виступом обираєте ОДИН фокус.\n2 Все інше відпускаєте.\n3 Після виступу обговорюєте досвід з наставником.",
+          needsWhisper: false,
+          duration: "TBD",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-12",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Тренувальний виступ 5 хв з одним фокусом",
+          type: "presence",
+          slideRef: "slide 70",
+          verbatim:
+            "Сьогодні ви виступаєте 5 хвилин.\nВаша мета — не сподобатися, продати чи бути ідеальним, а тренувати [обраний фокус, напр. паузи].\nМи оцінюємо тільки [фокус].",
+          needsWhisper: false,
+          duration: "5-7 хв",
+          needsPartner: false,
+          needsRecording: true,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-13",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Каталог 8 фокусів — reference",
+          type: "rhythm",
+          slideRef: "slide 69",
+          verbatim:
+            "1 Паузи — управління тишею\n2 Дихання — стійкість\n3 Контакт очима — впевненість\n4 Структура — логіка\n5 Кульмінація — динаміка\n6 Тон (Воїн/Друг/Мудрець/Чарівник) — статус\n7 Тіло — концентрація сенсу\n8 Один тезіс — концентрація сенсу",
+          needsWhisper: false,
+          duration: "0 (reference)",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "high",
+        },
+        {
+          id: "l08-PE-14",
+          lesson: "l08",
+          lessonName: "L3 Сила",
+          title: "Reflection — «головне завдання оратора»",
+          type: "other",
+          slideRef: "slide 3",
+          verbatim:
+            "Головне завдання оратора – це ...\nПишіть свої думки до чату",
+          needsWhisper: true,
+          duration: "3-5 хв",
+          needsPartner: false,
+          needsRecording: false,
+          conf: "low",
+        },
+      ];
+
+      // =====================================================================
+      // STATE MANAGEMENT
+      // =====================================================================
+      const STORAGE_KEY = "mcmm_oratorske_state";
+      let state = loadState();
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : {};
+        } catch (e) {
+          console.warn("Failed to load state:", e);
+          return {};
+        }
+      }
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (e) {
+          console.warn("Failed to save state:", e);
+        }
+      }
+
+      function getExerciseState(id) {
+        if (!state[id]) {
+          state[id] = {
+            status: "todo",
+            notes: "",
+            transcript: "",
+            rating: 0,
+            date: null,
+          };
+        }
+        return state[id];
+      }
+
+      function updateExerciseState(id, patch) {
+        const cur = getExerciseState(id);
+        Object.assign(cur, patch, { date: new Date().toISOString() });
+        saveState();
+      }
+
+      // =====================================================================
+      // RENDERING
+      // =====================================================================
+      const filters = { lesson: "all", type: "all", status: "all", search: "" };
+
+      function escapeHtml(s) {
+        return String(s).replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      }
+
+      function statusEmoji(s) {
+        return s === "done" ? "✅" : s === "in_progress" ? "🔄" : "⬜";
+      }
+
+      function statusLabel(s) {
+        return s === "done"
+          ? "Виконано"
+          : s === "in_progress"
+            ? "В процесі"
+            : "Не виконано";
+      }
+
+      function renderCard(ex) {
+        const st = getExerciseState(ex.id);
+        const card = document.createElement("article");
+        card.className = "card";
+        card.dataset.id = ex.id;
+        card.dataset.lesson = ex.lesson;
+        card.dataset.type = ex.type;
+        card.dataset.status = st.status;
+        card.dataset.title = ex.title.toLowerCase();
+
+        const partnerStr =
+          ex.needsPartner === true
+            ? "yes"
+            : ex.needsPartner === false
+              ? "no"
+              : "TBD";
+        const recordingStr =
+          ex.needsRecording === true
+            ? "yes"
+            : ex.needsRecording === false
+              ? "no"
+              : "TBD";
+        const dateStr = st.date
+          ? new Date(st.date).toLocaleString("uk-UA", {
+              dateStyle: "short",
+              timeStyle: "short",
+            })
+          : "—";
+
+        card.innerHTML = `
+    <div class="card-header">
+      <span class="card-id">${ex.id}</span>
+    </div>
+    <h3 class="card-title">${escapeHtml(ex.title)}</h3>
+    <div class="badges">
+      <span class="badge badge-lesson">${escapeHtml(ex.lessonName)}</span>
+      <span class="badge badge-type" data-type="${ex.type}">${ex.type}</span>
+      <span class="badge badge-conf">conf: ${ex.conf}</span>
+    </div>
+    <div class="meta-line">${escapeHtml(ex.slideRef)} · ⏱ ${escapeHtml(String(ex.duration))} · 👥 ${partnerStr} · 🎥 ${recordingStr}</div>
+
+    <details class="slide-detail">
+      <summary>Slide content (verbatim)</summary>
+      <div class="verbatim">${escapeHtml(ex.verbatim)}</div>
+    </details>
+
+    ${ex.needsWhisper ? '<div class="tbd-note">Detailed instruction TBD after whisper transcription</div>' : ""}
+
+    <div class="personal-section">
+      <h4>Personal tracking</h4>
+
+      <div class="row">
+        <select class="status-select" data-field="status">
+          <option value="todo" ${st.status === "todo" ? "selected" : ""}>⬜ Не виконано</option>
+          <option value="in_progress" ${st.status === "in_progress" ? "selected" : ""}>🔄 В процесі</option>
+          <option value="done" ${st.status === "done" ? "selected" : ""}>✅ Виконано</option>
+        </select>
+      </div>
+
+      <label class="input-label">Notes (твої спостереження)</label>
+      <textarea class="notes-input" data-field="notes" placeholder="Що відчув, що складно, що вийшло…">${escapeHtml(st.notes)}</textarea>
+
+      <label class="input-label">Wispr paste (транскрипт виконання)</label>
+      <textarea class="transcript-input" data-field="transcript" placeholder="Встав сюди транскрипт з Wispr Flow…">${escapeHtml(st.transcript)}</textarea>
+
+      <div class="rating-row">
+        <span class="input-label" style="margin:0">Self-rating</span>
+        <input type="range" class="rating-slider" data-field="rating" min="0" max="10" value="${st.rating}">
+        <span class="rating-value" data-bind="rating">${st.rating}/10</span>
+      </div>
+
+      <div class="date-stamp">Last attempt: ${dateStr}</div>
+
+      <div class="ai-block">
+        <div class="hint">Натисни «Скопіювати в чат до Claude» → встав у чат → отримай оцінку.</div>
+        <button class="copy-btn" data-action="copy">Скопіювати в чат до Claude</button>
+      </div>
+    </div>
+  `;
+
+        // Wire up handlers
+        card.querySelectorAll("[data-field]").forEach((el) => {
+          el.addEventListener("input", () => {
+            const field = el.dataset.field;
+            let val = el.value;
+            if (field === "rating") {
+              val = parseInt(val, 10);
+              const bind = card.querySelector('[data-bind="rating"]');
+              if (bind) bind.textContent = val + "/10";
+            }
+            updateExerciseState(ex.id, { [field]: val });
+            if (field === "status") {
+              card.dataset.status = val;
+              applyFilters();
+            }
+            const dateStampEl = card.querySelector(".date-stamp");
+            if (dateStampEl) {
+              const nd = new Date(state[ex.id].date);
+              dateStampEl.textContent =
+                "Last attempt: " +
+                nd.toLocaleString("uk-UA", {
+                  dateStyle: "short",
+                  timeStyle: "short",
+                });
+            }
+          });
+        });
+
+        card
+          .querySelector('[data-action="copy"]')
+          .addEventListener("click", () => copyPromptToChat(ex.id));
+
+        return card;
+      }
+
+      function renderAll() {
+        const grid = document.getElementById("grid");
+        grid.innerHTML = "";
+        EXERCISES.forEach((ex) => grid.appendChild(renderCard(ex)));
+      }
+
+      function applyFilters() {
+        document.querySelectorAll(".card").forEach((card) => {
+          const matchesLesson =
+            filters.lesson === "all" || card.dataset.lesson === filters.lesson;
+          const matchesType =
+            filters.type === "all" || card.dataset.type === filters.type;
+          const matchesStatus =
+            filters.status === "all" || card.dataset.status === filters.status;
+          const matchesSearch =
+            !filters.search || card.dataset.title.includes(filters.search);
+          card.classList.toggle(
+            "hidden",
+            !(matchesLesson && matchesType && matchesStatus && matchesSearch),
+          );
+        });
+      }
+
+      // =====================================================================
+      // FILTER UI
+      // =====================================================================
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const f = btn.dataset.filter;
+          const v = btn.dataset.value;
+          document
+            .querySelectorAll(`.filter-btn[data-filter="${f}"]`)
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          filters[f] = v;
+          applyFilters();
+        });
+      });
+
+      document.getElementById("search").addEventListener("input", (e) => {
+        filters.search = e.target.value.toLowerCase().trim();
+        applyFilters();
+      });
+
+      // =====================================================================
+      // COPY TO CLAUDE
+      // =====================================================================
+      function copyPromptToChat(exerciseId) {
+        const ex = EXERCISES.find((e) => e.id === exerciseId);
+        const st = getExerciseState(exerciseId);
+        const tpl = `Юрій виконав вправу «${ex.title}» з MCMM ораторського (${ex.lessonName}).
+
+Exercise ID: ${ex.id}
+Slide reference: ${ex.slideRef}
+Type: ${ex.type}
+
+Verbatim slide content:
+${ex.verbatim}
+
+Notes від Юрія:
+${st.notes || "(не вказано)"}
+
+Wispr transcript виконання:
+${st.transcript || "(не вказано)"}
+
+Self-rating: ${st.rating}/10
+Дата останньої спроби: ${st.date ? new Date(st.date).toLocaleString("uk-UA") : "(не вказано)"}
+
+Дай фідбек:
+1) Що сильно — конкретно, з прикладами з транскрипту
+2) Що покращити — 1-2 точки, не більше
+3) Наступна вправа з цього уроку (з каталогу) щоб посилити саме цей навичковий блок`;
+
+        navigator.clipboard
+          .writeText(tpl)
+          .then(() => {
+            alert("Скопійовано — встав у чат Claude");
+          })
+          .catch((err) => {
+            console.error("Clipboard error:", err);
+            // Fallback
+            const ta = document.createElement("textarea");
+            ta.value = tpl;
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+              document.execCommand("copy");
+              alert("Скопійовано (fallback) — встав у чат Claude");
+            } catch (e) {
+              alert("Не вдалося скопіювати. Промпт виведено у console.");
+              console.log(tpl);
+            }
+            document.body.removeChild(ta);
+          });
+      }
+
+      // =====================================================================
+      // EXPORT / IMPORT
+      // =====================================================================
+      function exportState() {
+        const data = JSON.stringify(state, null, 2);
+        const blob = new Blob([data], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `mcmm-oratorske-state-${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function importState(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const imported = JSON.parse(e.target.result);
+            if (
+              confirm(
+                "Замінити поточний стан імпортованим? (поточні нотатки будуть втрачені)",
+              )
+            ) {
+              state = imported;
+              saveState();
+              renderAll();
+              applyFilters();
+              alert("Імпортовано успішно");
+            }
+          } catch (err) {
+            alert("Помилка імпорту: " + err.message);
+          }
+        };
+        reader.readAsText(file);
+        event.target.value = "";
+      }
+
+      // =====================================================================
+      // INIT
+      // =====================================================================
+      renderAll();
+      applyFilters();
+    </script>
+  </body>
+</html>

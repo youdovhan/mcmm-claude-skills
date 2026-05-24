@@ -1,0 +1,5230 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCMM · I потік · Фінальне заняття · Програмка</title>
+    <meta
+      name="description"
+      content="Editorial програмка MCMM I потоку. 22 учасники. Карта Дениса. Афіша наступних. Партія промовця від класу."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+       *  PREMIUM EDITORIAL DESIGN SYSTEM
+       *  Royal Opera House × Bottega Veneta × Aesop
+       * ============================================================ */
+
+      :root {
+        /* High-end editorial palette */
+        --velvet-burgundy: #4a1820;
+        --velvet-shade: #2d0f14;
+        --oyster: #f2ebdd;
+        --cream-soft: #f8f3e7;
+        --cream-deep: #efe7d4;
+        --ink-noir: #14110d;
+        --ink-soft: #3b342a;
+        --ink-mute: #6e6555;
+        --gold-foil: #b89548;
+        --gold-whisper: #d4b873;
+        --paper-fold: #e6dcc9;
+        --paper-line: #d8cdb7;
+
+        /* Typographic scale */
+        --serif-display: "Cormorant", "Playfair Display", Georgia, serif;
+        --serif-body: "EB Garamond", "Iowan Old Style", Georgia, serif;
+        --sans-eyebrow: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+        --space-1: 8px;
+        --space-2: 16px;
+        --space-3: 24px;
+        --space-4: 32px;
+        --space-5: 48px;
+        --space-6: 64px;
+        --space-7: 96px;
+        --space-8: 128px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--serif-body);
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        background: var(--oyster);
+        font-feature-settings:
+          "liga" 1,
+          "kern" 1,
+          "onum" 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+      }
+
+      body.big-text-mode {
+        font-size: 21px;
+      }
+
+      ::selection {
+        background: var(--velvet-burgundy);
+        color: var(--cream-soft);
+      }
+
+      a {
+        color: var(--velvet-burgundy);
+        text-decoration: none;
+        transition:
+          color 0.35s ease,
+          letter-spacing 0.35s ease;
+      }
+      a:hover {
+        color: var(--gold-foil);
+      }
+      a:focus-visible {
+        outline: 1px solid var(--gold-foil);
+        outline-offset: 4px;
+      }
+
+      img,
+      svg {
+        max-width: 100%;
+        display: block;
+      }
+
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: inherit;
+      }
+
+      /* ============================================================
+       *  TYPOGRAPHY HELPERS
+       * ============================================================ */
+      .eyebrow {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        margin-bottom: var(--space-3);
+        display: block;
+        transition: letter-spacing 0.4s ease;
+      }
+      .eyebrow.dark {
+        color: var(--ink-mute);
+      }
+      .eyebrow:hover {
+        letter-spacing: 0.2em;
+      }
+
+      .numeral {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .numeral::before {
+        content: "";
+        width: 24px;
+        height: 1px;
+        background: var(--gold-foil);
+      }
+
+      h1.display {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 1.02;
+        letter-spacing: -0.012em;
+        color: var(--ink-noir);
+      }
+
+      h1.hero-display {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(48px, 9vw, 124px);
+        line-height: 1.02;
+        letter-spacing: -0.014em;
+        color: var(--ink-noir);
+      }
+
+      h1.feature-display {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(36px, 5vw, 72px);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: var(--ink-noir);
+      }
+
+      h2.feature {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(28px, 3.4vw, 48px);
+        line-height: 1.1;
+        letter-spacing: -0.005em;
+        color: var(--ink-noir);
+      }
+
+      h2.section-italic {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(22px, 2.6vw, 32px);
+        color: var(--ink-noir);
+        line-height: 1.2;
+      }
+
+      .lead {
+        font-family: var(--serif-body);
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        max-width: 680px;
+      }
+      body.big-text-mode .lead {
+        font-size: 22px;
+      }
+
+      .italic-intro {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(20px, 2.4vw, 28px);
+        color: var(--ink-soft);
+        line-height: 1.35;
+        max-width: 720px;
+      }
+
+      .small-caps {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      /* ============================================================
+       *  HAIRLINES & DIVIDERS
+       * ============================================================ */
+      .hairline {
+        height: 1px;
+        background: var(--paper-line);
+        margin: var(--space-5) 0;
+        width: 100%;
+      }
+      .hairline.gold {
+        background: var(--gold-foil);
+        opacity: 0.55;
+      }
+      .hairline.short {
+        max-width: 80px;
+      }
+      .hairline.tight {
+        margin: var(--space-3) 0;
+      }
+      .hairline.wide {
+        margin: var(--space-6) 0;
+      }
+      .hairline.thick {
+        height: 2px;
+        background: var(--ink-noir);
+      }
+
+      /* ============================================================
+       *  LAYOUT
+       * ============================================================ */
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(24px, 5vw, 80px);
+      }
+
+      .container.narrow {
+        max-width: 840px;
+      }
+
+      .container.editorial {
+        max-width: 720px;
+      }
+
+      section {
+        padding: var(--space-7) 0;
+      }
+
+      .section-tight {
+        padding: var(--space-6) 0;
+      }
+
+      /* ============================================================
+       *  TOP NAVIGATION
+       * ============================================================ */
+      .site-nav {
+        position: sticky;
+        top: 0;
+        background: rgba(242, 235, 221, 0.92);
+        backdrop-filter: saturate(140%) blur(12px);
+        -webkit-backdrop-filter: saturate(140%) blur(12px);
+        border-bottom: 1px solid var(--paper-line);
+        z-index: 50;
+      }
+
+      .site-nav-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 18px clamp(24px, 5vw, 80px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+      }
+
+      .site-mark {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-noir);
+      }
+      .site-mark span {
+        color: var(--gold-foil);
+      }
+
+      .site-nav-links {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+      }
+      .site-nav-links a {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        position: relative;
+        padding: 6px 0;
+      }
+      .site-nav-links a.active {
+        color: var(--velvet-burgundy);
+      }
+      .site-nav-links a.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: var(--velvet-burgundy);
+      }
+      .site-nav-links a:hover {
+        color: var(--velvet-burgundy);
+      }
+
+      .big-text-toggle {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        border: 1px solid var(--paper-line);
+        padding: 6px 12px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      .big-text-toggle:hover,
+      .big-text-toggle.on {
+        color: var(--velvet-burgundy);
+        border-color: var(--velvet-burgundy);
+      }
+
+      /* ============================================================
+       *  HERO
+       * ============================================================ */
+      .hero {
+        position: relative;
+        padding: clamp(64px, 12vw, 160px) 0 clamp(48px, 8vw, 96px);
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at top right,
+            rgba(212, 184, 115, 0.06),
+            transparent 60%
+          ),
+          var(--oyster);
+      }
+
+      .hero-drape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 360px;
+        pointer-events: none;
+        opacity: 0.35;
+        animation: hero-fade 1.2s ease-out 0.2s both;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+        animation: hero-fade 0.9s cubic-bezier(0.2, 0.6, 0.2, 1) 0.15s forwards;
+      }
+
+      @keyframes hero-fade {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-eyebrow-line {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: var(--space-4);
+      }
+      .hero-eyebrow-line .eyebrow {
+        margin-bottom: 0;
+      }
+      .hero-eyebrow-line .e-divider {
+        width: 40px;
+        height: 1px;
+        background: var(--gold-foil);
+      }
+
+      .hero h1 {
+        margin-bottom: var(--space-5);
+      }
+      .hero h1 em {
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .hero-italic-tag {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(20px, 2.2vw, 26px);
+        color: var(--ink-soft);
+        line-height: 1.45;
+        margin-bottom: var(--space-3);
+        max-width: 720px;
+      }
+
+      .hero-dedication {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 17px;
+        color: var(--gold-foil);
+        letter-spacing: 0.01em;
+        margin-bottom: var(--space-5);
+      }
+
+      .hero-lead {
+        margin-bottom: var(--space-5);
+      }
+
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-top: var(--space-5);
+        margin-bottom: var(--space-6);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 16px 28px;
+        border: 1px solid var(--ink-noir);
+        background: transparent;
+        color: var(--ink-noir);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 1px;
+      }
+      .btn .arrow {
+        transition: transform 0.4s ease;
+      }
+      .btn:hover {
+        background: var(--ink-noir);
+        color: var(--cream-soft);
+      }
+      .btn:hover .arrow {
+        transform: translateX(4px);
+      }
+      .btn.burgundy {
+        border-color: var(--velvet-burgundy);
+        color: var(--velvet-burgundy);
+      }
+      .btn.burgundy:hover {
+        background: var(--velvet-burgundy);
+        color: var(--cream-soft);
+      }
+      .btn.ghost {
+        border-color: var(--paper-line);
+        color: var(--ink-mute);
+      }
+      .btn.ghost:hover {
+        border-color: var(--ink-noir);
+        background: transparent;
+        color: var(--ink-noir);
+      }
+
+      /* Stats trio */
+      .stats-trio {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-5);
+        padding-top: var(--space-5);
+        border-top: 1px solid var(--paper-line);
+      }
+      .stat-cell .stat-number {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(48px, 6vw, 88px);
+        line-height: 1;
+        color: var(--ink-noir);
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+      .stat-cell .stat-label {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+      }
+
+      /* ============================================================
+       *  CHARACTERS GALLERY (editorial)
+       * ============================================================ */
+      .gallery-intro {
+        max-width: 720px;
+        margin-bottom: var(--space-6);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: clamp(48px, 6vw, 88px);
+      }
+
+      .character-row {
+        display: grid;
+        grid-template-columns: 38% 1fr;
+        gap: clamp(32px, 5vw, 80px);
+        align-items: start;
+        padding-bottom: clamp(40px, 5vw, 64px);
+        border-bottom: 1px solid var(--paper-line);
+        cursor: pointer;
+        transition: opacity 0.35s ease;
+      }
+      .character-row:last-child {
+        border-bottom: none;
+      }
+      .character-row:hover .character-name {
+        color: var(--velvet-burgundy);
+      }
+      .character-row:hover .character-cta {
+        letter-spacing: 0.22em;
+        color: var(--velvet-burgundy);
+      }
+
+      .character-row.flip {
+        grid-template-columns: 1fr 38%;
+      }
+      .character-row.flip .character-meta {
+        order: 2;
+      }
+      .character-row.flip .character-body {
+        order: 1;
+      }
+
+      .character-meta .numeral {
+        margin-bottom: var(--space-3);
+      }
+
+      .character-name {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 1.05;
+        color: var(--ink-noir);
+        letter-spacing: -0.005em;
+        margin-bottom: var(--space-3);
+        transition: color 0.4s ease;
+      }
+
+      .character-lessons {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+      }
+
+      .character-identity {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(18px, 1.6vw, 22px);
+        line-height: 1.4;
+        color: var(--ink-soft);
+        margin-bottom: var(--space-3);
+        margin-top: var(--space-2);
+      }
+
+      .character-pull {
+        font-family: var(--serif-body);
+        font-style: italic;
+        font-size: 17px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        padding-left: var(--space-3);
+        border-left: 1px solid var(--gold-foil);
+        margin-bottom: var(--space-4);
+      }
+
+      .character-cta {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.4s ease;
+      }
+      .character-cta::after {
+        content: "→";
+        font-size: 14px;
+        transition: transform 0.4s ease;
+      }
+
+      .character-tag {
+        display: inline-block;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        border: 1px solid var(--paper-line);
+        padding: 5px 10px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      .character-tag.full {
+        color: var(--velvet-burgundy);
+        border-color: var(--velvet-burgundy);
+      }
+
+      /* ============================================================
+       *  DENYS HERO BLOCK
+       * ============================================================ */
+      .denys-feature {
+        background: var(--cream-soft);
+        padding: clamp(64px, 9vw, 128px) 0;
+        margin-top: var(--space-7);
+        border-top: 1px solid var(--paper-line);
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .denys-feature .container {
+        position: relative;
+      }
+      .denys-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 96px);
+        align-items: start;
+      }
+      .denys-grid h1 {
+        margin-bottom: var(--space-3);
+      }
+      .denys-quote-pull {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(24px, 2.8vw, 36px);
+        line-height: 1.3;
+        color: var(--velvet-burgundy);
+        padding-left: var(--space-4);
+        border-left: 2px solid var(--gold-foil);
+        margin-top: var(--space-4);
+      }
+      .repertoire-list {
+        list-style: none;
+        padding: 0;
+        margin-top: var(--space-3);
+      }
+      .repertoire-list li {
+        font-family: var(--serif-body);
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        padding: 12px 0;
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .repertoire-list li:last-child {
+        border-bottom: none;
+      }
+      .repertoire-list li::before {
+        content: "·";
+        color: var(--gold-foil);
+        margin-right: 14px;
+        font-weight: bold;
+      }
+
+      /* ============================================================
+       *  FOCUS VIEW — Editorial card
+       * ============================================================ */
+      .focus-view {
+        padding: var(--space-6) 0 var(--space-7);
+        animation: hero-fade 0.6s ease-out;
+      }
+
+      .back-link {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: var(--space-5);
+        transition: all 0.4s ease;
+      }
+      .back-link::before {
+        content: "←";
+        font-size: 14px;
+        transition: transform 0.4s ease;
+      }
+      .back-link:hover {
+        color: var(--velvet-burgundy);
+        letter-spacing: 0.22em;
+      }
+      .back-link:hover::before {
+        transform: translateX(-4px);
+      }
+
+      .focus-eyebrow {
+        margin-bottom: var(--space-3);
+      }
+
+      .focus-name {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(40px, 6vw, 88px);
+        line-height: 1.02;
+        letter-spacing: -0.012em;
+        color: var(--ink-noir);
+        margin-bottom: var(--space-3);
+      }
+
+      .focus-identity {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(19px, 2vw, 24px);
+        line-height: 1.4;
+        color: var(--ink-soft);
+        max-width: 720px;
+        margin-bottom: var(--space-5);
+      }
+
+      .focus-meta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-bottom: var(--space-5);
+        padding-bottom: var(--space-5);
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .focus-meta .chip {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--velvet-burgundy);
+        border: 1px solid var(--velvet-burgundy);
+        padding: 7px 14px;
+        border-radius: 1px;
+      }
+      .focus-meta .chip.gold {
+        color: var(--gold-foil);
+        border-color: var(--gold-foil);
+      }
+
+      .focus-section {
+        padding: var(--space-5) 0;
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .focus-section:last-of-type {
+        border-bottom: none;
+      }
+
+      .focus-section .numeral {
+        margin-bottom: var(--space-3);
+      }
+
+      .focus-section h2 {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(22px, 2.4vw, 28px);
+        line-height: 1.2;
+        color: var(--ink-noir);
+        margin-bottom: var(--space-4);
+      }
+
+      .denys-quote {
+        position: relative;
+        margin: var(--space-3) 0 var(--space-4);
+        padding: 8px 0 8px var(--space-4);
+        border-left: 1px solid var(--gold-foil);
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .denys-quote.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .denys-quote p {
+        font-family: var(--serif-body);
+        font-style: italic;
+        font-size: clamp(18px, 1.6vw, 21px);
+        line-height: 1.55;
+        color: var(--ink-soft);
+        letter-spacing: 0.005em;
+        margin-bottom: 12px;
+      }
+      .denys-quote cite {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        font-style: normal;
+      }
+
+      .strengths-list {
+        list-style: none;
+        padding: 0;
+        max-width: 720px;
+      }
+      .strengths-list li {
+        font-family: var(--serif-body);
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        padding: 10px 0 10px var(--space-4);
+        position: relative;
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .strengths-list li::before {
+        content: "·";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        color: var(--gold-foil);
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .strengths-list li:last-child {
+        border-bottom: none;
+      }
+
+      .grow-paragraph {
+        font-family: var(--serif-body);
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        max-width: 720px;
+      }
+
+      .exercises-list {
+        list-style: none;
+        padding: 0;
+        counter-reset: ex;
+        max-width: 720px;
+      }
+      .exercises-list li {
+        counter-increment: ex;
+        padding: var(--space-3) 0;
+        border-bottom: 1px solid var(--paper-line);
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: var(--space-3);
+        align-items: start;
+      }
+      .exercises-list li:last-child {
+        border-bottom: none;
+      }
+      .exercises-list li::before {
+        content: counter(ex, decimal-leading-zero);
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        color: var(--gold-foil);
+        padding-top: 6px;
+      }
+      .exercise-code {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-noir);
+        display: block;
+        margin-bottom: 6px;
+      }
+      .exercise-desc {
+        font-family: var(--serif-body);
+        font-size: 16px;
+        line-height: 1.55;
+        color: var(--ink-soft);
+        display: block;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+      .exercise-body {
+        min-width: 0;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* ============================================================
+       *  CARD DECK — theatrical playbill
+       * ============================================================ */
+      .deck-feature {
+        padding: var(--space-7) 0 var(--space-6);
+        text-align: center;
+      }
+      .deck-feature .eyebrow {
+        display: inline-block;
+      }
+      .deck-feature h2 {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(28px, 3.6vw, 48px);
+        line-height: 1.1;
+        color: var(--ink-noir);
+        margin: 12px auto 16px;
+        max-width: 720px;
+      }
+      .deck-feature .deck-sub {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(15px, 1.4vw, 18px);
+        color: var(--ink-mute);
+        margin: 0 auto var(--space-5);
+        max-width: 520px;
+      }
+
+      .deck-stack {
+        position: relative;
+        width: 220px;
+        height: 320px;
+        margin: 0 auto;
+        cursor: pointer;
+        perspective: 1400px;
+        transition: transform 0.4s ease;
+      }
+      .deck-stack:hover {
+        transform: translateY(-6px);
+      }
+      .deck-stack::after {
+        content: "Розкрити колоду →";
+        position: absolute;
+        bottom: -42px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        white-space: nowrap;
+        transition:
+          letter-spacing 0.4s ease,
+          color 0.4s ease;
+      }
+      .deck-stack:hover::after {
+        letter-spacing: 0.28em;
+        color: var(--velvet-burgundy);
+      }
+      .deck-card-mini {
+        position: absolute;
+        inset: 0;
+        background: var(--cream-soft);
+        border: 1px solid var(--paper-line);
+        box-shadow: 0 6px 24px rgba(20, 17, 13, 0.08);
+        transition:
+          transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1),
+          box-shadow 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+      }
+      .deck-stack .deck-card-mini:nth-child(1) {
+        transform: rotate(-7deg) translate(-22px, 12px);
+      }
+      .deck-stack .deck-card-mini:nth-child(2) {
+        transform: rotate(-3deg) translate(-10px, 6px);
+      }
+      .deck-stack .deck-card-mini:nth-child(3) {
+        transform: rotate(0deg);
+      }
+      .deck-stack .deck-card-mini:nth-child(4) {
+        transform: rotate(3deg) translate(10px, 6px);
+      }
+      .deck-stack .deck-card-mini:nth-child(5) {
+        transform: rotate(7deg) translate(22px, 12px);
+      }
+      .deck-stack:hover .deck-card-mini:nth-child(1) {
+        transform: rotate(-12deg) translate(-44px, 18px);
+      }
+      .deck-stack:hover .deck-card-mini:nth-child(2) {
+        transform: rotate(-6deg) translate(-22px, 9px);
+      }
+      .deck-stack:hover .deck-card-mini:nth-child(4) {
+        transform: rotate(6deg) translate(22px, 9px);
+      }
+      .deck-stack:hover .deck-card-mini:nth-child(5) {
+        transform: rotate(12deg) translate(44px, 18px);
+      }
+      .deck-card-back-inner {
+        width: 86%;
+        height: 86%;
+        border: 1px solid var(--gold-foil);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px;
+      }
+      .deck-card-back-inner .ornament {
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--gold-foil);
+        transform: rotate(45deg);
+        position: relative;
+      }
+      .deck-card-back-inner .ornament::before,
+      .deck-card-back-inner .ornament::after {
+        content: "";
+        position: absolute;
+        background: var(--gold-foil);
+      }
+      .deck-card-back-inner .ornament::before {
+        inset: 6px;
+        border: 1px solid var(--gold-foil);
+        background: transparent;
+      }
+      .deck-card-back-inner .ornament::after {
+        width: 6px;
+        height: 6px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--gold-foil);
+      }
+      .deck-card-back-inner .monogram {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-style: italic;
+        font-size: 26px;
+        color: var(--gold-foil);
+        letter-spacing: 0.04em;
+      }
+      .deck-card-back-inner .label {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+      }
+
+      /* EXERCISES DECK VARIANT — subtle burgundy accent on monogram */
+      .deck-feature-exercises {
+        padding-top: var(--space-5);
+      }
+      .deck-stack-exercises .deck-card-back-inner {
+        border-color: var(--velvet-burgundy);
+      }
+      .deck-stack-exercises .deck-card-back-inner .ornament {
+        border-color: var(--velvet-burgundy);
+      }
+      .deck-stack-exercises .deck-card-back-inner .ornament::before,
+      .deck-stack-exercises .deck-card-back-inner .ornament::after {
+        background: var(--velvet-burgundy);
+      }
+      .deck-stack-exercises .deck-card-back-inner .monogram {
+        color: var(--velvet-burgundy);
+      }
+      .deck-stack-exercises::after {
+        content: "Розкрити колоду вправ →";
+        color: var(--velvet-burgundy);
+      }
+      .deck-stack-exercises:hover::after {
+        color: var(--gold-foil);
+      }
+      .flip-card-exercise .flip-face.flip-front .face-monogram {
+        color: var(--velvet-burgundy);
+      }
+
+      /* SPEECHES DECK VARIANT — gold-foil monogram, theatrical empty state */
+      .deck-feature-speeches {
+        padding-top: var(--space-5);
+      }
+      .deck-stack-speeches .deck-card-back-inner {
+        border-color: var(--gold-foil);
+      }
+      .deck-stack-speeches .deck-card-back-inner .ornament {
+        border-color: var(--gold-foil);
+      }
+      .deck-stack-speeches .deck-card-back-inner .ornament::before {
+        border-color: var(--gold-foil);
+      }
+      .deck-stack-speeches .deck-card-back-inner .ornament::after {
+        background: var(--gold-foil);
+      }
+      .deck-stack-speeches .deck-card-back-inner .monogram {
+        color: var(--gold-foil);
+      }
+      .deck-stack-speeches::after {
+        content: "Розкрити колоду виступів →";
+        color: var(--gold-foil);
+      }
+      .deck-stack-speeches:hover::after {
+        color: var(--velvet-burgundy);
+      }
+
+      /* Speeches empty-state CTA — bot link block */
+      .speeches-cta {
+        margin: var(--space-3) auto var(--space-4);
+        max-width: 560px;
+        padding: var(--space-3) var(--space-4);
+        background: var(--cream-soft);
+        border: 1px solid var(--paper-line);
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        transition:
+          border-color 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .speeches-cta:hover {
+        border-color: var(--gold-foil);
+        box-shadow: 0 8px 26px rgba(20, 17, 13, 0.06);
+      }
+      .speeches-cta .tg-glyph {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border: 1px solid var(--gold-foil);
+        transform: rotate(45deg);
+        margin-top: 4px;
+        position: relative;
+      }
+      .speeches-cta .tg-glyph::before {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        border: 1px solid var(--gold-foil);
+        background: transparent;
+      }
+      .speeches-cta .tg-glyph::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--gold-foil);
+      }
+      .speeches-cta .cta-body {
+        flex: 1;
+      }
+      .speeches-cta .cta-eyebrow {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        margin-bottom: 6px;
+      }
+      .speeches-cta .cta-text {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.45;
+        color: var(--ink-noir);
+      }
+      .speeches-cta .cta-text strong {
+        font-style: normal;
+        font-weight: 500;
+        color: var(--velvet-burgundy);
+      }
+      .speeches-cta .cta-bot-link {
+        display: inline-block;
+        margin-top: 8px;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--velvet-burgundy);
+        border-bottom: 1px solid var(--gold-foil);
+        padding-bottom: 2px;
+        transition:
+          color 0.3s ease,
+          letter-spacing 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .speeches-cta .cta-bot-link:hover {
+        color: var(--gold-foil);
+        letter-spacing: 0.28em;
+        border-color: var(--velvet-burgundy);
+      }
+
+      /* Speeches empty state — overlay messaging */
+      .speeches-empty {
+        max-width: 540px;
+        margin: var(--space-5) auto;
+        padding: var(--space-5) var(--space-4);
+        text-align: center;
+        background: var(--cream-soft);
+        border: 1px solid var(--paper-line);
+        position: relative;
+      }
+      .speeches-empty::before,
+      .speeches-empty::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border: 1px solid var(--gold-foil);
+        transform: rotate(45deg);
+      }
+      .speeches-empty::before {
+        top: -12px;
+        left: 50%;
+        margin-left: -11px;
+        background: var(--oyster);
+      }
+      .speeches-empty::after {
+        bottom: -12px;
+        left: 50%;
+        margin-left: -11px;
+        background: var(--oyster);
+      }
+      .speeches-empty .empty-ornament {
+        width: 56px;
+        height: 56px;
+        border: 1px solid var(--gold-foil);
+        margin: 0 auto var(--space-3);
+        transform: rotate(45deg);
+        position: relative;
+      }
+      .speeches-empty .empty-ornament::before {
+        content: "?";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-style: italic;
+        font-size: 32px;
+        color: var(--gold-foil);
+        line-height: 1;
+      }
+      .speeches-empty h3 {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(24px, 2.4vw, 32px);
+        line-height: 1.15;
+        color: var(--ink-noir);
+        margin-bottom: var(--space-2);
+      }
+      .speeches-empty p {
+        font-family: var(--serif-body);
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        margin: 0 auto var(--space-3);
+        max-width: 420px;
+      }
+      .speeches-empty .copy-link-btn {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--cream-soft);
+        background: var(--velvet-burgundy);
+        border: 1px solid var(--velvet-burgundy);
+        padding: 12px 22px;
+        cursor: pointer;
+        transition:
+          background 0.35s ease,
+          color 0.35s ease,
+          letter-spacing 0.35s ease;
+      }
+      .speeches-empty .copy-link-btn:hover {
+        background: var(--gold-foil);
+        border-color: var(--gold-foil);
+        color: var(--ink-noir);
+        letter-spacing: 0.28em;
+      }
+      .speeches-empty .copy-link-btn.copied {
+        background: var(--gold-foil);
+        border-color: var(--gold-foil);
+        color: var(--ink-noir);
+      }
+
+      /* Speeches deck — populated card (when CLASS_SPEECHES is non-empty) */
+      .flip-card-speech .flip-face.flip-front .face-monogram {
+        color: var(--gold-foil);
+      }
+      .flip-card-speech .flip-face.flip-back .back-quote {
+        color: var(--ink-noir);
+      }
+      .flip-card-speech .flip-back .speech-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin: 8px 0 10px;
+      }
+      .flip-card-speech .flip-back .speech-meta-row {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+      }
+      .flip-card-speech .flip-back .speech-meta-row strong {
+        color: var(--velvet-burgundy);
+      }
+
+      /* EXERCISE FOCUS — light markdown rendering */
+      .exercise-instruction {
+        font-family: var(--serif-body);
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+      }
+      .exercise-instruction p {
+        margin: 0 0 14px;
+      }
+      .exercise-instruction .ex-md-ol,
+      .exercise-instruction .ex-md-ul {
+        list-style: none;
+        margin: 0 0 16px;
+        padding: 0;
+      }
+      .exercise-instruction .ex-md-ol li,
+      .exercise-instruction .ex-md-ul li {
+        position: relative;
+        padding-left: 32px;
+        margin-bottom: 10px;
+        line-height: 1.7;
+      }
+      .exercise-instruction .ex-md-ol {
+        counter-reset: ex-step;
+      }
+      .exercise-instruction .ex-md-ol > li {
+        counter-increment: ex-step;
+      }
+      .exercise-instruction .ex-md-ol > li::before {
+        content: counter(ex-step, decimal-leading-zero);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        color: var(--gold-foil);
+      }
+      .exercise-instruction .ex-md-ul > li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--gold-foil);
+      }
+      .exercise-instruction strong {
+        color: var(--ink-noir);
+        font-weight: 500;
+      }
+      .exercise-instruction em {
+        font-style: italic;
+        color: var(--ink-mute);
+      }
+      .exercise-instruction .ex-md-quote {
+        display: block;
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-size: 19px;
+        line-height: 1.5;
+        color: var(--ink-noir);
+        padding: 12px 0 12px 24px;
+        border-left: 1px solid var(--gold-foil);
+        margin: 12px 0;
+      }
+
+      /* OVERLAY (spread mode) */
+      .deck-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 17, 13, 0.78);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 800;
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        overflow-y: auto;
+        animation: deck-overlay-in 0.4s ease;
+      }
+      .deck-overlay.open {
+        display: flex;
+      }
+      @keyframes deck-overlay-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .deck-overlay-inner {
+        max-width: 1180px;
+        width: 100%;
+        padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px);
+        position: relative;
+      }
+      .deck-overlay-header {
+        text-align: center;
+        margin-bottom: var(--space-5);
+        color: var(--cream-soft);
+      }
+      .deck-overlay-header .eyebrow {
+        color: var(--gold-whisper);
+      }
+      .deck-overlay-header h2 {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.1;
+        color: var(--oyster);
+        margin: 8px 0 6px;
+      }
+      .deck-overlay-header p {
+        font-family: var(--serif-display);
+        font-style: italic;
+        color: var(--gold-whisper);
+        font-size: 15px;
+      }
+      .deck-overlay-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-whisper);
+        background: transparent;
+        border: 1px solid var(--gold-whisper);
+        padding: 10px 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+      .deck-overlay-close:hover {
+        color: var(--velvet-shade);
+        background: var(--gold-whisper);
+      }
+
+      .deck-spread {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 220px));
+        justify-content: center;
+        gap: clamp(14px, 2vw, 24px);
+        perspective: 1600px;
+      }
+
+      .flip-card {
+        position: relative;
+        aspect-ratio: 2 / 3;
+        max-height: 320px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition:
+          transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
+          box-shadow 0.4s ease,
+          opacity 0.5s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .flip-card.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .flip-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      }
+      .flip-card.flipped {
+        transform: rotateY(180deg);
+      }
+      .flip-card.flipped:hover {
+        transform: rotateY(180deg) translateY(-4px);
+      }
+
+      .flip-face {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 16px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+      }
+      .flip-front {
+        background: var(--oyster);
+        border: 1px solid var(--paper-line);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 14px;
+      }
+      .flip-front .face-ornament {
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--gold-foil);
+        transform: rotate(45deg);
+        margin: 4px auto;
+      }
+      .flip-front .face-monogram {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-style: italic;
+        font-size: 38px;
+        line-height: 1;
+        color: var(--gold-foil);
+        letter-spacing: 0.02em;
+      }
+      .flip-front .face-name {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.15;
+        color: var(--ink-noir);
+        margin-top: 2px;
+      }
+      .flip-front .face-lessons {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+      }
+      .flip-front .face-hint {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 8px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        margin-top: auto;
+        padding-top: 12px;
+        opacity: 0.85;
+      }
+
+      .flip-back {
+        background: var(--cream-soft);
+        border: 1px solid var(--gold-foil);
+        transform: rotateY(180deg);
+        justify-content: space-between;
+        text-align: left;
+        gap: 10px;
+      }
+      .flip-back .back-eyebrow {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 8px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+      }
+      .flip-back .back-name {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: 19px;
+        line-height: 1.2;
+        color: var(--ink-noir);
+        margin-top: 4px;
+      }
+      .flip-back .back-quote {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        color: var(--velvet-burgundy);
+        flex: 1;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+      }
+      .flip-back .back-cta {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--velvet-burgundy);
+        border-top: 1px solid var(--paper-line);
+        padding-top: 10px;
+        text-align: center;
+        transition:
+          color 0.3s ease,
+          letter-spacing 0.3s ease;
+      }
+      .flip-back .back-cta:hover {
+        color: var(--gold-foil);
+        letter-spacing: 0.26em;
+      }
+
+      @media (max-width: 640px) {
+        .deck-stack {
+          width: 180px;
+          height: 260px;
+        }
+        .deck-spread {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        .deck-overlay-close {
+          top: 14px;
+          right: 14px;
+        }
+      }
+
+      .denys-offer-card {
+        background: var(--cream-soft);
+        border: 1px solid var(--gold-foil);
+        padding: var(--space-5);
+        max-width: 720px;
+        margin-top: var(--space-3);
+        transition: box-shadow 0.4s ease;
+      }
+      .denys-offer-card:hover {
+        box-shadow: 0 8px 32px rgba(20, 17, 13, 0.04);
+      }
+      .denys-offer-card .eyebrow {
+        margin-bottom: var(--space-2);
+      }
+      .denys-offer-card h4 {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: 24px;
+        line-height: 1.25;
+        color: var(--velvet-burgundy);
+        margin-bottom: var(--space-3);
+      }
+      .denys-offer-card p {
+        font-family: var(--serif-body);
+        font-size: 16.5px;
+        line-height: 1.65;
+        color: var(--ink-soft);
+      }
+
+      .focus-nav {
+        margin-top: var(--space-6);
+        padding-top: var(--space-5);
+        border-top: 1px solid var(--paper-line);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-3);
+        flex-wrap: wrap;
+      }
+      .focus-nav-link {
+        flex: 1;
+        max-width: 320px;
+        display: block;
+        text-decoration: none;
+      }
+      .focus-nav-link.next {
+        text-align: right;
+      }
+      .focus-nav-link .nav-direction {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        margin-bottom: 6px;
+        display: block;
+      }
+      .focus-nav-link .nav-name {
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: 24px;
+        color: var(--ink-noir);
+        line-height: 1.2;
+        transition: color 0.4s ease;
+      }
+      .focus-nav-link:hover .nav-name {
+        color: var(--velvet-burgundy);
+      }
+
+      /* ============================================================
+       *  OFFER VIEW
+       * ============================================================ */
+      .offer-spread {
+        padding: var(--space-5) 0;
+      }
+      .offer-spread .numeral {
+        margin-bottom: var(--space-3);
+      }
+      .offer-spread h2 {
+        margin-bottom: var(--space-3);
+      }
+
+      .offer-italic-intro {
+        font-family: var(--serif-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(19px, 2vw, 24px);
+        line-height: 1.45;
+        color: var(--ink-soft);
+        max-width: 720px;
+        margin-bottom: var(--space-4);
+      }
+
+      .offer-quote-line {
+        font-family: var(--serif-body);
+        font-style: italic;
+        font-size: 18px;
+        color: var(--ink-mute);
+        margin-bottom: var(--space-4);
+        padding-left: var(--space-3);
+        border-left: 1px solid var(--gold-foil);
+      }
+
+      .recommended-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: var(--space-4);
+      }
+      .rec-tag {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        border: 1px solid var(--paper-line);
+        padding: 8px 14px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        border-radius: 1px;
+      }
+      .rec-tag:hover {
+        color: var(--velvet-burgundy);
+        border-color: var(--velvet-burgundy);
+        background: var(--cream-soft);
+      }
+
+      .contact-note {
+        font-family: var(--sans-eyebrow);
+        font-weight: 400;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        padding-top: var(--space-3);
+        border-top: 1px dashed var(--paper-line);
+        max-width: 680px;
+      }
+      .contact-note strong {
+        color: var(--gold-foil);
+        letter-spacing: 0.18em;
+      }
+
+      /* ============================================================
+       *  SPEECH VIEW
+       * ============================================================ */
+      .speech-view {
+        animation: hero-fade 0.6s ease-out;
+        padding: var(--space-5) 0 var(--space-7);
+      }
+
+      .tone-diagram {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding: var(--space-4) 0;
+        margin: var(--space-5) 0;
+        border-top: 1px solid var(--paper-line);
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .tone-dot {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .tone-circle {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid var(--gold-foil);
+        background: transparent;
+        position: relative;
+      }
+      .tone-circle.filled {
+        background: var(--gold-foil);
+      }
+      .tone-label {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-noir);
+      }
+      .tone-arrow {
+        color: var(--ink-mute);
+        font-size: 14px;
+      }
+
+      .speech-controls {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: var(--space-5);
+        padding-bottom: var(--space-4);
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .control-btn {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        border: 1px solid var(--paper-line);
+        padding: 9px 16px;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .control-btn:hover,
+      .control-btn.active {
+        color: var(--velvet-burgundy);
+        border-color: var(--velvet-burgundy);
+      }
+
+      .speech-section {
+        padding: var(--space-5) 0;
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .speech-section:last-of-type {
+        border-bottom: none;
+      }
+
+      .speech-section .act-numeral {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        margin-bottom: var(--space-3);
+      }
+
+      .speech-section h3 {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(32px, 3.8vw, 48px);
+        line-height: 1.1;
+        color: var(--ink-noir);
+        margin-bottom: var(--space-3);
+      }
+
+      .speech-tone-line {
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--velvet-burgundy);
+        margin-bottom: var(--space-4);
+      }
+
+      .speech-text {
+        font-family: var(--serif-body);
+        font-size: 22px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        max-width: 760px;
+        transition: font-size 0.3s ease;
+      }
+      .speech-text em {
+        color: var(--gold-foil);
+        font-style: italic;
+      }
+      .speech-text strong {
+        color: var(--velvet-burgundy);
+        font-weight: 500;
+      }
+      .speech-stage-direction {
+        display: inline-block;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        margin: 0 6px;
+      }
+
+      .speech-annotation {
+        margin-top: var(--space-3);
+        padding: var(--space-3);
+        font-family: var(--serif-body);
+        font-style: italic;
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--gold-foil);
+        background: var(--cream-soft);
+        border-left: 1px solid var(--gold-foil);
+        max-width: 760px;
+      }
+
+      body.annotations-off .speech-annotation {
+        display: none;
+      }
+
+      body.stage-mode {
+        background: var(--ink-noir);
+        color: var(--cream-soft);
+      }
+      body.stage-mode .speech-view {
+        color: var(--cream-soft);
+      }
+      body.stage-mode .speech-section h3,
+      body.stage-mode .focus-name,
+      body.stage-mode h1.display {
+        color: var(--cream-soft);
+      }
+      body.stage-mode .speech-text {
+        color: var(--cream-soft);
+      }
+      body.stage-mode .speech-text strong {
+        color: var(--gold-whisper);
+      }
+      body.stage-mode .speech-text em {
+        color: var(--gold-whisper);
+      }
+      body.stage-mode .back-link,
+      body.stage-mode .speech-tone-line {
+        color: var(--gold-whisper);
+      }
+      body.stage-mode .speech-section {
+        border-color: rgba(212, 184, 115, 0.18);
+      }
+      body.stage-mode .site-nav {
+        background: rgba(20, 17, 13, 0.92);
+        border-color: rgba(212, 184, 115, 0.18);
+      }
+      body.stage-mode .site-mark,
+      body.stage-mode .site-nav-links a {
+        color: var(--cream-soft);
+      }
+      body.stage-mode .site-nav-links a.active::after {
+        background: var(--gold-whisper);
+      }
+
+      /* ============================================================
+       *  FOOTER
+       * ============================================================ */
+      .site-footer {
+        padding: var(--space-7) 0 var(--space-5);
+        border-top: 1px solid var(--paper-line);
+        text-align: center;
+        font-family: var(--serif-body);
+        font-style: italic;
+        font-size: 14px;
+        line-height: 1.65;
+        color: var(--ink-mute);
+      }
+      .site-footer .footer-mark {
+        font-family: var(--sans-eyebrow);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        margin-bottom: var(--space-2);
+        display: block;
+      }
+
+      /* ============================================================
+       *  KEYBOARD HINT
+       * ============================================================ */
+      .kbd-hint {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: var(--cream-soft);
+        border: 1px solid var(--paper-line);
+        padding: 10px 14px;
+        font-family: var(--sans-eyebrow);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        z-index: 10;
+        display: none;
+        max-width: 280px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+      }
+      .kbd-hint.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .kbd-hint kbd {
+        font-family: var(--sans-eyebrow);
+        background: var(--oyster);
+        border: 1px solid var(--paper-line);
+        border-radius: 2px;
+        padding: 1px 6px;
+        margin: 0 2px;
+        font-size: 9px;
+      }
+
+      /* ============================================================
+       *  RESPONSIVE
+       * ============================================================ */
+      @media (max-width: 900px) {
+        .denys-grid {
+          grid-template-columns: 1fr;
+        }
+        .character-row,
+        .character-row.flip {
+          grid-template-columns: 1fr;
+          gap: var(--space-3);
+        }
+        .character-row.flip .character-meta {
+          order: 0;
+        }
+        .character-row.flip .character-body {
+          order: 1;
+        }
+        .stats-trio {
+          grid-template-columns: 1fr;
+          gap: var(--space-4);
+        }
+        section {
+          padding: var(--space-5) 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .site-nav-inner {
+          padding: 14px 20px;
+        }
+        .site-nav-links {
+          gap: var(--space-2);
+        }
+        .site-nav-links a {
+          font-size: 10px;
+          letter-spacing: 0.14em;
+        }
+        .focus-nav {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .focus-nav-link {
+          max-width: 100%;
+        }
+        .focus-nav-link.next {
+          text-align: left;
+        }
+        .kbd-hint {
+          display: none !important;
+        }
+      }
+
+      /* ============================================================
+       *  BOT FEATURE — gift card from class, premium presentation
+       * ============================================================ */
+      .bot-feature {
+        position: relative;
+        padding: var(--space-7) clamp(24px, 5vw, 80px);
+        background:
+          linear-gradient(180deg, rgba(74, 24, 32, 0.04) 0%, rgba(74, 24, 32, 0.07) 100%),
+          var(--oyster);
+        border-top: 1px solid var(--paper-line);
+        border-bottom: 1px solid var(--paper-line);
+        overflow: hidden;
+      }
+      .bot-feature::before,
+      .bot-feature::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: clamp(48px, 6vw, 80px);
+        height: 1px;
+        background: var(--gold-foil);
+        opacity: 0.55;
+      }
+      .bot-feature::before {
+        top: 28px;
+      }
+      .bot-feature::after {
+        bottom: 28px;
+      }
+      .bot-feature-inner {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+      }
+      .bot-feature .bot-ornament {
+        width: 44px;
+        height: 44px;
+        margin: 0 auto var(--space-3);
+        border: 1px solid var(--gold-foil);
+        transform: rotate(45deg);
+        position: relative;
+        opacity: 0.85;
+      }
+      .bot-feature .bot-ornament::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border: 1px solid var(--gold-foil);
+      }
+      .bot-feature .bot-ornament::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--gold-foil);
+      }
+      .bot-feature .eyebrow {
+        display: inline-block;
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        margin-bottom: var(--space-3);
+      }
+      .bot-feature h2 {
+        font-family: var(--serif-display);
+        font-weight: 300;
+        font-size: clamp(40px, 5.4vw, 72px);
+        line-height: 1.05;
+        color: var(--velvet-burgundy);
+        margin: 0 0 var(--space-3);
+        letter-spacing: -0.005em;
+      }
+      .bot-feature .bot-subtitle {
+        font-family: var(--serif-body);
+        font-style: italic;
+        font-size: clamp(17px, 1.6vw, 20px);
+        line-height: 1.55;
+        color: var(--ink-noir);
+        max-width: 600px;
+        margin: 0 auto var(--space-5);
+      }
+      .bot-feature .bot-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 36px;
+        background: var(--gold-foil);
+        color: var(--ink-noir);
+        font-family: var(--serif-display);
+        font-weight: 400;
+        font-size: 17px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 1px solid var(--gold-foil);
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+        box-shadow: 0 6px 24px rgba(184, 149, 72, 0.18);
+      }
+      .bot-feature .bot-cta:hover,
+      .bot-feature .bot-cta:focus-visible {
+        background: transparent;
+        color: var(--velvet-burgundy);
+        border-color: var(--velvet-burgundy);
+        box-shadow: 0 10px 32px rgba(74, 24, 32, 0.16);
+        transform: translateY(-2px);
+      }
+      .bot-feature .bot-cta .arrow {
+        font-size: 18px;
+        line-height: 1;
+        transition: transform 0.35s ease;
+      }
+      .bot-feature .bot-cta:hover .arrow {
+        transform: translateX(4px);
+      }
+      .bot-feature .bot-handle {
+        margin-top: var(--space-4);
+        font-family: var(--sans-eyebrow);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold-foil);
+        opacity: 0.82;
+      }
+      @media (max-width: 640px) {
+        .bot-feature {
+          padding: var(--space-6) 20px;
+        }
+        .bot-feature .bot-cta {
+          padding: 16px 26px;
+          font-size: 15px;
+          letter-spacing: 0.12em;
+        }
+      }
+
+      /* ============================================================
+       *  PRINT
+       * ============================================================ */
+      @media print {
+        body {
+          background: white;
+          color: black;
+          font-size: 11pt;
+        }
+        .site-nav,
+        .hero-ctas,
+        .kbd-hint,
+        .speech-controls,
+        .focus-nav,
+        .back-link,
+        .character-cta,
+        .bot-feature {
+          display: none !important;
+        }
+        section {
+          padding: 18pt 0;
+          page-break-inside: avoid;
+        }
+        .character-row {
+          page-break-inside: avoid;
+        }
+        .denys-quote {
+          break-inside: avoid;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        h1.hero-display,
+        h1.display,
+        h1.feature-display,
+        .focus-name {
+          font-size: 24pt;
+          color: black;
+        }
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+
+      /* Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================================================
+         SITE NAVIGATION
+         ============================================================ -->
+    <nav class="site-nav" aria-label="Головна навігація">
+      <div class="site-nav-inner">
+        <div class="site-mark">
+          MCMM <span>·</span> I потік <span>·</span> Програмка
+        </div>
+        <div class="site-nav-links">
+          <a href="#/home" data-nav="home">Головна</a>
+          <a
+            href="#/home"
+            data-nav="cards"
+            onclick="
+              setTimeout(() => {
+                const el = document.getElementById('characters');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 50)
+            "
+            >Персонажі</a
+          >
+          <a
+            href="#/home"
+            data-nav="exercises"
+            onclick="
+              setTimeout(() => {
+                const el = document.getElementById('exercises');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 50)
+            "
+            >Вправи</a
+          >
+          <a
+            href="#/home"
+            data-nav="speeches"
+            onclick="
+              setTimeout(() => {
+                const el = document.getElementById('speeches');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 50)
+            "
+            >Виступи</a
+          >
+          <a href="#/offer" data-nav="offer">Афіша</a>
+          <a href="#/speech" data-nav="speech">Партія</a>
+          <a
+            href="#/home"
+            data-nav="bot"
+            onclick="
+              setTimeout(() => {
+                const el = document.getElementById('bot');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 50)
+            "
+            >Бот</a
+          >
+        </div>
+        <button
+          class="big-text-toggle"
+          id="big-text-btn"
+          aria-pressed="false"
+          title="Великий шрифт для сцени"
+        >
+          A·A·A
+        </button>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         APP CONTAINER
+         ============================================================ -->
+    <main id="app" role="main"></main>
+
+    <!-- Keyboard hint -->
+    <div class="kbd-hint" id="kbd-hint" role="region" aria-label="Клавіші">
+      <kbd>←</kbd><kbd>→</kbd> карти · <kbd>S</kbd> партія ·
+      <kbd>Space</kbd> афіша · <kbd>H</kbd> головна · <kbd>Esc</kbd> назад
+    </div>
+
+    <!-- External exercises data (37 records) -->
+    <script src="exercises_data.js"></script>
+
+    <!-- External class speeches data (community library, opt-in submissions) -->
+    <script src="class_speeches.js"></script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ============================================================
+         *  DATA — Учасники, Денис, Speech sections
+         * ============================================================ */
+
+        const PARTICIPANTS = [
+          {
+            slug: "alina-velihina",
+            name: "Аліна Велігіна",
+            lessons: "L1 + L2 + L3",
+            headline_quote:
+              "Структуру розповіла з прологом, кульмінацією і розв'язкою",
+            identity:
+              "Магістр психології, коуч-ментор, власниця успішного бізнесу, менторка платформи «Жінки у бізнесі».",
+            status: "full",
+            quotes: [
+              {
+                text: "Аліна, ти дуже чітко її по структурі розповіла. Там був і пролог, і путь, як ця грибка потрапила до тебе, і конфлікт внутрішній цієї грибки... Там була і кульмінація, і внутрішній розворот, і розв'язка, і фінал",
+                ref: "C-l05-049",
+              },
+              {
+                text: "Вперше, класно ти зробила в початку, що обозначила паузу, не одразу типу поїхали-погнали, ні, ти взяла паузу, видихнула, взяла своє пространство і почала говорити. Ти почала з стихотворення, це дуже класний хук. Я собі на заміточку візьму. Не думав, що так можна зробити",
+                ref: "C-l07-059",
+              },
+              {
+                text: "Мені сподобалося, що ти не сказала «приходь до мене, я допоможу», а сказала «обирайте собі спеціаліста по душі». Це прям дуже розполагає на самому ділі",
+                ref: "C-l07-072",
+              },
+            ],
+            strengths: [
+              "Природна Арка Героя в impromptu — побудувала на ходу повну структуру з прологом, кульмінацією і розв'язкою",
+              "Прийом «пауза перед стартом + вірш як хук» — Денис прямо записав це собі в арсенал",
+              "Анти-самореклама — «обирай свого спеціаліста» — рідкісна етична позиція",
+              "Самосвідомість масок — чітко артикулює свого «спасателя» / «причинить добро»",
+              "Готовність до драйв-практики — 1 березня MCMM, наступне ефір; «я хочу ще»",
+            ],
+            grow_area:
+              "Денис помітив патерн «я не готувалась» — оправдання після виступу. Це не для аудиторії, це для себе. Лікується через 3-5 повторів на камеру, після яких структура стає внутрішньою, і не треба про неї думати. Також — займай весь свій час на сцені (ти зробила 3.5 хв з 7).",
+            exercises: [
+              {
+                code: "ex-L2-Бутерброд",
+                desc: "переробка self-feedback (визнання → точка росту → закріплення сили) замість «я не готувалась»",
+              },
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру → структура зникає в підсвідомість",
+              },
+              {
+                code: "ex-15 L3",
+                desc: "прямі ефіри як «актуальні рілси» (Денис підтримав твою інтуїцію)",
+              },
+            ],
+            denys_offer: {
+              title: "Курс «Глибина Героя» (44-й потік)",
+              body: "Твій рівень готовності до Арки + досвід офлайн-виступів = ідеальна точка входу в персональну глибину. Денис веде це 43 потоки поспіль; коли учасники повертаються — це і є справжній proof.",
+            },
+          },
+          {
+            slug: "anastasiia-vynohradova",
+            name: "Анастасія Виноградова",
+            lessons: "L2 + L3",
+            headline_quote: "Здоровенна сила і яркість в живій імпровізації",
+            identity:
+              "Підприємець 29 років («не з особистого бренду, а через систему, команду і відповідальність»).",
+            status: "full",
+            quotes: [
+              {
+                text: "Ця яркість, ця суперсила, ця живість — я реально, у мене був дисонанс до твоєї виступління. Ти багатьом давала повернуту зв'язку, прямо така жива, аутентична, настояща, класна. І коли ти почала читати — це зовсім інший людина",
+                ref: "C-l07-051",
+              },
+              { text: "Де страшно, там йдемо і робимо", ref: "C-l07-058" },
+              {
+                text: "Категоричність буває доброю, а буває догматичною злою. Добра категоричність — коли ми чітко розуміємо свої цінності і смисли... якщо ми не категоричні — скоріш за все ми хочемо вгодити всім, а не своїй аудиторії",
+                ref: "C-l08-058",
+              },
+            ],
+            strengths: [
+              "«Здоровенна сила і яркість» в живій імпровізації — «аутентична, настояща»",
+              "Самосвідомість блокатора — чітко знаєш «у мене з системою не дуже, в структурі зжимаюсь»",
+              "Стратегічний підприємницький мозок — 29 років бізнесу, мислення системами",
+              "Активна у чаті L3 — кидала 3 інсайт-питання (категоричність, мат, розрив шаблону), Денис відповів на кожне як на цінне",
+            ],
+            grow_area:
+              "Денис побачив дисонанс між живою харизмою і читанням GPT-тексту — коли вирвешся з структури і слайдів, працює зовсім інший рівень. Антипатерн «починаю з оправдань» — кидай. Для тебе індивідуальний підхід критичний (Денис прямо: «у тебе унікальний випадок, шукаємо як виступати без блокатора-структури»).",
+            exercises: [
+              {
+                code: "ex-08 L3",
+                desc: "одна фраза у 4 тонах (для калібрування твого Воїн-діапазону)",
+              },
+              {
+                code: "ex-12 L2",
+                desc: "PA-техніка без слайдів, лише з адресатом",
+              },
+              {
+                code: "ex-self",
+                desc: "імпровізаційний 3-хв виступ без підготовки → запис → послухати",
+              },
+            ],
+            denys_offer: {
+              title: "1-on-1 коучинг з Денисом",
+              body: "Твій профіль — кейс для індивідуального коучингу з Денисом. Структура-як-блокатор не лікується груповим форматом, потрібна персональна 1-on-1 робота. Денис теж приймає 1-on-1 клієнтів.",
+            },
+          },
+          {
+            slug: "anna",
+            name: "Анна",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Перша артикулювала харизму як «енергію присутності + блиск в очах»",
+            identity: "Психолог. Учасниця L1 + L3.",
+            status: "full",
+            quotes: [
+              {
+                text: "Помітте, коли ми слухаємо зараз Анну, наскільки у нас змінюється розуміння Анни. Тобто це абсолютно різна енергія",
+                ref: "C-l08-063",
+              },
+              {
+                text: "Я не даю людям нові знання. Я нагадую людям те, що вони забули в хаосі багатозадачності",
+                ref: "C-l08-034",
+              },
+              {
+                text: "Хотілося ще до цієї конкурентості додати енергію, яку несе людина. Енергію впевненості, енергію опори, оцей блеск в очах. Іноді він навіть може мовчати, але коли він входить, оцю енергію впитують всі",
+                ref: "C-l05-018",
+              },
+            ],
+            strengths: [
+              "Перша, хто артикулювала харизму як «енергію присутності + блиск в очах»",
+              "Здатна ставити ключові питання — про скептиків і про перші 30 секунд (Денис розгорнув на тому цілі секції)",
+              "Тонкий патерн самоспостереження — «несвідомого дублювання інтонації» — це глибока самокритика",
+              "L3 drill переключення тонів мудрець ↔ воїн — Денис каже «абсолютно різна енергія» (PROOF тонової динаміки)",
+            ],
+            grow_area:
+              "Блок експерта: «У мене немає смислу. Все вже у GPT». Денис відповів на цей блок прямо: «я не даю нові знання — я нагадую забуте». Це не теорія, це твоя робоча відповідь на власний блок. Юлія тебе підтримала: «Ань, ти як особистість цікава. Люди йдуть на особистість, Ань».",
+            exercises: [
+              {
+                code: "ex-tone-switch L3",
+                desc: "продовжуй переключення мудрець ↔ воїн (Денис вже бачить твій діапазон)",
+              },
+              {
+                code: "ex-02 L3",
+                desc: "Live-ефір на тему «що я забула, бо все у GPT» (поверни собі вагу слова)",
+              },
+              {
+                code: "ex-хук L1",
+                desc: "тренувати трігерний 30-сек хук типу «Усі ми з дитинства недолюблені»",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій блок «у мене немає смислу» лікується через 4 елементи глибини героя (хто я · де я · мої закони · що для мене щастя). Це не курс ораторства, це робота з ідентичністю. Денис сам це назвав «не контент-маркетинг, а робота з глибиною героя слухача».",
+            },
+          },
+          {
+            slug: "kateryna",
+            name: "Катерина",
+            lessons: "L2 + L3",
+            headline_quote:
+              "Прекрасна, проста, аутентична природа — коли немає доспіхів",
+            identity:
+              "Дитячий психолог. Один з трьох найсильніших виступів за весь курс (поруч з Лерою і офлайн-виступом Аліни).",
+            status: "full",
+            quotes: [
+              {
+                text: "Ось Катерина — прекрасна, проста, аутентична природа. Наскільки ось ця настояча, коли немає доспіхів — я теж знімаю доспіхи, я проникаюся, хочу слухати",
+                ref: "C-l07-083",
+              },
+              {
+                text: "Її настояча — суперсила, найважливіше. Це найважливіше, це суперсила. Аліна, Анастасія взаємодіють з виступом — кожне слово впитуємо",
+                ref: "C-l07-056",
+              },
+              {
+                text: "Дуже сильна імпатка, відчуває людей, не навчилася працювати з станом щоб не брати на себе",
+                ref: "C-l07-090",
+              },
+            ],
+            strengths: [
+              "Одна з трьох найсильніших виступів за всі 3 уроки",
+              "Природна простота, аутентичність — «коли немає доспіхів»",
+              "Висока імпатичність — клієнти відчуваються глибоко",
+              "Магнетизм через правду — «впитуємо кожне слово»",
+              "Тема як її день — «вийти з болота» = твій реальний кейс цього дня. Це і є те, що Денис називає експертною темою",
+            ],
+            grow_area:
+              "Імпатичність без захисту — ти береш на себе. Потрібно навчитися знімати доспіхи в гостя, але не пропускати у себе. У L3 drill — переключення тонів соблазнітель ↔ чарівник: Денис рекомендує тренувати тайну («тільки я почув») окремо від інтимного шепоту.",
+            exercises: [
+              {
+                code: "ex-04 PA L2",
+                desc: "навчитися PA з захистом (адресат + бар'єр енергетичний)",
+              },
+              {
+                code: "ex-tone-tayna L3",
+                desc: "drill «розповідь тайни» окремо від інтимного шепоту",
+              },
+              {
+                code: "ex-self-care expert",
+                desc: "після кожного клієнта — 5-хв ритуал розідентифікації",
+              },
+            ],
+            denys_offer: {
+              title: "Курс «Глибина Героя» + 1-on-1 з Денисом",
+              body: "Твій рівень настоячості вже на TEDx-рівні. У «Глибині Героя» це переростає у роботу з 4 архетипами + захист імпатки. Денис сам згадував твій виступ як приклад магнетизму через правду — це означає, що його персональна 1-on-1 робота з тобою буде швидка і глибока.",
+            },
+          },
+          {
+            slug: "lera-reznyk",
+            name: "Лера Резник",
+            lessons: "L2 + L3",
+            headline_quote:
+              "З мінусів — нічого не виписав. Немає там сира, зелені, салату",
+            identity:
+              "Поетеса, коуч, ментор з Хайфи (Ізраїль). Два тижні тому стала мамою. Єдина учасниця курсу, в чиєму виступі Денис не знайшов жодного мінусу.",
+            status: "full",
+            quotes: [
+              {
+                text: "У неї є якась неподдільна правда в голосі, в словах. Не в логіці, не в структурі мови, а в тому, як вона спілкується. Авторитетно дуже, аристократично. Створила свій світ, виключила контекст до неї і ввела всіх у свій",
+                ref: "C-l07-053",
+              },
+              {
+                text: "З мінусів я нічого не виписав, з якоїсь зони росту, немає там сира, зелені, салату",
+                ref: "C-l07-085",
+              },
+              {
+                text: "Прекрасно простроєні логічні мостики, переходи з однієї теми до іншої. Вона все час говорить, використовує техніку я-сообщення, я відчуваю, як мені... видно, мабуть багато в терапії була",
+                ref: "C-l07-054",
+              },
+            ],
+            strengths: [
+              "Єдина за курс, у кого Денис не знайшов мінусів",
+              "«Неподдільна правда в голосі», «авторитетно», «аристократично»",
+              "Природний мудрець — «умудрена життєвим опитом»",
+              "Я-сообщення замість «вам треба» (терапевтична школа)",
+              "Створює власний світ, виключає попередній контекст",
+              "Висока культура мови (вірші, чужі поети)",
+              "Cross-lesson послідовність — у L3 при питанні Ані повторила тезу Дениса",
+            ],
+            grow_area:
+              "«В кінці голос сідає вниз. Не сідай вниз. В кінці чіткий відкритий знак» [C-l08-071]. Все. Більше нічого. Денис сказав: «у вас усе є — просто продовжуйте».",
+            exercises: [
+              {
+                code: "ex-tone-open L3",
+                desc: "drill «відкритий знак у кінці фрази»",
+              },
+              {
+                code: "ex-Куніна",
+                desc: "Денис рекомендував книгу Куніна «I go to Haifa» (під твою Хайфу)",
+              },
+              {
+                code: "ex-publish daily",
+                desc: "твій стиль готовий до публічних виступів — просто публікуй регулярно",
+              },
+            ],
+            denys_offer: {
+              title: "Персональний 1-on-1 з Денисом",
+              body: "Стандартний курс «Глибина Героя» тобі не потрібен — у тебе вже працює. Що Денис може дати — персональний фідбек на твої публічні виступи (1-on-1) для тонкої калібровки. Це інший формат, не курс.",
+            },
+          },
+          {
+            slug: "nataliia",
+            name: "Наталія",
+            lessons: "L1 + L2 + L3",
+            headline_quote:
+              "Чітко, ясно і конкретно — за формулу про голос як інструмент стану",
+            identity:
+              "Коуч, енергопрактик, працює з жінками. Ведуча жіночого клубу.",
+            status: "full",
+            quotes: [
+              {
+                text: "Чітко, ясно і конкретно. Дякую велике, Наталія",
+                ref: "C-l05-087",
+              },
+              {
+                text: "Так, ми можемо думати по одному, а світ чує по-іншому. І взагалі ось цей чарівник на рівні карми і езотерики — чим м'якше річ, тим більше грошей, чим більше воїнственності, тим більше конфліктів в житті",
+                ref: "C-l08-065",
+              },
+              {
+                text: "Не бачу ніяких проблем, щоб ви відділено провели індивідуальний ефір по якоїсь структурі. Коли ви будете вести прямий ефір, ви будете інтуїтивно взаємодіюватися, і це буде живе спілкування. А структура більше дана для індивідуальних виступлінь",
+                ref: "C-l08-117",
+              },
+            ],
+            strengths: [
+              "Готовий «безпечний» жіночий клуб як якір PA — досвід ведення жіночих груп",
+              "Запит на голос як інструмент стану — артикулюєш краще за більшість",
+              "Активно бере участь у drill'ах (chosen чарівником)",
+              "Здатна до колаборацій (партнерство з Оленою Сідок)",
+            ],
+            grow_area:
+              "Розрив між self-perception (я думала — чарівник) і receiver-perception (звучить як воїн). Денис м'яко: «чим більше воїнственності, тим більше конфліктів в житті» — натяк, що варто пом'якшувати тон у твоїй ніші (жінки). Це лікується через self-record + listen для калібрування.",
+            exercises: [
+              {
+                code: "ex-self-record L3",
+                desc: "кожен drill записувати і слухати з боку",
+              },
+              {
+                code: "ex-soft tone L3",
+                desc: "drill м'якого чарівника (без воїн-агресії)",
+              },
+              {
+                code: "ex-02 L3",
+                desc: "соло ефір замість парного з Оленою (Денис рекомендував)",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твоя ніша (жінки) ідеально лягає на 4-архетипну роботу. Денис прямо сказав, що у твоїй ніші м'якший тон = більше грошей. Це не теорія, це його астрологічне+психологічне спостереження за роками практики.",
+            },
+          },
+          {
+            slug: "olena-sidok",
+            name: "Олена Сідок",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Прекрасний волшебник був, Альона. Просто прекрасний",
+            identity:
+              "Учасниця Zoom-сесії. Природний домінуючий тон — Чарівник (рідкість серед учасниць).",
+            status: "full",
+            quotes: [
+              {
+                text: "О, от це прекрасний волшебник був, Альона. Просто прекрасний",
+                ref: "C-l08-068",
+              },
+              { text: "Не такі етичні, як Олена", ref: "transcript 02:07:01" },
+              {
+                text: "Ми запланували зробити колаборацію з Оленою Сідок, і якраз ви даєте домашнє завдання",
+                ref: "C-l08-125",
+              },
+            ],
+            strengths: [
+              "Природний домінуючий тон — Чарівник (рідкість серед учасниць)",
+              "Висока етичність — Денис використав твоє ім'я як приклад",
+              "Виходила волонтером — мотивація своя, не з зобов'язання",
+              "Бачить трансфер структур у Instagram-маркетинг — «стільки класних структур, котрі підходять і під прогрів, і під сторітелл, і під карусель, під рілс»",
+            ],
+            grow_area:
+              "Денис у L3 рекомендував: СОЛО ефір для домашки замість парного з Наталією [C-l08-117]. Не тому що щось не так з партнерством — а щоб ти могла тренувати СВОЮ структуру самостійно перш ніж колаборувати.",
+            exercises: [
+              {
+                code: "ex-11 L3",
+                desc: "Тон у Живому колі (40 хв) — твій природний Чарівник + інші 3 тони послідовно",
+              },
+              {
+                code: "ex-02 L3",
+                desc: "Домашка живий ефір 15-25 хв (90 хв з підготовкою) — соло, як Денис рекомендував",
+              },
+              {
+                code: "ex-15 L3",
+                desc: "Рефлексія головного завдання оратора (5 хв) — кріпити твою чарівникову візію",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Ти вже володієш ВЛАДНИМ тоном Чарівника, у «Глибині Героя» це переростає у повну палітру 4 архетипів. Денис прямо назвав тебе «прекрасний волшебник» — це означає, що у його персональній роботі з тобою буде кайфово, бо стартовий рівень високий.",
+            },
+          },
+          {
+            slug: "snizhana",
+            name: "Сніжана",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Конгруентність = щирість = харизма. Ти перша це артикулювала",
+            identity:
+              "Коуч «реальних змін» (бере відповідальність за результати клієнта), бізнес-вуменша, викладач Львівської політехніки.",
+            status: "full",
+            quotes: [
+              {
+                text: "Абсолютно, благодарю, Сніжана, просто прекрасно сказали. Це саме про ту конгруєнтність",
+                ref: "C-l05-017",
+              },
+              {
+                text: "Коли ти услишала фразу професора нашого українського Олега Чабана... мені дуже перегукується з тою концепцією",
+                ref: "C-l05-029",
+              },
+              {
+                text: "Структура питання-відповідь-доказ. Це її проявленість, її цінність",
+                ref: "C-l08-055",
+              },
+            ],
+            strengths: [
+              "Конгруентність як ядро харизми — ти перша артикулювала це в L1",
+              "Цитаційна культура (Олег Чабан + готовність зробити Арку Героя на ходу)",
+              "Сильна структура питання-відповідь-доказ у захисті его",
+              "Глибокі цінності — «бажання жити серед щасливих, успішних і драйвових людей»",
+              "Швидке мислення — у warmup вже видавала готову Арку",
+            ],
+            grow_area:
+              "Денис не дав явних зон росту. Ти — одна з найвпевненіших учасниць курсу. Якщо щось — продовжуй у вибраній траєкторії: Арка Героя під коуч-його сесії, конгруентність як ядро.",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "Арка Героя під коучингові сесії (твоя природна структура)",
+              },
+              {
+                code: "ex-конгруентність L1",
+                desc: "drill «один посил на виступ» (як ти вже інтуїтивно робиш)",
+              },
+              {
+                code: "ex-его-захист L3",
+                desc: "продовжуй питання-відповідь-доказ як свою структуру",
+              },
+            ],
+            denys_offer: {
+              title: "1-on-1 з Денисом — для майстер-рівня",
+              body: "Ти ймовірно вже готова до майстер-рівня у Дениса. «Глибина Героя» може бути для тебе повторенням того, що ти інтуїтивно знаєш. Краще варіант — 1-on-1 з Денисом для виходу на наступний рівень (книга? курс власний? публічний бренд?).",
+            },
+          },
+          {
+            slug: "yuliia-nutritsiolog",
+            name: "Юлія",
+            lessons: "L2 + L3",
+            headline_quote:
+              "PA 9/10 — мудро вибираєш ідеальну аудиторію для тренування",
+            identity:
+              "Сертифікований нутриціолог, провела медитацію впевненості у виступі (L2). PA 9/10 при виступі про ранкові ритуали.",
+            status: "full",
+            quotes: [
+              {
+                text: "Во-первых, я сразу поняла про що виступление, ты сразу попала в боль конкретной аудитории, ты сразу начала взаимодействовать с аудиторией, ее включила в моменте 30-40 секунд, яркое сильное начало, начало прям супер яркое",
+                ref: "C-l07-070",
+              },
+              {
+                text: "Юлія молодець, вона вже запостила рілс по AIDA. Коли встигла Юлія? Умничка, молодець",
+                ref: "C-l08-091",
+              },
+              {
+                text: "Подержите Юлію. Давайте похлопаємо. А то в залі ж ми хлопаємо, коли людина починає. А тут вона сама сидить на стресі",
+                ref: "C-l07-076",
+              },
+            ],
+            strengths: [
+              "PA 9/10 — мудро вибираєш ідеальну аудиторію для тренування",
+              "Яскравий початок виступу — Денис: «супер яркий, експертність відчувається»",
+              "Real-time application — запостила рілс по AIDA одразу під час лекції",
+              "Виконавча — «8 березня пригласили — не задумалася ні на хвилину»",
+              "Поддержка інших — підтримала Анну у L3: «люди йдуть на особистість, Ань»",
+            ],
+            grow_area:
+              "Антипатерн «починаю з оправдань» — Денис прямо. Кульмінація просіла, енергія в кінці впала (L2 виступ про ранки). Сегментуєш аудиторію («ходять в зал» vs «домашні») — забанила частину (Василь засвідчив). Лікувальний лайфхак — слайди-як-структура — Денис прямо підтвердив, що це робить виступ легшим.",
+            exercises: [
+              {
+                code: "ex-Бутерброд L2",
+                desc: "переробити self-feedback (без оправдань)",
+              },
+              {
+                code: "ex-кульмінація L2",
+                desc: "drill «енергія в кінці» (не просідати)",
+              },
+              {
+                code: "ex-real-time L3",
+                desc: "продовжуй слайди-як-структуру + публікації одразу під час уроку",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій рівень publish-готовності вже видно (рілс одразу). У «Глибині Героя» це переростає в твою власну експертну тему (самоцінність, кордони, опори — твоя ж формулювання). Як нутриціолог ти знаєш — але твоя справжня тема глибша.",
+            },
+          },
+          {
+            slug: "yuliia-kravchuk",
+            name: "Юлія Кравчук",
+            lessons: "L2 + L3",
+            headline_quote: "Денис прямо: «Браво! Ось це мудрець!»",
+            identity:
+              "Учасниця L2 + L3. У L2 — давала фідбек Василю. У L3 — Денис використав твій drill як приклад «спікер передає СТАН».",
+            status: "full",
+            quotes: [
+              {
+                text: "Я добіг до кінця і зрозумів, що межі існують тільки в голові... І ще раз, мудрець, трохи медленніше, ще більше паузи... Ось це мудрець! Браво!",
+                ref: "C-l08-072",
+              },
+              {
+                text: "Хто ще хоче поділитися відповідальною зв'язкою про Василя? Давайте Юлія Кравчук",
+                ref: "L2 transcript 59:04",
+              },
+            ],
+            strengths: [
+              "Природний мудрець — Денис прямо «Браво!»",
+              "Здатна перемикати темп у середині фрази — це важко для пограничних типів",
+              "Активна в дисципліні фідбеку",
+            ],
+            grow_area:
+              "Денис не дав явних мінусів. Якщо щось — продовжуй у мудреці, експериментуй з темпом (медленніше = глибше).",
+            exercises: [
+              {
+                code: "ex-tempo L3",
+                desc: "drill «одна фраза в різних темпах»",
+              },
+              { code: "ex-mudrets L3", desc: "drill «мудрець з паузами»" },
+              {
+                code: "ex-Бутерброд L2",
+                desc: "продовжуй чесний peer-фідбек (це твоя сильна сторона)",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій природний мудрець потребує матеріалу. У «Глибині Героя» ти отримуєш 4 елементи глибини героя як інструменти для контенту.",
+            },
+          },
+          {
+            slug: "vasyl",
+            name: "Василь",
+            lessons: "L2 + L3",
+            headline_quote: "Регулярна практика — 4 виступи МЧП за 2 тижні",
+            identity:
+              "Учасник L2 + L3. Виступав партнером з Аліною Велігіною 1 березня в МЧП (live, офлайн).",
+            status: "full",
+            quotes: [
+              {
+                text: "Какие у кого есть инсайти пока что по виступленню по темі Василія, Дневник Благодарності",
+                ref: "C-l07-077",
+              },
+              {
+                text: "Загалом мав два виступи в МЧП. Завтра теж маю виступ, післязавтра. Найбільше, що мені запам'яталося, це починати з класного хуку. Оце всі ми недолюблені, і пішло-поїхало",
+                ref: "C-l08-052",
+              },
+            ],
+            strengths: [
+              "Регулярна практика — 4 виступи за 2 тижні (МЧП-актив)",
+              "Запам'ятав хук «недолюблені» з L1 і застосував",
+              "Активно дає live-фідбек — корисний голос в аудиторії",
+            ],
+            grow_area:
+              "Темп виступу — Валерія сказала «швидкий», Денис уточнив: причина в адресаті, а не у темпі. L3: не вмієш продавати послугу у фіналі виступу — це маркетингова проблема, не ораторська. Денис: «Можна через ораторське це легше створити». Міксуєш сегментацію аудиторії з критикою — треба X→Y→Z формула.",
+            exercises: [
+              {
+                code: "ex-PA L2",
+                desc: "тренувати конкретного адресата (не темп — а кому говориш)",
+              },
+              {
+                code: "ex-XYZ L2",
+                desc: "формула конструктивної критики (тренувати на партнерах)",
+              },
+              {
+                code: "ex-Sales L3",
+                desc: "продаж послуги через ораторське (перші слайди продаж — теж сторітелл)",
+              },
+            ],
+            denys_offer: {
+              title: "Груповий формат Дениса",
+              body: "Твій профіль — кейс для групового формату Дениса («Глибина Героя» або інших живих потоків), де ти отримуєш peer-feedback від інших мотивованих практиків. Групова динаміка для тебе важливіша за персональну.",
+            },
+          },
+          {
+            slug: "olha-bohdanovska",
+            name: "Ольга Богдановська",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Чесний intro — не приховуєш величезний страх проявленості",
+            identity:
+              "Соучередитель сімейного рибоконсервного виробництва. Навчається коучингу.",
+            status: "full",
+            quotes: [
+              {
+                text: "Ольга, дякую, дякую. Чувствую і розумію. Дякую",
+                ref: "L1 transcript 13:33",
+              },
+              {
+                text: "Так, дійсно, ми інтуїтивно її і використовуємо, бо вона абсолютно адекватна, зріла",
+                ref: "C-l08-105",
+              },
+            ],
+            strengths: [
+              "Інтуїтивно вже використовуєш структури в житті — це показник «здорової емпатії»",
+              "Чесний intro — не приховуєш величезний страх проявленості, ком в горлі (≠ оправдання)",
+            ],
+            grow_area:
+              "Величезний страх проявленості перед незнайомою аудиторією. Не реалізовуєш внутрішній голос «помагати людям». Лікується через ex-04 L1 (5 повторів на камеру) + ex-PA L2 (один безпечний адресат).",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру (трансформувати страх через repetition)",
+              },
+              {
+                code: "ex-12 PA L2",
+                desc: "один безпечний адресат для зняття страху",
+              },
+              {
+                code: "ex-15 L3",
+                desc: "рефлексія «для чого я хочу проявлятися» (твій внутрішній голос)",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій страх проявленості і конфлікт «бізнес-родина / помагати людям» — це центральна тема «Глибини Героя». Денис прямо у цьому курсі працює з 4 елементами (хто я · де я · мої закони · що для мене щастя), що знімає такі ступор-блоки.",
+            },
+          },
+          {
+            slug: "iryna",
+            name: "Ірина",
+            lessons: "L1",
+            headline_quote: "Фокус на скептиках руйнує впевненість",
+            identity:
+              "Учасниця L1. Денис прийняв як клінічний приклад патерну «фокус на скептиках руйнує впевненість».",
+            status: "partial",
+            quotes: [
+              {
+                text: "Я почала працювати на скептиків... типу вразь мене, і я хотіла їх вразити. І через то цей збій пішов в впевненості у виступах офлайн",
+                ref: "C-l05-094",
+              },
+            ],
+            strengths: [
+              "Самосвідомість — артикулюєш свій патерн чітко",
+              "Готова до self-correction (це сильна сторона)",
+            ],
+            grow_area:
+              "Ловити себе на «вразь мене» думці; повертати у класифікацію аудиторії (5-10% скептиків — не твій клієнт).",
+            exercises: [
+              {
+                code: "ex-аудиторії L1",
+                desc: "класифікація аудиторії 5-10% скептиків vs твій клієнт",
+              },
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру для відновлення впевненості",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом (у форматі 1-on-1 або «Глибина Героя») дасть більше, ніж обмежені дані з курсу.",
+            },
+          },
+          {
+            slug: "svitlana",
+            name: "Світлана",
+            lessons: "L1",
+            headline_quote: "25 років в бізнесі, оборот понад мільярд",
+            identity: "25 років в бізнесі, оборот понад мільярд.",
+            status: "partial",
+            quotes: [
+              {
+                text: "Ті люди, які щось хочуть тебе запитати, на що ти не маєш для них відповіді",
+                ref: "C-l05-103",
+              },
+            ],
+            strengths: [
+              "High-status position — 25 років бізнесу",
+              "Здатна формулювати тонкі питання про скептиків",
+            ],
+            grow_area:
+              "Денис: відповідь тільки для своїх. Не намагатися переконувати скептиків. Класифікація аудиторії працює навіть на high-status рівні.",
+            exercises: [
+              {
+                code: "ex-аудиторії L1",
+                desc: "класифікація аудиторії — твої клієнти, а не скептики",
+              },
+            ],
+            denys_offer: {
+              title: "1-on-1 з Денисом",
+              body: "Твій рівень high-status — особистий розбір 1-on-1 з Денисом буде ефективніший за груповий курс.",
+            },
+          },
+          {
+            slug: "oksana",
+            name: "Оксана",
+            lessons: "L1",
+            headline_quote:
+              "Зроби без перфекціонізму, на конкретиці знайдемо рішення",
+            identity:
+              "Учасниця L1. 3 практичні питання (планшет, мостик до теми, лайфхаки).",
+            status: "partial",
+            quotes: [
+              {
+                text: "Зроби без перфекціонізму, на конкретиці знайдемо рішення",
+                ref: "C-l05-097",
+              },
+            ],
+            strengths: [
+              "3 практичні питання за один урок — operationally-minded",
+              "Готова до експериментів",
+            ],
+            grow_area:
+              "5 повторів на камеру → текст стає твоїм. Антидот перфекціонізму — Денисів наскрізний меседж.",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру → текст стає твоїм",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+          },
+          {
+            slug: "viktoriia",
+            name: "Вікторія",
+            lessons: "L1",
+            headline_quote: "Запит на українську ораторську практику",
+            identity: "Учасниця L1. Запит на українську ораторську практику.",
+            status: "partial",
+            quotes: [{ text: "Послідовно вистроїмо", ref: "L1 warmup" }],
+            strengths: [
+              "Двомовна практика",
+              "Запит на конкретну українську дисципліну",
+            ],
+            grow_area:
+              "Артикуляція + словниковий запас (паралельно практика двома мовами).",
+            exercises: [
+              {
+                code: "ex-артикуляція",
+                desc: "тренування дикції в обох мовах",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+          },
+          {
+            slug: "valeriia",
+            name: "Валерія",
+            lessons: "L2",
+            headline_quote: "Активний фідбек, читала Куніна",
+            identity:
+              "L2 — активний фідбек, читала Куніна. Денис ставив питання їй (PA 0-10).",
+            status: "partial",
+            quotes: [{ text: "Швидкий темп", ref: "L2 feedback" }],
+            strengths: [
+              "Активна у дисципліні peer-фідбеку",
+              "Літературна культура (читала Куніна)",
+            ],
+            grow_area:
+              "Копати глибше за наслідок при фідбеку («швидкий темп» — наслідок чого?).",
+            exercises: [
+              {
+                code: "ex-Бутерброд L2",
+                desc: "фідбек з причиною, не лише наслідком",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+          },
+          {
+            slug: "uliana",
+            name: "Ульяна",
+            lessons: "L3",
+            headline_quote: "Drill «друг → воїн без агресії»",
+            identity: "L3 drill друг → воїн з агресією.",
+            status: "partial",
+            quotes: [
+              {
+                text: "Тут може бути агресія, прямо віддільний тренінг — як говорити тоном воїна без агресії",
+                ref: "C-l08-064",
+              },
+            ],
+            strengths: [
+              "Готовність до drill'у переключення тонів",
+              "Висока активність у L3",
+            ],
+            grow_area:
+              "Окремий тренінг «воїн без агресії» (любов у серці як основа, не агресія).",
+            exercises: [
+              {
+                code: "ex-tone-warrior L3",
+                desc: "drill «воїн з любов'ю у серці»",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+          },
+          {
+            slug: "yuliia-numerolog",
+            name: "Юлія",
+            lessons: "L1",
+            headline_quote:
+              "Парадокс — в структурі мало мене, без структури — потік несе",
+            identity:
+              "L1 warmup. Запит про парадокс «в структурі мало мене, без структури — потік несе».",
+            status: "partial",
+            quotes: [
+              {
+                text: "3-5 повторів на камеру → структура стає внутрішньою",
+                ref: "C-l05-Denys-response",
+              },
+            ],
+            strengths: [
+              "Артикулює тонкий парадокс структури",
+              "Здатна до self-reflection",
+            ],
+            grow_area: "3-5 повторів на камеру → структура стає внутрішньою.",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру до інтерналізації",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+          },
+          {
+            slug: "masha",
+            name: "Маша",
+            lessons: "L1",
+            headline_quote: "Ти була з нами — привітання класу",
+            identity: "Учасниця L1 у списку 9 студенток фінального шерингу.",
+            status: "mention",
+            quotes: [
+              {
+                text: "Без окремого фідбеку — привітання класу",
+                ref: "C-l05-082",
+              },
+            ],
+            strengths: ["Присутність у класі — частина групової динаміки"],
+            grow_area:
+              "Без розгорнутих даних — особистий розбір з Денисом дасть більше.",
+            exercises: [
+              { code: "ex-04 L1", desc: "5 повторів на камеру для старту" },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж згадка.",
+            },
+          },
+          {
+            slug: "krystyna",
+            name: "Кристина",
+            lessons: "L1",
+            headline_quote:
+              "Цитата актриси — не «винайдені» скептики, у них травматичний патерн",
+            identity:
+              'L1. Денис прийняв цитату як: «не "винайдені" скептики, у них травматичний патерн поведінки».',
+            status: "mention",
+            quotes: [
+              {
+                text: "Якщо ти бачиш людину, якому потрібно щось пояснити, то пояснити не треба. Це не твій чоловік",
+                ref: "C-l05-041",
+              },
+            ],
+            strengths: [
+              "Цитаційна культура — Денис прийняв цитату",
+              "Здатна формулювати тонко",
+            ],
+            grow_area: "Продовжуй цитаційну культуру — це твоя сильна сторона.",
+            exercises: [
+              {
+                code: "ex-цитати L1",
+                desc: "збирати цитати-якорі під свої виступи",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж згадка.",
+            },
+          },
+        ];
+
+        const DENYS = {
+          slug: "denys-chernyshov",
+          name: "Денис Чернишов",
+          lessons: "Режисер курсу",
+          headline_quote:
+            "Я не даю людям нові знання. Я нагадую людям те, що вони забули в хаосі багатозадачності",
+          identity:
+            "Актор. Психолог. Спортивний психолог. Астролог. Наставник. Одеса.",
+          status: "denys",
+          quotes: [
+            {
+              text: "Я не даю людям нові знання. Я нагадую людям те, що вони забули в хаосі багатозадачності",
+              ref: "C-l08-034",
+            },
+          ],
+          strengths: [
+            "11 годин contact-time → 361 atomic idea → 37 practical exercises",
+            "10 структур виступу: Арка Героя · 6+1 · AIDA · Ескалація · Живе коло · 3 контрасти · МРНП · З-В-Д · Шлях за 5 кроків · П-Р-П",
+            "4 тони голосу: Мудрець · Воїн · Друг · Чарівник",
+            "8 фокусів практики на 8 місяців прицільної дисципліни",
+            "5 концептуальних осей: стан > слова · тріада хто/для кого/для чого · структура+тон=магнетизм · антидот перфекціонізму · тільки правда дає присутність",
+          ],
+          grow_area: "",
+          exercises: [],
+          denys_offer: null,
+          gratitude: {
+            authentic_markers: [
+              "«Годуй. Люби. Молись» — 4 роки безкоштовно годуєш ~100 людей/тиждень на вулицях Одеси",
+              "43 потоки курсу «Глибина Героя» — soc proof не від маркетингу, а від людей які повертаються",
+              "Студія медитацій «Тепло» (Одеса) — стабільний фізичний бізнес на присутності",
+              "Це не контент-маркетинг — це людина, яка живе тим, чого вчить про правду",
+            ],
+            thanks_for: [
+              "43 потоки «Глибина Героя» — і ми у одному з них",
+              "4 роки «Годуй. Люби. Молись» — людина, яка живе тим, чого вчить",
+              "Студію «Тепло»",
+              "Цей курс",
+            ],
+          },
+          repertoire: [
+            "43 потоки «Глибина Героя»",
+            "Студія медитацій «Тепло» (Одеса)",
+            "«Годуй. Люби. Молись» — 4 роки безкоштовно",
+            "MCMM I потік — наш курс",
+          ],
+        };
+
+        const SPEECH_SECTIONS = [
+          {
+            act: "I",
+            title: "HOOK",
+            duration: "45 сек",
+            tone: "ДРУГ",
+            text: "Колеги. Ми пройшли разом 11 годин з Денисом. Три уроки. L1 «Основи», L2 «Голос лідера», L3 «Сила присутності». Це багато. У мене у голові вже починає блякнути половина того, що було на першому уроці. Кому ще так? <em>(пауза)</em> AI у мене не блякне ніколи. AI запам'ятав за нас все. Я хочу показати — що з цього вийшло.",
+            annotation:
+              "Чому ДРУГ — входимо тепло, нікого не загвинчуємо. Денисів же принцип — стан > слова.",
+          },
+          {
+            act: "II",
+            title: "DEMO",
+            duration: "2 хв 30 сек",
+            tone: "ЧАРІВНИК",
+            text: 'Я взяв всі 3 уроки. AI прочитав 11 годин транскриптів, 361 atomic ідею, всі ваші питання у чаті, всі ваші виступи, всі фідбеки Дениса. І для кожного з нас зробив <strong>персональну карту</strong>.<br><br>Дивіться як вона виглядає. Ось карта Аліни. <span class="speech-stage-direction">[клік]</span><br><br>Що Денис побачив у ній — три verbatim цитати з курсу: про Арку Героя кицькі, про паузу перед стартом, про «обирай свого спеціаліста». Сильні сторони — природна Арка Героя в impromptu. Зона росту — не казати «я не готувалась». Наступні кроки — ex-Бутерброд, ex-04 повтори на камеру, ex-15 живі ефіри. І якщо хочеш глибше з Денисом — «Глибина Героя» 44-й потік.<br><br>Ось карта Лери. <span class="speech-stage-direction">[клік]</span><br><br>Денис сказав про неї — «у неї неподдільна правда в голосі, авторитетно, аристократично. З мінусів я нічого не виписав. Немає там сира, зелені, салату». <strong>Нуль мінусів.</strong> За весь курс — Лера єдина. Її наступний крок — не сідай голос вниз у кінці фрази. І Денис рекомендує — стандартний курс тобі не треба, краще 1-on-1 з ним персонально.<br><br>Ось карта Катерини. <span class="speech-stage-direction">[клік]</span><br><br>Дитячий психолог. «Прекрасна, проста, аутентична природа. Коли немає доспіхів — я теж знімаю доспіхи, проникаюся, хочу слухати». Зона росту — імпатичність без захисту, навчитися знімати доспіхи в гостя, але не пропускати у себе. Денис відмітив її як один з трьох найсильніших виступів за весь курс.<br><br><em>(швидко 2 ще карти — Олена Сідок «прекрасний волшебник», Сніжана «конгруентність як ядро харизми»)</em><br><br>Кожна карта — це 3 verbatim цитати Дениса про тебе. Твої сильні сторони. Твоя зона росту. Три конкретні наступні вправи з 37. І рекомендація — куди далі з Денисом.',
+            annotation:
+              "Чому ЧАРІВНИК — показ майбутнього через конкретику. Демонстрація як в L3 — «слухач сприймає тон, не текст».",
+          },
+          {
+            act: "III",
+            title: "REVEAL",
+            duration: "1 хв",
+            tone: "МУДРЕЦЬ",
+            text: 'А ще я зробив одну особливу карту. <strong>Денису.</strong> Бо це 11 годин — і AI запам\'ятав їх за нас.<br><br><span class="speech-stage-direction">[клік на карту Дениса]</span><br><br>361 atomic ідея. 37 practical exercises. 5 концептуальних осей: стан > слова, тріада хто/для кого/для чого, структура + тон = магнетизм, антидот перфекціонізму, тільки правда дає присутність. 10 структур виступу. 4 тони голосу. 8 фокусів на 8 місяців.<br><br>Це не контент-маркетинг. Це людина, яка живе тим, чого вчить. <em>«Годуй. Люби. Молись»</em> — 4 роки безкоштовно годуєш ~100 людей на тиждень. Студія <em>«Тепло»</em>. 43 потоки <em>«Глибини Героя»</em>. Це аутентичність, яку AI згенерувати не може.',
+            annotation:
+              "Чому МУДРЕЦЬ — системна reveal. Денис у L3 говорив про парадокс GPT-епохи — «я не даю нові знання, я нагадую забуте». Цей момент — про вагу слова в епоху AI-шуму.",
+          },
+          {
+            act: "IV",
+            title: "ЗАКРИТТЯ",
+            duration: "45 сек",
+            tone: "ДРУГ+ЧАРІВНИК",
+            text: "Це подарунок класу. <strong>Кожен з вас отримає свою карту — лінк у нашому чаті.</strong> Денису — окрема подяка за цей курс.<br><br>Дякую.",
+            annotation:
+              "Чому ДРУГ — запрошення, не заклик-продаж. Закриття на «дякую» — тепло, не «купуйте». Денис у залі — ми вшановуємо його, не себе.",
+          },
+        ];
+
+        const ALL_CARDS = [...PARTICIPANTS, DENYS];
+
+        const ROLE_MODELS = [
+          "lera-reznyk",
+          "kateryna",
+          "alina-velihina",
+          "olena-sidok",
+          "snizhana",
+        ];
+
+        /* ============================================================
+         *  UTILITIES
+         * ============================================================ */
+        function escHtml(s) {
+          return String(s).replace(/[&<>"']/g, function (c) {
+            return {
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            }[c];
+          });
+        }
+
+        function findBySlug(slug) {
+          return ALL_CARDS.find((c) => c.slug === slug);
+        }
+
+        function getStatusLabel(status) {
+          return (
+            {
+              full: "Повна програмка",
+              partial: "Коротка програмка",
+              mention: "Згадка",
+              denys: "Режисер",
+            }[status] || status
+          );
+        }
+
+        function ukNumeral(n) {
+          const num = String(n).padStart(2, "0");
+          return num;
+        }
+
+        /* ============================================================
+         *  HOME VIEW
+         * ============================================================ */
+        function renderHome() {
+          const fulls = PARTICIPANTS.filter((p) => p.status === "full");
+          const partials = PARTICIPANTS.filter((p) => p.status === "partial");
+          const mentions = PARTICIPANTS.filter((p) => p.status === "mention");
+
+          return `
+            <!-- HERO -->
+            <section class="hero">
+              <svg class="hero-drape" viewBox="0 0 240 360" aria-hidden="true">
+                <defs>
+                  <linearGradient id="goldHair" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#D4B873" stop-opacity="0.7"/>
+                    <stop offset="100%" stop-color="#B89548" stop-opacity="0.05"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 0 0 L 0 280 Q 30 320 60 280 Q 90 240 60 200 Q 30 160 0 200 Z" fill="none" stroke="url(#goldHair)" stroke-width="1"/>
+                <line x1="20" y1="0" x2="20" y2="200" stroke="url(#goldHair)" stroke-width="0.5"/>
+                <line x1="40" y1="0" x2="40" y2="180" stroke="url(#goldHair)" stroke-width="0.5"/>
+                <line x1="60" y1="0" x2="60" y2="160" stroke="url(#goldHair)" stroke-width="0.5"/>
+                <line x1="80" y1="0" x2="80" y2="140" stroke="url(#goldHair)" stroke-width="0.5"/>
+                <line x1="100" y1="0" x2="100" y2="120" stroke="url(#goldHair)" stroke-width="0.5"/>
+              </svg>
+              <div class="container">
+                <div class="hero-content">
+                  <div class="hero-eyebrow-line">
+                    <span class="eyebrow">MCMM · I потік · Фінальне заняття · Акт III</span>
+                  </div>
+                  <h1 class="hero-display">
+                    Одинадцять годин лекцій.<br>
+                    Триста шістдесят одна ідея.<br>
+                    Тридцять сім практик.
+                  </h1>
+                  <p class="hero-italic-tag" style="margin-top:48px;">
+                    Те, що ми починаємо забувати,<br>
+                    AI запам'ятав за нас.
+                  </p>
+                  <p class="hero-dedication">
+                    Денису — від класу. З вдячністю.
+                  </p>
+
+                  <div class="hairline" style="max-width:120px;margin: 48px 0;"></div>
+
+                  <p class="lead">
+                    Ми пройшли разом три уроки — «Основи», «Голос лідера», «Сила присутності». Денис відкрив нам інтегровану дисципліну, де тіло актора, психіка психолога, душа наставника і дія спортивного психолога зливаються в одну простоту — прибрати все, що між тобою і твоєю правдою. У цій програмці — кожен з нас. І окрема програмка — для режисера.
+                  </p>
+
+                  <div class="hero-ctas">
+                    <a href="#characters" class="btn" onclick="setTimeout(()=>{document.getElementById('characters').scrollIntoView({behavior:'smooth'})}, 50); return false;">Персонажі <span class="arrow">→</span></a>
+                    <a href="#exercises" class="btn ghost" onclick="setTimeout(()=>{document.getElementById('exercises').scrollIntoView({behavior:'smooth'})}, 50); return false;">Вправи <span class="arrow">→</span></a>
+                    <a href="#speeches" class="btn ghost" onclick="setTimeout(()=>{document.getElementById('speeches').scrollIntoView({behavior:'smooth'})}, 50); return false;">Виступи <span class="arrow">→</span></a>
+                    <a href="#/offer" class="btn ghost">Афіша наступних <span class="arrow">→</span></a>
+                  </div>
+
+                  <div class="stats-trio">
+                    <div class="stat-cell">
+                      <div class="stat-number" data-target="22">0</div>
+                      <div class="stat-label">Учасники</div>
+                    </div>
+                    <div class="stat-cell">
+                      <div class="stat-number" data-target="12">0</div>
+                      <div class="stat-label">Повні програмки</div>
+                    </div>
+                    <div class="stat-cell">
+                      <div class="stat-number" data-target="1">0</div>
+                      <div class="stat-label">Режисер</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ============================================================
+                 BOT FEATURE — gift from class, premium presentation
+                 ============================================================ -->
+            <section id="bot" class="bot-feature" aria-labelledby="bot-feature-heading">
+              <div class="bot-feature-inner">
+                <div class="bot-ornament" aria-hidden="true"></div>
+                <span class="eyebrow">Подарунок класу</span>
+                <h2 id="bot-feature-heading">Особистий AI-партнер</h2>
+                <p class="bot-subtitle">
+                  Веде через три питання — повертає програмку виступу, презентацію та репетиційний пак. За методологією Дениса Чернишова. У твоєму Telegram.
+                </p>
+                <a
+                  href="https://t.me/denys_speech_builder_bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bot-cta"
+                >
+                  Відкрити в Telegram <span class="arrow" aria-hidden="true">→</span>
+                </a>
+                <p class="bot-handle">@denys_speech_builder_bot</p>
+              </div>
+            </section>
+
+            <!-- CHARACTERS — only intro + deck (no detail spreads on home) -->
+            <section id="characters">
+              <div class="container">
+                <div class="gallery-intro">
+                  <span class="eyebrow">Dramatis Personae</span>
+                  <h2 class="feature">Двадцять два персонажі.<br>Кожен — своя програмка.</h2>
+                  <p class="italic-intro" style="margin-top: 32px;">
+                    Двадцять дві історії з курсу. Кожна — verbatim фідбек Дениса, сильні сторони, зона росту, репетиції і шлях далі.
+                  </p>
+                </div>
+
+                <!-- DECK FEATURE — interactive playbill deck (Participants) -->
+                <div class="deck-feature">
+                  <span class="eyebrow">Колода програмок</span>
+                  <h2>Карти на сцені.<br>Можеш обрати і перевернути.</h2>
+                  <p class="deck-sub">22 учасники + режисер · клацни колоду — розкладуться як таро</p>
+                  <div class="deck-stack" id="deck-stack" role="button" tabindex="0" aria-label="Розкласти колоду програмок">
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">M·M</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">C·M</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I потік</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">MM</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">M·M</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">C·M</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- EXERCISES DECK -->
+            <section id="exercises">
+              <div class="container">
+                <div class="gallery-intro">
+                  <span class="eyebrow">Repertoire of Practice</span>
+                  <h2 class="feature">Тридцять сім практик.<br>Кожна — одна репетиція.</h2>
+                  <p class="italic-intro" style="margin-top: 32px;">
+                    37 вправ з трьох уроків курсу Дениса — від оживлення сцени до 30-секундної процедури вибору структури.
+                  </p>
+                </div>
+
+                <!-- DECK FEATURE — interactive exercises deck -->
+                <div class="deck-feature deck-feature-exercises">
+                  <span class="eyebrow">Колода вправ</span>
+                  <h2>Відкрий і обери одну.</h2>
+                  <p class="deck-sub">37 практик з курсу Дениса · клацни колоду — розкладеться як таро</p>
+                  <div class="deck-stack deck-stack-exercises" id="deck-stack-exercises" role="button" tabindex="0" aria-label="Розкласти колоду вправ">
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · 37</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">L·1</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · 37</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">L·2</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · 37 вправ</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">EX</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · 37</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">L·3</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · 37</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">L·2</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- CLASS SPEECHES DECK — community library, opt-in submissions -->
+            <section id="speeches">
+              <div class="container">
+                <div class="gallery-intro">
+                  <span class="eyebrow">Library of Voices</span>
+                  <h2 class="feature">Колода виступів класу.<br>Спільна бібліотека.</h2>
+                  <p class="italic-intro" style="margin-top: 32px;">
+                    Учасники I потоку, які пройшли програмку у боті — можуть поділитись своїм виступом з класом. Анонімно або з ім'ям. Колода росте, як ростемо ми.
+                  </p>
+                </div>
+
+                <!-- DECK FEATURE — interactive speeches deck (empty until first submission) -->
+                <div class="deck-feature deck-feature-speeches">
+                  <span class="eyebrow">Колода виступів класу</span>
+                  <h2>Виступи класу.</h2>
+                  <p class="deck-sub">Учасники, які пройшли програмку. Опт-ін через бот.</p>
+
+                  <div class="speeches-cta" role="note">
+                    <div class="tg-glyph" aria-hidden="true"></div>
+                    <div class="cta-body">
+                      <div class="cta-eyebrow">Поки порожня</div>
+                      <div class="cta-text">
+                        Відкрий <strong>@denys_speech_builder_bot</strong> → завершиш виступ → opt-in поділитись з класом.
+                      </div>
+                      <a class="cta-bot-link" href="https://t.me/denys_speech_builder_bot" target="_blank" rel="noopener noreferrer">Відкрити бота · Telegram →</a>
+                    </div>
+                  </div>
+
+                  <div class="deck-stack deck-stack-speeches" id="deck-stack-speeches" role="button" tabindex="0" aria-label="Розкласти колоду виступів класу">
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">?</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">?</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">Майбутні виступи</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">В</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">?</span>
+                      </div>
+                    </div>
+                    <div class="deck-card-mini">
+                      <div class="deck-card-back-inner">
+                        <span class="label">MCMM · I</span>
+                        <div class="ornament"></div>
+                        <span class="monogram">?</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- DENYS FEATURE -->
+            <section class="denys-feature" id="denys">
+              <div class="container">
+                <span class="eyebrow">Режисер · Постановник · Автор</span>
+                <div class="denys-grid" style="margin-top: 24px;">
+                  <div>
+                    <h1 class="feature-display">Денис<br>Чернишов</h1>
+                    <p class="italic-intro" style="margin-top: 24px;">
+                      Актор. Психолог. Спортивний психолог. Астролог. Наставник. Одеса.
+                    </p>
+                    <p class="denys-quote-pull">
+                      «Я не вчу технікам.<br>
+                      Я прибираю все, що між<br>
+                      вами і вашою правдою».
+                    </p>
+                  </div>
+                  <div>
+                    <span class="eyebrow dark">Репертуар</span>
+                    <ul class="repertoire-list">
+                      ${DENYS.repertoire.map((r) => `<li>${escHtml(r)}</li>`).join("")}
+                    </ul>
+
+                    <div style="margin-top: 48px;">
+                      <span class="eyebrow dark">Маркер аутентичності</span>
+                      <p class="lead" style="margin-top: 12px; font-size: 16px;">
+                        «Годуй. Люби. Молись» — 4 роки безкоштовно годуєш ~100 людей на тиждень на вулицях Одеси. Це не контент-маркетинг. Це людина, яка живе тим, чого вчить.
+                      </p>
+                    </div>
+
+                    <a href="#/focus/${DENYS.slug}" class="btn burgundy" style="margin-top: 40px;">
+                      Відкрити програмку режисера <span class="arrow">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="site-footer">
+              <div class="container">
+                <span class="footer-mark">AI = синтез · не вигадка</span>
+                Усі цитати — verbatim з 11 годин лекцій Дениса.<br>
+                Цей показ зібраний на 361 atomic claim з курсу MCMM I потоку.
+              </div>
+            </footer>
+          `;
+        }
+
+        /* ============================================================
+         *  CHARACTER ROW (editorial layout, alternating 60/40)
+         * ============================================================ */
+        function renderCharacterRow(p, idx) {
+          const isFlip = idx % 2 === 0;
+          const num = ukNumeral(idx);
+          const statusLabel = getStatusLabel(p.status);
+          const isFull = p.status === "full";
+
+          return `
+            <article class="character-row ${isFlip ? "flip" : ""}" onclick="window.location.hash='#/focus/${p.slug}'" role="link" tabindex="0" aria-label="Програмка ${escHtml(p.name)}">
+              <div class="character-meta">
+                <div class="numeral">${num} · Персонаж</div>
+                <div class="character-lessons">${escHtml(p.lessons)}</div>
+              </div>
+              <div class="character-body">
+                <h3 class="character-name">${escHtml(p.name)}</h3>
+                <p class="character-identity">${escHtml(p.identity)}</p>
+                <p class="character-pull">«${escHtml(p.headline_quote)}»</p>
+                <div>
+                  <span class="character-tag ${isFull ? "full" : ""}">${escHtml(statusLabel)}</span>
+                </div>
+                <span class="character-cta" style="margin-top: 20px;">Відкрити програмку</span>
+              </div>
+            </article>
+          `;
+        }
+
+        /* ============================================================
+         *  FOCUS VIEW — editorial card per participant
+         * ============================================================ */
+        function renderFocus(slug) {
+          const p = findBySlug(slug);
+          if (!p) {
+            return `
+              <div class="focus-view container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+                <h1 class="display">Програмку не знайдено</h1>
+                <p class="lead">Учасника з ідентифікатором <code>${escHtml(slug)}</code> не існує.</p>
+              </div>
+            `;
+          }
+
+          const list = [...PARTICIPANTS, DENYS];
+          const idx = list.findIndex((x) => x.slug === slug);
+          const prev = idx > 0 ? list[idx - 1] : null;
+          const next = idx < list.length - 1 ? list[idx + 1] : null;
+
+          // Denys gets a special layout
+          if (p.status === "denys") {
+            return renderDenysCard(p, prev, next);
+          }
+
+          const isFull = p.status === "full";
+          const statusLabel = getStatusLabel(p.status);
+
+          let sections = [];
+          let secNum = 1;
+
+          // 01 - quotes
+          if (p.quotes && p.quotes.length > 0) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Натхнення режисера</div>
+                <h2>Що Денис побачив у тобі</h2>
+                ${p.quotes
+                  .map(
+                    (q) => `
+                  <blockquote class="denys-quote">
+                    <p>«${escHtml(q.text)}»</p>
+                    <cite>[${escHtml(q.ref)}]</cite>
+                  </blockquote>
+                `,
+                  )
+                  .join("")}
+              </section>
+            `);
+          }
+
+          // 02 - strengths
+          if (p.strengths && p.strengths.length > 0) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Образ</div>
+                <h2>Сильні сторони</h2>
+                <ul class="strengths-list">
+                  ${p.strengths.map((s) => `<li>${escHtml(s)}</li>`).join("")}
+                </ul>
+              </section>
+            `);
+          }
+
+          // 03 - grow area
+          if (p.grow_area) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Вектор розвитку</div>
+                <h2>Зона росту</h2>
+                <p class="grow-paragraph">${escHtml(p.grow_area)}</p>
+              </section>
+            `);
+          }
+
+          // 04 - exercises
+          if (p.exercises && p.exercises.length > 0) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Репетиції</div>
+                <h2>Наступні кроки практики</h2>
+                <ol class="exercises-list">
+                  ${p.exercises
+                    .map(
+                      (e) => `
+                    <li>
+                      <div class="exercise-body">
+                        <span class="exercise-code">${escHtml(e.code)}</span>
+                        <span class="exercise-desc">${escHtml(e.desc)}</span>
+                      </div>
+                    </li>
+                  `,
+                    )
+                    .join("")}
+                </ol>
+              </section>
+            `);
+          }
+
+          // 05 - denys offer
+          if (p.denys_offer) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Сцена з режисером</div>
+                <h2>Якщо хочеш глибше з Денисом</h2>
+                <div class="denys-offer-card">
+                  <span class="eyebrow">Рекомендація Дениса</span>
+                  <h4>${escHtml(p.denys_offer.title)}</h4>
+                  <p>${escHtml(p.denys_offer.body)}</p>
+                </div>
+              </section>
+            `);
+          }
+
+          return `
+            <div class="focus-view">
+              <div class="container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+
+                <header style="padding: 24px 0 32px;">
+                  <div class="focus-eyebrow">
+                    <span class="eyebrow">MCMM I потік · Учасник · ${escHtml(p.lessons)}</span>
+                  </div>
+                  <h1 class="focus-name">${escHtml(p.name)}</h1>
+                  <p class="focus-identity">${escHtml(p.identity)}</p>
+                  <div class="focus-meta">
+                    <span class="chip ${isFull ? "" : "gold"}">${escHtml(statusLabel)}</span>
+                    <span class="small-caps" style="color: var(--ink-mute);">${escHtml(p.lessons)}</span>
+                  </div>
+                </header>
+
+                ${sections.join("")}
+
+                <nav class="focus-nav" aria-label="Навігація між програмками">
+                  ${
+                    prev
+                      ? `
+                    <a href="#/focus/${prev.slug}" class="focus-nav-link prev">
+                      <span class="nav-direction">← Попередній</span>
+                      <span class="nav-name">${escHtml(prev.name)}</span>
+                    </a>
+                  `
+                      : `<span></span>`
+                  }
+                  ${
+                    next
+                      ? `
+                    <a href="#/focus/${next.slug}" class="focus-nav-link next">
+                      <span class="nav-direction">Наступний →</span>
+                      <span class="nav-name">${escHtml(next.name)}</span>
+                    </a>
+                  `
+                      : `<span></span>`
+                  }
+                </nav>
+              </div>
+            </div>
+          `;
+        }
+
+        /* ============================================================
+         *  DENYS CARD — Director's Programme Notes
+         * ============================================================ */
+        function renderDenysCard(d, prev, next) {
+          return `
+            <div class="focus-view">
+              <div class="container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+
+                <header style="padding: 24px 0 32px;">
+                  <div class="focus-eyebrow">
+                    <span class="eyebrow">Режисер · Постановник · Автор курсу</span>
+                  </div>
+                  <h1 class="focus-name">${escHtml(d.name)}</h1>
+                  <p class="focus-identity">${escHtml(d.identity)}</p>
+                  <div class="focus-meta">
+                    <span class="chip gold">Режисер курсу</span>
+                  </div>
+                </header>
+
+                <section class="focus-section">
+                  <div class="numeral">01 · Голос автора</div>
+                  <h2>Що ти нам сказав</h2>
+                  ${d.quotes
+                    .map(
+                      (q) => `
+                    <blockquote class="denys-quote">
+                      <p>«${escHtml(q.text)}»</p>
+                      <cite>[${escHtml(q.ref)}]</cite>
+                    </blockquote>
+                  `,
+                    )
+                    .join("")}
+                </section>
+
+                <section class="focus-section">
+                  <div class="numeral">02 · Архітектура курсу</div>
+                  <h2>Що ти нам дав</h2>
+                  <ul class="strengths-list">
+                    ${d.strengths.map((s) => `<li>${escHtml(s)}</li>`).join("")}
+                  </ul>
+                </section>
+
+                <section class="focus-section">
+                  <div class="numeral">03 · Маркер аутентичності</div>
+                  <h2>Те, що ми побачили</h2>
+                  <ul class="strengths-list">
+                    ${d.gratitude.authentic_markers.map((m) => `<li>${escHtml(m)}</li>`).join("")}
+                  </ul>
+                </section>
+
+                <section class="focus-section">
+                  <div class="numeral">04 · Подяка</div>
+                  <h2>Дякуємо за</h2>
+                  <ul class="strengths-list">
+                    ${d.gratitude.thanks_for.map((m) => `<li>${escHtml(m)}</li>`).join("")}
+                  </ul>
+                </section>
+
+                <section class="focus-section">
+                  <div class="numeral">05 · Подарунок класу</div>
+                  <h2>Що далі</h2>
+                  <div class="denys-offer-card">
+                    <span class="eyebrow">Афіша наступних спектаклів</span>
+                    <h4>Чотири шляхи з Денисом</h4>
+                    <p>«Глибина Героя» 44-й потік · 1-on-1 коучинг · Студія «Тепло» · «Годуй. Люби. Молись». Деталі на сторінці афіші.</p>
+                    <div style="margin-top: 24px;">
+                      <a href="#/offer" class="btn burgundy" style="font-size: 10px; padding: 12px 22px;">Відкрити афішу <span class="arrow">→</span></a>
+                    </div>
+                  </div>
+                </section>
+
+                <nav class="focus-nav" aria-label="Навігація">
+                  ${
+                    prev
+                      ? `
+                    <a href="#/focus/${prev.slug}" class="focus-nav-link prev">
+                      <span class="nav-direction">← Попередній</span>
+                      <span class="nav-name">${escHtml(prev.name)}</span>
+                    </a>
+                  `
+                      : `<span></span>`
+                  }
+                  <a href="#/home" class="focus-nav-link next">
+                    <span class="nav-direction">До головної →</span>
+                    <span class="nav-name">Програмка класу</span>
+                  </a>
+                </nav>
+              </div>
+            </div>
+          `;
+        }
+
+        /* ============================================================
+         *  OFFER VIEW — Future Repertoire
+         * ============================================================ */
+        function renderOffer() {
+          const heroGlybyna = [
+            "alina-velihina",
+            "anna",
+            "olena-sidok",
+            "yuliia-nutritsiolog",
+            "yuliia-kravchuk",
+            "nataliia",
+            "olha-bohdanovska",
+            "vasyl",
+          ];
+          const oneOnOne = [
+            "kateryna",
+            "lera-reznyk",
+            "anastasiia-vynohradova",
+            "snizhana",
+          ];
+
+          function renderRecTags(slugs) {
+            return slugs
+              .map((s) => {
+                const p = findBySlug(s);
+                if (!p) return "";
+                return `<a href="#/focus/${s}" class="rec-tag">${escHtml(p.name)}</a>`;
+              })
+              .join("");
+          }
+
+          return `
+            <div class="focus-view">
+              <div class="container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+
+                <header style="padding: 32px 0 64px;">
+                  <span class="eyebrow">Афіша наступних спектаклів</span>
+                  <h1 class="display" style="margin-top: 16px;">Що далі<br>з Денисом</h1>
+                  <p class="italic-intro" style="margin-top: 32px;">
+                    Це не cold sales. Це чотири опції, які він пропонує для тих, хто хоче глибше.
+                  </p>
+                </header>
+
+                <div class="hairline gold short"></div>
+
+                <article class="offer-spread">
+                  <div class="numeral">01 · Опція</div>
+                  <h2 class="feature">«Глибина Героя»<br>44-й потік</h2>
+                  <p class="offer-italic-intro">
+                    Розширена особистісна робота з тріадою + Аркою Героя + 4 елементами глибини героя — хто я, де я, мої закони, що для мене щастя.
+                  </p>
+                  <p class="offer-quote-line">
+                    43 потоки. Люди повертаються. Soc proof не від маркетингу, а від людей.
+                  </p>
+                  <div style="margin: 32px 0 16px;">
+                    <span class="eyebrow">Кому особливо з нашого класу</span>
+                  </div>
+                  <div class="recommended-tags">${renderRecTags(heroGlybyna)}</div>
+                  <p class="contact-note">
+                    <strong>Контакт</strong> · запитати у Дениса прямо на занятті або через Telegram
+                  </p>
+                </article>
+
+                <div class="hairline wide"></div>
+
+                <article class="offer-spread">
+                  <div class="numeral">02 · Опція</div>
+                  <h2 class="feature">1-on-1 коучинг<br>з Денисом</h2>
+                  <p class="offer-italic-intro">
+                    Персональний формат для тих, хто вже на високому рівні або має унікальний випадок, що не лікується груповим форматом.
+                  </p>
+                  <div style="margin: 32px 0 16px;">
+                    <span class="eyebrow">Кому особливо з нашого класу</span>
+                  </div>
+                  <div class="recommended-tags">${renderRecTags(oneOnOne)}</div>
+                  <p class="contact-note">
+                    <strong>Контакт</strong> · через Дениса прямо
+                  </p>
+                </article>
+
+                <div class="hairline wide"></div>
+
+                <article class="offer-spread">
+                  <div class="numeral">03 · Опція</div>
+                  <h2 class="feature">Студія<br>«Тепло»</h2>
+                  <p class="offer-italic-intro">
+                    Якщо ти в Одесі або плануєш приїхати — physical practice присутності.
+                  </p>
+                  <p class="offer-quote-line">
+                    Інтегрується з 8-фокусів каталогом — «сьогодні я треную одну якість».
+                  </p>
+                  <p class="contact-note">
+                    <strong>Контакт</strong> · через Дениса або сторінку студії
+                  </p>
+                </article>
+
+                <div class="hairline wide"></div>
+
+                <article class="offer-spread">
+                  <div class="numeral">04 · Опція</div>
+                  <h2 class="feature">«Годуй.<br>Люби.<br>Молись.»</h2>
+                  <p class="offer-italic-intro">
+                    Чотири роки. Безкоштовно. Близько сотні людей на тиждень.
+                  </p>
+                  <p class="offer-quote-line">
+                    Якщо хочеш приєднатися як волонтер або підтримати фінансово — це шлях. Це не пропозиція з курсу. Це запрошення в практику.
+                  </p>
+                </article>
+
+                <div class="hairline wide"></div>
+
+                <footer class="site-footer" style="padding: 24px 0; border-top: none;">
+                  <span class="footer-mark">Центр оффера — Денис</span>
+                  Подарунок класу.
+                </footer>
+              </div>
+            </div>
+          `;
+        }
+
+        /* ============================================================
+         *  SPEECH VIEW — Stage Direction
+         * ============================================================ */
+        function renderSpeech() {
+          return `
+            <div class="speech-view">
+              <div class="container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+
+                <header style="padding: 32px 0;">
+                  <span class="eyebrow">Stage Direction · 5 хвилин · Прем'єра</span>
+                  <h1 class="display" style="margin-top: 16px;">Партія<br>промовця</h1>
+                  <p class="italic-intro" style="margin-top: 32px;">
+                    Структура чотирьох актів: Hook → Demo → Reveal → Закриття.<br>
+                    Близько 680 слів. П'ять хвилин з тридцяти-секундним люфтом.
+                  </p>
+                </header>
+
+                <div class="tone-diagram" role="region" aria-label="Тонова партитура">
+                  ${SPEECH_SECTIONS.map(
+                    (s, i) => `
+                    <div class="tone-dot">
+                      <span class="tone-circle ${i % 2 === 0 ? "" : "filled"}"></span>
+                      <span class="tone-label">${escHtml(s.tone)}</span>
+                    </div>
+                    ${i < SPEECH_SECTIONS.length - 1 ? '<span class="tone-arrow">→</span>' : ""}
+                  `,
+                  ).join("")}
+                </div>
+
+                <div class="speech-controls" role="region" aria-label="Контроли виступу">
+                  <button class="control-btn" id="toggle-annotations" type="button" aria-pressed="false">
+                    Сховати анотації
+                  </button>
+                  <button class="control-btn" id="toggle-stage" type="button" aria-pressed="false">
+                    Сценічний фон
+                  </button>
+                  <button class="control-btn" id="font-bigger" type="button" aria-label="Збільшити шрифт">A+</button>
+                  <button class="control-btn" id="font-reset" type="button" aria-label="Скинути шрифт">A</button>
+                  <button class="control-btn" id="font-smaller" type="button" aria-label="Зменшити шрифт">A−</button>
+                </div>
+
+                ${SPEECH_SECTIONS.map(
+                  (s) => `
+                  <section class="speech-section">
+                    <div class="act-numeral">Акт ${escHtml(s.act)} · ${escHtml(s.title)}</div>
+                    <h3>${escHtml(s.title === "ЗАКРИТТЯ" ? "Закриття" : s.title)}</h3>
+                    <div class="speech-tone-line">${escHtml(s.duration)} · Тон ${escHtml(s.tone)}</div>
+                    <div class="speech-text">${s.text}</div>
+                    <div class="speech-annotation">${escHtml(s.annotation)}</div>
+                  </section>
+                `,
+                ).join("")}
+
+                <footer class="site-footer" style="padding: 32px 0; border-top: 1px solid var(--paper-line);">
+                  <span class="footer-mark">Тон-фрейм</span>
+                  Подарунок класу. Не cold sales.<br>
+                  Денис у залі — ми вшановуємо його, не себе.
+                </footer>
+              </div>
+            </div>
+          `;
+        }
+
+        /* ============================================================
+         *  ROUTER
+         * ============================================================ */
+        function renderRoute() {
+          const hash = window.location.hash || "#/home";
+          const app = document.getElementById("app");
+          let html = "";
+
+          // Clean stage-mode by default unless we're in speech view
+          if (!hash.startsWith("#/speech")) {
+            document.body.classList.remove("stage-mode");
+            document.body.classList.remove("annotations-off");
+          }
+
+          if (
+            hash === "#/home" ||
+            hash === "#" ||
+            hash === "" ||
+            hash === "#/" ||
+            hash.startsWith("#/home")
+          ) {
+            html = renderHome();
+            setActiveNav("home");
+          } else if (hash.startsWith("#characters")) {
+            html = renderHome();
+            setActiveNav("cards");
+          } else if (hash.startsWith("#exercises")) {
+            html = renderHome();
+            setActiveNav("exercises");
+          } else if (hash.startsWith("#speeches")) {
+            html = renderHome();
+            setActiveNav("speeches");
+          } else if (hash.startsWith("#/focus/")) {
+            const slug = hash.replace("#/focus/", "");
+            html = renderFocus(slug);
+            setActiveNav("cards");
+          } else if (hash.startsWith("#/exercise/")) {
+            const code = hash.replace("#/exercise/", "");
+            html = renderExerciseFocus(code);
+            setActiveNav("exercises");
+          } else if (hash === "#/offer") {
+            html = renderOffer();
+            setActiveNav("offer");
+          } else if (hash === "#/speech") {
+            html = renderSpeech();
+            setActiveNav("speech");
+          } else {
+            html = renderHome();
+            setActiveNav("home");
+          }
+
+          app.innerHTML = html;
+          window.scrollTo({ top: 0, behavior: "instant" });
+
+          if (hash === "#/speech") bindSpeechControls();
+          if (
+            hash === "#/home" ||
+            hash === "#" ||
+            hash === "" ||
+            hash === "#/" ||
+            hash.startsWith("#/home") ||
+            hash.startsWith("#characters") ||
+            hash.startsWith("#exercises") ||
+            hash.startsWith("#speeches")
+          ) {
+            initStatsCounter();
+            initQuoteFadeIn();
+            initDeck();
+            initDeckExercises();
+            initDeckSpeeches();
+          }
+          if (hash.startsWith("#/focus/") || hash.startsWith("#/exercise/")) {
+            initQuoteFadeIn();
+          }
+
+          // ARIA keyboard for role=link
+          document.querySelectorAll('[role="link"]').forEach((el) => {
+            el.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                el.click();
+              }
+            });
+          });
+        }
+
+        function setActiveNav(active) {
+          document.querySelectorAll(".site-nav-links a").forEach((a) => {
+            a.classList.toggle("active", a.getAttribute("data-nav") === active);
+          });
+        }
+
+        /* ============================================================
+         *  STATS COUNTER
+         * ============================================================ */
+        function initStatsCounter() {
+          const els = document.querySelectorAll(".stat-number[data-target]");
+          if (!els.length) return;
+          const obs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  countTo(entry.target);
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 },
+          );
+          els.forEach((el) => obs.observe(el));
+        }
+
+        function countTo(el) {
+          const target = parseInt(el.getAttribute("data-target") || "0", 10);
+          const dur = 1200;
+          const start = performance.now();
+          function step(now) {
+            const t = Math.min(1, (now - start) / dur);
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = Math.floor(eased * target);
+            if (t < 1) requestAnimationFrame(step);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(step);
+        }
+
+        /* ============================================================
+         *  QUOTE FADE-IN (scroll observer)
+         * ============================================================ */
+        function initQuoteFadeIn() {
+          const quotes = document.querySelectorAll(".denys-quote");
+          if (!quotes.length) return;
+          const obs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in-view");
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.2 },
+          );
+          quotes.forEach((q) => obs.observe(q));
+        }
+
+        /* ============================================================
+         *  SPEECH CONTROLS
+         * ============================================================ */
+        let speechFontSize = 22;
+
+        function bindSpeechControls() {
+          const tA = document.getElementById("toggle-annotations");
+          const tS = document.getElementById("toggle-stage");
+          const fB = document.getElementById("font-bigger");
+          const fS = document.getElementById("font-smaller");
+          const fR = document.getElementById("font-reset");
+
+          if (tA) {
+            tA.addEventListener("click", () => {
+              const on = document.body.classList.toggle("annotations-off");
+              tA.classList.toggle("active", on);
+              tA.setAttribute("aria-pressed", String(on));
+              tA.textContent = on ? "Показати анотації" : "Сховати анотації";
+            });
+          }
+
+          if (tS) {
+            tS.addEventListener("click", () => {
+              const on = document.body.classList.toggle("stage-mode");
+              tS.classList.toggle("active", on);
+              tS.setAttribute("aria-pressed", String(on));
+              tS.textContent = on ? "Світлий фон" : "Сценічний фон";
+            });
+          }
+
+          function applyFontSize() {
+            document.querySelectorAll(".speech-text").forEach((el) => {
+              el.style.fontSize = speechFontSize + "px";
+            });
+          }
+
+          if (fB)
+            fB.addEventListener("click", () => {
+              speechFontSize = Math.min(36, speechFontSize + 2);
+              applyFontSize();
+            });
+          if (fS)
+            fS.addEventListener("click", () => {
+              speechFontSize = Math.max(14, speechFontSize - 2);
+              applyFontSize();
+            });
+          if (fR)
+            fR.addEventListener("click", () => {
+              speechFontSize = 22;
+              applyFontSize();
+            });
+        }
+
+        /* ============================================================
+         *  BIG TEXT MODE
+         * ============================================================ */
+        function initBigTextToggle() {
+          const btn = document.getElementById("big-text-btn");
+          if (!btn) return;
+          btn.addEventListener("click", () => {
+            const on = document.body.classList.toggle("big-text-mode");
+            btn.classList.toggle("on", on);
+            btn.setAttribute("aria-pressed", String(on));
+          });
+        }
+
+        /* ============================================================
+         *  CARD DECK — spread + flip
+         * ============================================================ */
+        window.deckState = window.deckState || {
+          open: false,
+          flipped: new Set(),
+        };
+
+        function getInitials(name) {
+          if (!name) return "·";
+          const parts = String(name).trim().split(/\s+/);
+          const first = parts[0] ? parts[0][0] : "";
+          const second = parts[1] ? parts[1][0] : "";
+          return (first + second).toUpperCase() || "·";
+        }
+
+        function renderDeckOverlay() {
+          const cards = [...PARTICIPANTS, DENYS];
+          const items = cards
+            .map((p) => {
+              const initials = getInitials(p.name);
+              const lessons = p.lessons || "MCMM · I потік";
+              const quote = p.headline_quote
+                ? "«" + p.headline_quote + "»"
+                : p.identity || "";
+              return `
+                <div class="flip-card" data-slug="${escHtml(p.slug)}" role="button" tabindex="0"
+                     aria-label="Перевернути карту ${escHtml(p.name)}">
+                  <div class="flip-face flip-front">
+                    <span class="face-lessons">${escHtml(lessons)}</span>
+                    <div class="face-ornament"></div>
+                    <span class="face-monogram">${escHtml(initials)}</span>
+                    <span class="face-name">${escHtml(p.name)}</span>
+                    <span class="face-hint">Клацни — переверни</span>
+                  </div>
+                  <div class="flip-face flip-back">
+                    <div>
+                      <span class="back-eyebrow">${escHtml(lessons)}</span>
+                      <div class="back-name">${escHtml(p.name)}</div>
+                    </div>
+                    <div class="back-quote">${escHtml(quote)}</div>
+                    <a class="back-cta" href="#/focus/${escHtml(p.slug)}" data-open-focus="${escHtml(p.slug)}">Відкрити програмку →</a>
+                  </div>
+                </div>
+              `;
+            })
+            .join("");
+
+          return `
+            <div class="deck-overlay" id="deck-overlay" role="dialog" aria-modal="true" aria-label="Колода програмок">
+              <div class="deck-overlay-inner">
+                <button class="deck-overlay-close" type="button" id="deck-overlay-close" aria-label="Закрити колоду (Esc)">Закрити · Esc</button>
+                <div class="deck-overlay-header">
+                  <span class="eyebrow">Dramatis Personae · колода</span>
+                  <h2>Обери карту. Переверни. Відкрий програмку.</h2>
+                  <p>Клацни лице — побачиш цитату. Клацни «Відкрити програмку» — підеш у повну партію.</p>
+                </div>
+                <div class="deck-spread">${items}</div>
+              </div>
+            </div>
+          `;
+        }
+
+        function ensureDeckOverlay() {
+          let ov = document.getElementById("deck-overlay");
+          if (ov) ov.remove();
+          document.body.insertAdjacentHTML("beforeend", renderDeckOverlay());
+          ov = document.getElementById("deck-overlay");
+          ov.addEventListener("click", (e) => {
+            const closeBtn = e.target.closest("#deck-overlay-close");
+            if (closeBtn) {
+              e.preventDefault();
+              closeDeck();
+              return;
+            }
+            const cta = e.target.closest("[data-open-focus]");
+            if (cta) {
+              const slug = cta.getAttribute("data-open-focus");
+              e.preventDefault();
+              closeDeck();
+              window.location.hash = "#/focus/" + slug;
+              return;
+            }
+            const card = e.target.closest(".flip-card");
+            if (card) {
+              card.classList.toggle("flipped");
+              return;
+            }
+            // Click on backdrop (overlay itself, not inner) closes
+            if (e.target === ov) closeDeck();
+          });
+          ov.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              const card = e.target.closest(".flip-card");
+              if (card) {
+                e.preventDefault();
+                card.classList.toggle("flipped");
+              }
+            }
+          });
+        }
+
+        function openDeck() {
+          ensureDeckOverlay();
+          const ov = document.getElementById("deck-overlay");
+          if (!ov) return;
+          ov.classList.add("open");
+          document.body.style.overflow = "hidden";
+          window.deckState.open = true;
+          // Staggered entry — add .in class with small delay per card
+          const cards = ov.querySelectorAll(".flip-card");
+          cards.forEach((c, i) => {
+            const t = Math.min(800, i * 30);
+            setTimeout(() => c.classList.add("in"), t);
+          });
+        }
+
+        function closeDeck() {
+          const ov = document.getElementById("deck-overlay");
+          if (!ov) return;
+          ov.classList.remove("open");
+          document.body.style.overflow = "";
+          window.deckState.open = false;
+        }
+
+        function initDeck() {
+          const stack = document.getElementById("deck-stack");
+          if (!stack) return;
+          stack.addEventListener("click", openDeck);
+          stack.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openDeck();
+            }
+          });
+        }
+
+        /* ============================================================
+         *  EXERCISES DECK — second deck for 37 practices
+         * ============================================================ */
+        window.deckExercisesState = window.deckExercisesState || {
+          open: false,
+          flipped: new Set(),
+        };
+
+        function getExerciseList() {
+          return Array.isArray(window.EXERCISES) ? window.EXERCISES : [];
+        }
+
+        function findExerciseByCode(code) {
+          return getExerciseList().find((e) => e.code === code);
+        }
+
+        function renderDeckExercisesOverlay() {
+          const items = getExerciseList()
+            .map((ex) => {
+              const codeBadge = (ex.code || "").toUpperCase();
+              const lessonLabel = ex.lesson + " · " + (ex.duration || "");
+              const briefShort = ex.brief || ex.what_it_trains || "";
+              return `
+                <div class="flip-card flip-card-exercise" data-code="${escHtml(ex.code)}" role="button" tabindex="0"
+                     aria-label="Перевернути карту ${escHtml(ex.title)}">
+                  <div class="flip-face flip-front">
+                    <span class="face-lessons">${escHtml(lessonLabel)}</span>
+                    <div class="face-ornament"></div>
+                    <span class="face-monogram">${escHtml(codeBadge)}</span>
+                    <span class="face-name">Вправа</span>
+                    <span class="face-hint">Клацни — переверни</span>
+                  </div>
+                  <div class="flip-face flip-back">
+                    <div>
+                      <span class="back-eyebrow">${escHtml(ex.lesson)} · ${escHtml(ex.duration || "")}</span>
+                      <div class="back-name">${escHtml(ex.title)}</div>
+                    </div>
+                    <div class="back-quote">${escHtml(briefShort)}</div>
+                    <a class="back-cta" href="#/exercise/${escHtml(ex.code)}" data-open-exercise="${escHtml(ex.code)}">Відкрити вправу →</a>
+                  </div>
+                </div>
+              `;
+            })
+            .join("");
+
+          return `
+            <div class="deck-overlay" id="deck-overlay-exercises" role="dialog" aria-modal="true" aria-label="Колода вправ">
+              <div class="deck-overlay-inner">
+                <button class="deck-overlay-close" type="button" id="deck-overlay-exercises-close" aria-label="Закрити колоду (Esc)">Закрити · Esc</button>
+                <div class="deck-overlay-header">
+                  <span class="eyebrow">Repertoire of Practice · колода</span>
+                  <h2>37 вправ. Обери одну. Переверни. Зроби.</h2>
+                  <p>Клацни лице — побачиш суть. Клацни «Відкрити вправу» — отримаєш повну інструкцію.</p>
+                </div>
+                <div class="deck-spread">${items}</div>
+              </div>
+            </div>
+          `;
+        }
+
+        function ensureDeckExercisesOverlay() {
+          let ov = document.getElementById("deck-overlay-exercises");
+          if (ov) ov.remove();
+          document.body.insertAdjacentHTML(
+            "beforeend",
+            renderDeckExercisesOverlay(),
+          );
+          ov = document.getElementById("deck-overlay-exercises");
+          ov.addEventListener("click", (e) => {
+            const closeBtn = e.target.closest("#deck-overlay-exercises-close");
+            if (closeBtn) {
+              e.preventDefault();
+              closeDeckExercises();
+              return;
+            }
+            const cta = e.target.closest("[data-open-exercise]");
+            if (cta) {
+              const code = cta.getAttribute("data-open-exercise");
+              e.preventDefault();
+              closeDeckExercises();
+              window.location.hash = "#/exercise/" + code;
+              return;
+            }
+            const card = e.target.closest(".flip-card");
+            if (card) {
+              card.classList.toggle("flipped");
+              return;
+            }
+            if (e.target === ov) closeDeckExercises();
+          });
+          ov.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              const card = e.target.closest(".flip-card");
+              if (card) {
+                e.preventDefault();
+                card.classList.toggle("flipped");
+              }
+            }
+          });
+        }
+
+        function openDeckExercises() {
+          ensureDeckExercisesOverlay();
+          const ov = document.getElementById("deck-overlay-exercises");
+          if (!ov) return;
+          ov.classList.add("open");
+          document.body.style.overflow = "hidden";
+          window.deckExercisesState.open = true;
+          const cards = ov.querySelectorAll(".flip-card");
+          cards.forEach((c, i) => {
+            const t = Math.min(800, i * 25);
+            setTimeout(() => c.classList.add("in"), t);
+          });
+        }
+
+        function closeDeckExercises() {
+          const ov = document.getElementById("deck-overlay-exercises");
+          if (!ov) return;
+          ov.classList.remove("open");
+          document.body.style.overflow = "";
+          window.deckExercisesState.open = false;
+        }
+
+        function initDeckExercises() {
+          const stack = document.getElementById("deck-stack-exercises");
+          if (!stack) return;
+          stack.addEventListener("click", openDeckExercises);
+          stack.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openDeckExercises();
+            }
+          });
+        }
+
+        /* ============================================================
+         *  SPEECHES DECK — community library of class submissions
+         *  Опт-ін через @denys_speech_builder_bot. Поки порожня.
+         * ============================================================ */
+        window.deckSpeechesState = window.deckSpeechesState || {
+          open: false,
+          flipped: new Set(),
+        };
+
+        function getSpeechList() {
+          return Array.isArray(window.CLASS_SPEECHES)
+            ? window.CLASS_SPEECHES
+            : [];
+        }
+
+        function renderDeckSpeechesOverlay() {
+          const list = getSpeechList();
+
+          let body;
+          if (list.length === 0) {
+            // EMPTY STATE — invite first submission
+            body = `
+              <div class="speeches-empty" role="region" aria-label="Колода виступів поки порожня">
+                <div class="empty-ornament" aria-hidden="true"></div>
+                <h3>Колода ще чекає першу карту.<br>Перший виступ — твій?</h3>
+                <p>Перший виступ ще не submitted. Якщо ти пройшов(-ла) програмку у боті — opt-in поділитись з класом і стань першою картою у колоді.</p>
+                <button type="button" class="copy-link-btn" id="copy-bot-link-btn" data-bot-link="https://t.me/denys_speech_builder_bot">Скопіювати лінк на бота</button>
+              </div>
+            `;
+          } else {
+            const items = list
+              .map((sp) => {
+                const codeBadge = (sp.code || "").toUpperCase();
+                const label = sp.anonymous_label || "Учасник класу";
+                const initials = (label.match(/\p{L}+/gu) || ["В"])
+                  .map((w) => w[0])
+                  .join("")
+                  .slice(0, 2)
+                  .toUpperCase();
+                const topic = sp.topic || "Виступ без теми";
+                const archetype = sp.archetype || "—";
+                const structure = sp.structure || "—";
+                const date = sp.date || "";
+                const outlineUrl = sp.outline_url || "#";
+                return `
+                  <div class="flip-card flip-card-speech" data-code="${escHtml(sp.code || "")}" role="button" tabindex="0"
+                       aria-label="Перевернути карту ${escHtml(label)}">
+                    <div class="flip-face flip-front">
+                      <span class="face-lessons">${escHtml(codeBadge || "MCMM · I")}</span>
+                      <div class="face-ornament"></div>
+                      <span class="face-monogram">${escHtml(initials)}</span>
+                      <span class="face-name">${escHtml(label)}</span>
+                      <span class="face-hint">Клацни — переверни</span>
+                    </div>
+                    <div class="flip-face flip-back">
+                      <div>
+                        <span class="back-eyebrow">Виступ${date ? " · " + escHtml(date) : ""}</span>
+                        <div class="back-name">${escHtml(topic)}</div>
+                        <div class="speech-meta">
+                          <span class="speech-meta-row">Архетип · <strong>${escHtml(archetype)}</strong></span>
+                          <span class="speech-meta-row">Структура · <strong>${escHtml(structure)}</strong></span>
+                        </div>
+                      </div>
+                      <a class="back-cta" href="${escHtml(outlineUrl)}" target="_blank" rel="noopener noreferrer" data-open-speech="${escHtml(sp.code || "")}">Відкрити програмку →</a>
+                    </div>
+                  </div>
+                `;
+              })
+              .join("");
+            body = `<div class="deck-spread">${items}</div>`;
+          }
+
+          return `
+            <div class="deck-overlay" id="deck-overlay-speeches" role="dialog" aria-modal="true" aria-label="Колода виступів класу">
+              <div class="deck-overlay-inner">
+                <button class="deck-overlay-close" type="button" id="deck-overlay-speeches-close" aria-label="Закрити колоду (Esc)">Закрити · Esc</button>
+                <div class="deck-overlay-header">
+                  <span class="eyebrow">Library of Voices · колода</span>
+                  <h2>Виступи класу. Опт-ін через бот.</h2>
+                  <p>Тут будуть карти учасників, які пройшли програмку у боті і обрали поділитись.</p>
+                </div>
+                ${body}
+              </div>
+            </div>
+          `;
+        }
+
+        function ensureDeckSpeechesOverlay() {
+          let ov = document.getElementById("deck-overlay-speeches");
+          if (ov) ov.remove();
+          document.body.insertAdjacentHTML(
+            "beforeend",
+            renderDeckSpeechesOverlay(),
+          );
+          ov = document.getElementById("deck-overlay-speeches");
+          ov.addEventListener("click", (e) => {
+            const closeBtn = e.target.closest("#deck-overlay-speeches-close");
+            if (closeBtn) {
+              e.preventDefault();
+              closeDeckSpeeches();
+              return;
+            }
+            const copyBtn = e.target.closest("#copy-bot-link-btn");
+            if (copyBtn) {
+              e.preventDefault();
+              const link =
+                copyBtn.getAttribute("data-bot-link") ||
+                "https://t.me/denys_speech_builder_bot";
+              const original = copyBtn.textContent;
+              const finish = () => {
+                copyBtn.classList.add("copied");
+                copyBtn.textContent = "Скопійовано ✓";
+                setTimeout(() => {
+                  copyBtn.classList.remove("copied");
+                  copyBtn.textContent = original;
+                }, 2200);
+              };
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(link).then(finish, finish);
+              } else {
+                // Fallback for older browsers
+                try {
+                  const ta = document.createElement("textarea");
+                  ta.value = link;
+                  ta.style.position = "fixed";
+                  ta.style.opacity = "0";
+                  document.body.appendChild(ta);
+                  ta.select();
+                  document.execCommand("copy");
+                  document.body.removeChild(ta);
+                  finish();
+                } catch (err) {
+                  copyBtn.textContent = link;
+                }
+              }
+              return;
+            }
+            const cta = e.target.closest("[data-open-speech]");
+            if (cta) {
+              // Let the native link work (external URL); just close overlay smoothly.
+              setTimeout(closeDeckSpeeches, 100);
+              return;
+            }
+            const card = e.target.closest(".flip-card");
+            if (card) {
+              card.classList.toggle("flipped");
+              return;
+            }
+            if (e.target === ov) closeDeckSpeeches();
+          });
+          ov.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              const card = e.target.closest(".flip-card");
+              if (card) {
+                e.preventDefault();
+                card.classList.toggle("flipped");
+              }
+            }
+          });
+        }
+
+        function openDeckSpeeches() {
+          ensureDeckSpeechesOverlay();
+          const ov = document.getElementById("deck-overlay-speeches");
+          if (!ov) return;
+          ov.classList.add("open");
+          document.body.style.overflow = "hidden";
+          window.deckSpeechesState.open = true;
+          const cards = ov.querySelectorAll(".flip-card");
+          cards.forEach((c, i) => {
+            const t = Math.min(800, i * 30);
+            setTimeout(() => c.classList.add("in"), t);
+          });
+        }
+
+        function closeDeckSpeeches() {
+          const ov = document.getElementById("deck-overlay-speeches");
+          if (!ov) return;
+          ov.classList.remove("open");
+          document.body.style.overflow = "";
+          window.deckSpeechesState.open = false;
+        }
+
+        function initDeckSpeeches() {
+          const stack = document.getElementById("deck-stack-speeches");
+          if (!stack) return;
+          stack.addEventListener("click", openDeckSpeeches);
+          stack.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openDeckSpeeches();
+            }
+          });
+        }
+
+        /* ============================================================
+         *  EXERCISE FOCUS — single practice view
+         * ============================================================ */
+        function renderExerciseFocus(code) {
+          const ex = findExerciseByCode(code);
+          if (!ex) {
+            return `
+              <div class="focus-view container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+                <h1 class="display">Вправу не знайдено</h1>
+                <p class="lead">Вправи з кодом <code>${escHtml(code)}</code> не існує.</p>
+              </div>
+            `;
+          }
+
+          const list = getExerciseList();
+          const idx = list.findIndex((x) => x.code === code);
+          const prev = idx > 0 ? list[idx - 1] : null;
+          const next = idx < list.length - 1 ? list[idx + 1] : null;
+
+          let sections = [];
+          let secNum = 1;
+
+          // 01 — Завдання (what it trains)
+          if (ex.what_it_trains) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Завдання</div>
+                <h2>Що вона тренує</h2>
+                <p class="grow-paragraph">${escHtml(ex.what_it_trains)}</p>
+              </section>
+            `);
+          }
+
+          // 02 — Інструкція
+          if (ex.instruction) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Інструкція</div>
+                <h2>Як зробити</h2>
+                <div class="exercise-instruction">${renderExerciseMarkdown(ex.instruction)}</div>
+              </section>
+            `);
+          }
+
+          // 03 — Що оцінювати
+          if (ex.evaluation) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Критичні точки</div>
+                <h2>Що оцінювати</h2>
+                <div class="exercise-instruction">${renderExerciseMarkdown(ex.evaluation)}</div>
+              </section>
+            `);
+          }
+
+          // 04 — Поширені помилки
+          if (ex.mistakes) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Поширені помилки</div>
+                <h2>Чого не робити</h2>
+                <div class="exercise-instruction">${renderExerciseMarkdown(ex.mistakes)}</div>
+              </section>
+            `);
+          }
+
+          // 05 — Адаптації
+          if (ex.adaptations) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Адаптації</div>
+                <h2>Як її проводити</h2>
+                <div class="exercise-instruction">${renderExerciseMarkdown(ex.adaptations)}</div>
+              </section>
+            `);
+          }
+
+          // 06 — Denys verbatim
+          if (ex.verbatim) {
+            sections.push(`
+              <section class="focus-section">
+                <div class="numeral">${ukNumeral(secNum++)} · Денисовий коментар</div>
+                <h2>Verbatim з курсу</h2>
+                <blockquote class="denys-quote">
+                  <p>${renderExerciseMarkdown(ex.verbatim)}</p>
+                </blockquote>
+              </section>
+            `);
+          }
+
+          const lessonLong =
+            {
+              L1: "Урок 5 · Основи",
+              L2: "Урок 7 · Голос лідера",
+              L3: "Урок 8 · Сила присутності",
+            }[ex.lesson] || ex.lesson;
+
+          return `
+            <div class="focus-view">
+              <div class="container narrow">
+                <a href="#/home" class="back-link">Назад до головної</a>
+
+                <header style="padding: 24px 0 32px;">
+                  <div class="focus-eyebrow">
+                    <span class="eyebrow">Вправа · ${escHtml(lessonLong)} · ${escHtml(ex.duration || "")}</span>
+                  </div>
+                  <h1 class="focus-name">${escHtml(ex.title)}</h1>
+                  <p class="focus-identity">${escHtml(ex.brief || "")}</p>
+                  <div class="focus-meta">
+                    <span class="chip gold">${escHtml((ex.code || "").toUpperCase())}</span>
+                    <span class="small-caps" style="color: var(--ink-mute);">${escHtml(ex.lesson)} · ${escHtml(ex.duration || "")}</span>
+                    ${ex.difficulty ? `<span class="small-caps" style="color: var(--ink-mute);">${escHtml(ex.difficulty)}</span>` : ""}
+                  </div>
+                </header>
+
+                ${sections.join("")}
+
+                <nav class="focus-nav" aria-label="Навігація між вправами">
+                  ${
+                    prev
+                      ? `
+                    <a href="#/exercise/${prev.code}" class="focus-nav-link prev">
+                      <span class="nav-direction">← Попередня</span>
+                      <span class="nav-name">${escHtml(prev.title)}</span>
+                    </a>
+                  `
+                      : `<span></span>`
+                  }
+                  ${
+                    next
+                      ? `
+                    <a href="#/exercise/${next.code}" class="focus-nav-link next">
+                      <span class="nav-direction">Наступна →</span>
+                      <span class="nav-name">${escHtml(next.title)}</span>
+                    </a>
+                  `
+                      : `<span></span>`
+                  }
+                </nav>
+              </div>
+            </div>
+          `;
+        }
+
+        // Light markdown renderer for exercise body (numbered lists, bold, line breaks).
+        function renderExerciseMarkdown(md) {
+          if (!md) return "";
+          // Escape HTML first.
+          let s = escHtml(md);
+          // Bold **...**
+          s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+          // Italic *...* (after bold)
+          s = s.replace(/(^|\s)\*([^*\n]+)\*/g, "$1<em>$2</em>");
+          // Convert blockquote markers
+          s = s.replace(
+            /^&gt;\s?(.+)$/gm,
+            '<span class="ex-md-quote">$1</span>',
+          );
+          // Split into blocks by double newline.
+          const blocks = s.split(/\n{2,}/);
+          const html = blocks
+            .map((blk) => {
+              const lines = blk
+                .split("\n")
+                .map((l) => l.trim())
+                .filter(Boolean);
+              if (!lines.length) return "";
+              // Detect ordered list
+              if (lines.every((l) => /^\d+\.\s/.test(l) || /^[\s]*$/.test(l))) {
+                return (
+                  "<ol class='ex-md-ol'>" +
+                  lines
+                    .map((l) => "<li>" + l.replace(/^\d+\.\s/, "") + "</li>")
+                    .join("") +
+                  "</ol>"
+                );
+              }
+              // Detect unordered list (- or • or - [ ])
+              if (
+                lines.every((l) => /^[-•]\s/.test(l) || /^-\s\[\s?\]\s/.test(l))
+              ) {
+                return (
+                  "<ul class='ex-md-ul'>" +
+                  lines
+                    .map(
+                      (l) =>
+                        "<li>" +
+                        l
+                          .replace(/^-\s\[\s?\]\s?/, "")
+                          .replace(/^[-•]\s?/, "") +
+                        "</li>",
+                    )
+                    .join("") +
+                  "</ul>"
+                );
+              }
+              // Regular paragraph
+              return "<p>" + lines.join("<br>") + "</p>";
+            })
+            .join("\n");
+          return html;
+        }
+
+        /* ============================================================
+         *  KEYBOARD SHORTCUTS
+         * ============================================================ */
+        function initKeyboard() {
+          // Show hint briefly on first load
+          const hint = document.getElementById("kbd-hint");
+          if (hint) {
+            setTimeout(() => {
+              hint.classList.add("show");
+              setTimeout(() => hint.classList.remove("show"), 5000);
+            }, 2000);
+          }
+
+          document.addEventListener("keydown", (e) => {
+            // Skip if user is typing in an input
+            const tag = (e.target.tagName || "").toLowerCase();
+            if (tag === "input" || tag === "textarea") return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+            const key = e.key;
+            const hash = window.location.hash || "#/home";
+            const inFocus = hash.startsWith("#/focus/");
+            const inExercise = hash.startsWith("#/exercise/");
+
+            // Deck overlay: Esc closes deck (don't navigate)
+            if (window.deckState && window.deckState.open) {
+              if (key === "Escape" || key.toLowerCase() === "escape") {
+                e.preventDefault();
+                closeDeck();
+              }
+              return;
+            }
+
+            // Exercises deck overlay: Esc closes
+            if (window.deckExercisesState && window.deckExercisesState.open) {
+              if (key === "Escape" || key.toLowerCase() === "escape") {
+                e.preventDefault();
+                closeDeckExercises();
+              }
+              return;
+            }
+
+            // Speeches deck overlay: Esc closes
+            if (window.deckSpeechesState && window.deckSpeechesState.open) {
+              if (key === "Escape" || key.toLowerCase() === "escape") {
+                e.preventDefault();
+                closeDeckSpeeches();
+              }
+              return;
+            }
+
+            // Arrow nav within participant focus
+            if (inFocus && (key === "ArrowRight" || key === "ArrowLeft")) {
+              const slug = hash.replace("#/focus/", "");
+              const list = [...PARTICIPANTS, DENYS];
+              const idx = list.findIndex((x) => x.slug === slug);
+              if (idx === -1) return;
+              const target =
+                key === "ArrowRight"
+                  ? list[Math.min(list.length - 1, idx + 1)]
+                  : list[Math.max(0, idx - 1)];
+              if (target && target.slug !== slug) {
+                e.preventDefault();
+                window.location.hash = "#/focus/" + target.slug;
+              }
+              return;
+            }
+
+            // Arrow nav within exercise focus
+            if (inExercise && (key === "ArrowRight" || key === "ArrowLeft")) {
+              const code = hash.replace("#/exercise/", "");
+              const list = getExerciseList();
+              const idx = list.findIndex((x) => x.code === code);
+              if (idx === -1) return;
+              const target =
+                key === "ArrowRight"
+                  ? list[Math.min(list.length - 1, idx + 1)]
+                  : list[Math.max(0, idx - 1)];
+              if (target && target.code !== code) {
+                e.preventDefault();
+                window.location.hash = "#/exercise/" + target.code;
+              }
+              return;
+            }
+
+            // Single-key shortcuts
+            switch (key.toLowerCase()) {
+              case " ":
+                e.preventDefault();
+                window.location.hash = "#/offer";
+                break;
+              case "s":
+                window.location.hash = "#/speech";
+                break;
+              case "h":
+                window.location.hash = "#/home";
+                break;
+              case "escape":
+                window.location.hash = "#/home";
+                break;
+              case "1":
+                window.location.hash = "#/focus/" + ROLE_MODELS[0];
+                break;
+              case "2":
+                window.location.hash = "#/focus/" + ROLE_MODELS[1];
+                break;
+              case "3":
+                window.location.hash = "#/focus/" + ROLE_MODELS[2];
+                break;
+              case "4":
+                window.location.hash = "#/focus/" + ROLE_MODELS[3];
+                break;
+              case "5":
+                window.location.hash = "#/focus/" + ROLE_MODELS[4];
+                break;
+            }
+          });
+        }
+
+        /* ============================================================
+         *  INIT
+         * ============================================================ */
+        window.addEventListener("hashchange", renderRoute);
+        document.addEventListener("DOMContentLoaded", () => {
+          renderRoute();
+          initBigTextToggle();
+          initKeyboard();
+        });
+        if (document.readyState !== "loading") {
+          renderRoute();
+          initBigTextToggle();
+          initKeyboard();
+        }
+      })();
+    </script>
+  </body>
+</html>

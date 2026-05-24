@@ -1,0 +1,2714 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCMM Ораторське · Подарунок класу</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+      :root {
+        --bg-cream: #f5f0e8;
+        --ink-charcoal: #2a2a2a;
+        --blood-wine: #7a2a2a;
+        --blood-wine-dark: #5c1f1f;
+        --sepia-gold: #8b6f47;
+        --card-paper: #fbf7ee;
+        --border-faint: #e0d8c8;
+        --stage-dark: #1a1a1a;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg-cream);
+        color: var(--ink-charcoal);
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ========== HEADER NAV ========== */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg-cream);
+        border-bottom: 1px solid var(--border-faint);
+        padding: 16px 0;
+      }
+
+      .site-header-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .site-logo {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--blood-wine);
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      .site-logo small {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        color: var(--sepia-gold);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .site-nav {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .site-nav a {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        color: var(--ink-charcoal);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 6px 0;
+        border-bottom: 2px solid transparent;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+
+      .site-nav a:hover,
+      .site-nav a.active {
+        color: var(--blood-wine);
+        border-bottom-color: var(--blood-wine);
+      }
+
+      /* ========== CONTAINER ========== */
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 48px 24px 96px;
+      }
+
+      /* ========== TYPOGRAPHY ========== */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        color: var(--ink-charcoal);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 56px;
+        margin-bottom: 24px;
+      }
+      h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 26px;
+        margin-bottom: 16px;
+      }
+      h4 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        margin-bottom: 16px;
+      }
+
+      /* ========== HOME HERO ========== */
+      .hero {
+        text-align: center;
+        padding: 64px 0 48px;
+        border-bottom: 1px solid var(--border-faint);
+        margin-bottom: 64px;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        font-weight: 900;
+        color: var(--blood-wine);
+        margin-bottom: 32px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-subtitle {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-style: italic;
+        color: var(--ink-charcoal);
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      .hero-dedication {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-style: italic;
+        color: var(--sepia-gold);
+        margin-bottom: 40px;
+      }
+
+      .hero-lead {
+        max-width: 720px;
+        margin: 0 auto 40px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--ink-charcoal);
+        text-align: left;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .stats-bar {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--sepia-gold);
+        letter-spacing: 0.05em;
+        padding: 16px;
+        border-top: 1px solid var(--border-faint);
+        border-bottom: 1px solid var(--border-faint);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* ========== BUTTONS ========== */
+      .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 2px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.1s;
+      }
+
+      .btn-primary {
+        background: var(--blood-wine);
+        color: var(--bg-cream);
+      }
+
+      .btn-primary:hover {
+        background: var(--blood-wine-dark);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--blood-wine);
+        border-color: var(--blood-wine);
+      }
+
+      .btn-secondary:hover {
+        background: var(--blood-wine);
+        color: var(--bg-cream);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      /* ========== SECTION HEADINGS ========== */
+      .section-heading {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: var(--ink-charcoal);
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      .section-heading::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: var(--blood-wine);
+        margin: 16px auto 0;
+      }
+
+      /* ========== PARTICIPANTS GRID ========== */
+      .participants-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 64px;
+      }
+
+      .participant-card {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 28px;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(42, 42, 42, 0.06);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .participant-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(42, 42, 42, 0.1);
+      }
+
+      .participant-card.special {
+        border: 2px solid var(--blood-wine);
+        background: linear-gradient(180deg, var(--card-paper) 0%, #f5ede0 100%);
+      }
+
+      .participant-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--blood-wine);
+        color: var(--bg-cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      .participant-card.special .participant-avatar {
+        background: var(--sepia-gold);
+      }
+
+      .participant-name {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink-charcoal);
+        margin: 0;
+      }
+
+      .participant-quote {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 15px;
+        color: var(--ink-charcoal);
+        line-height: 1.5;
+        border-left: 2px solid var(--sepia-gold);
+        padding-left: 12px;
+      }
+
+      .participant-tag {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        background: var(--bg-cream);
+        color: var(--sepia-gold);
+        border: 1px solid var(--border-faint);
+        border-radius: 2px;
+        align-self: flex-start;
+      }
+
+      .participant-tag.full {
+        color: var(--blood-wine);
+        border-color: var(--blood-wine);
+      }
+
+      .participant-lessons {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--sepia-gold);
+        letter-spacing: 0.05em;
+      }
+
+      /* ========== SPECIAL BLOCKS ON HOME ========== */
+      .special-block {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-left: 4px solid var(--blood-wine);
+        padding: 40px;
+        margin-bottom: 32px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(42, 42, 42, 0.06);
+      }
+
+      .special-block:hover {
+        box-shadow: 0 6px 18px rgba(122, 42, 42, 0.12);
+      }
+
+      .special-block h3 {
+        color: var(--blood-wine);
+        margin-bottom: 12px;
+      }
+
+      .special-block .pull-quote {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 20px;
+        color: var(--ink-charcoal);
+        margin-top: 16px;
+      }
+
+      /* ========== FOOTER ========== */
+      .site-footer {
+        border-top: 1px solid var(--border-faint);
+        padding: 32px 24px;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        color: var(--sepia-gold);
+        line-height: 1.6;
+        max-width: 720px;
+        margin: 64px auto 0;
+      }
+
+      /* ========== FOCUS VIEW ========== */
+      .focus-view {
+        max-width: 880px;
+        margin: 0 auto;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        color: var(--blood-wine);
+        text-decoration: none;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      .focus-hero {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 48px;
+        margin-bottom: 32px;
+        box-shadow: 0 2px 8px rgba(42, 42, 42, 0.06);
+        text-align: center;
+      }
+
+      .focus-hero h1 {
+        font-size: 48px;
+        color: var(--blood-wine);
+        margin-bottom: 16px;
+      }
+
+      .lesson-chip {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        background: var(--bg-cream);
+        color: var(--sepia-gold);
+        border: 1px solid var(--border-faint);
+        border-radius: 2px;
+        margin-bottom: 20px;
+      }
+
+      .focus-identity {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-style: italic;
+        color: var(--ink-charcoal);
+        line-height: 1.5;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .focus-section {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 36px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px rgba(42, 42, 42, 0.06);
+      }
+
+      .focus-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        color: var(--blood-wine);
+        margin-bottom: 24px;
+        border-bottom: 1px solid var(--border-faint);
+        padding-bottom: 12px;
+      }
+
+      .denys-quote {
+        background: transparent;
+        border-left: 3px solid var(--blood-wine);
+        padding: 16px 0 16px 20px;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .denys-quote p {
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        color: var(--ink-charcoal);
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+
+      .denys-quote cite {
+        font-family: "JetBrains Mono", monospace;
+        font-style: normal;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: var(--sepia-gold);
+      }
+
+      .strengths-list,
+      .exercises-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .strengths-list li,
+      .exercises-list li {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border-faint);
+        position: relative;
+        padding-left: 28px;
+        line-height: 1.6;
+      }
+
+      .strengths-list li:last-child,
+      .exercises-list li:last-child {
+        border-bottom: none;
+      }
+
+      .strengths-list li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        top: 14px;
+        color: var(--blood-wine);
+        font-size: 14px;
+      }
+
+      .exercises-list li::before {
+        content: counter(ex);
+        counter-increment: ex;
+        position: absolute;
+        left: 0;
+        top: 14px;
+        color: var(--blood-wine);
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .exercises-list {
+        counter-reset: ex;
+      }
+
+      .exercise-code {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        background: var(--bg-cream);
+        color: var(--blood-wine);
+        padding: 2px 6px;
+        border-radius: 2px;
+        border: 1px solid var(--border-faint);
+      }
+
+      .grow-area {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--ink-charcoal);
+      }
+
+      .denys-offer-card {
+        background: var(--bg-cream);
+        border: 1px solid var(--blood-wine);
+        border-radius: 4px;
+        padding: 32px;
+        margin-top: 12px;
+      }
+
+      .denys-offer-card h4 {
+        color: var(--blood-wine);
+        margin-bottom: 16px;
+        font-size: 22px;
+      }
+
+      details.yurii-tools {
+        background: var(--bg-cream);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 0;
+        margin-top: 16px;
+      }
+
+      details.yurii-tools summary {
+        padding: 20px 24px;
+        cursor: pointer;
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        color: var(--sepia-gold);
+        list-style: none;
+        outline: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      details.yurii-tools summary::-webkit-details-marker {
+        display: none;
+      }
+
+      details.yurii-tools summary::after {
+        content: "+";
+        font-size: 26px;
+        color: var(--sepia-gold);
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+        transition: transform 0.2s;
+      }
+
+      details.yurii-tools[open] summary::after {
+        transform: rotate(45deg);
+      }
+
+      details.yurii-tools .yurii-tools-body {
+        padding: 0 24px 24px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      details.yurii-tools ul {
+        padding-left: 20px;
+        margin-top: 8px;
+      }
+
+      details.yurii-tools li {
+        padding: 6px 0;
+      }
+
+      .focus-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-faint);
+      }
+
+      .focus-nav .btn {
+        flex: 1;
+        text-align: center;
+        max-width: 280px;
+      }
+
+      /* ========== OFFER VIEW ========== */
+      .offer-hero {
+        text-align: center;
+        padding: 48px 0;
+        margin-bottom: 48px;
+        border-bottom: 1px solid var(--border-faint);
+      }
+
+      .offer-hero h1 {
+        font-size: 52px;
+        color: var(--blood-wine);
+        margin-bottom: 20px;
+      }
+
+      .offer-hero p {
+        font-size: 18px;
+        max-width: 640px;
+        margin: 0 auto;
+        color: var(--ink-charcoal);
+      }
+
+      .offer-card {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 48px;
+        margin-bottom: 32px;
+        box-shadow: 0 2px 8px rgba(42, 42, 42, 0.06);
+      }
+
+      .offer-card-number {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: var(--sepia-gold);
+        letter-spacing: 0.15em;
+        margin-bottom: 8px;
+      }
+
+      .offer-card h2 {
+        font-size: 38px;
+        color: var(--blood-wine);
+        margin-bottom: 20px;
+      }
+
+      .offer-section-divider {
+        border: none;
+        border-top: 1px dashed var(--border-faint);
+        margin: 64px 0 48px;
+        position: relative;
+        text-align: center;
+      }
+
+      .offer-section-divider::after {
+        content: "· · ·";
+        display: inline-block;
+        background: var(--bg-cream);
+        padding: 0 24px;
+        position: relative;
+        top: -12px;
+        color: var(--sepia-gold);
+        letter-spacing: 0.5em;
+      }
+
+      .subdued-section h2 {
+        font-size: 32px;
+        color: var(--sepia-gold);
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .subdued-section h3 {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 18px;
+        color: var(--ink-charcoal);
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .yurii-tools-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .yurii-tool-card {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 32px;
+      }
+
+      .yurii-tool-card h4 {
+        color: var(--sepia-gold);
+        margin-bottom: 12px;
+        font-size: 20px;
+      }
+
+      .yurii-tool-card p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .recommended-list {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0;
+      }
+
+      .recommended-list li {
+        display: inline-block;
+        margin: 4px 4px 4px 0;
+      }
+
+      .recommended-list a {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--blood-wine);
+        text-decoration: none;
+        background: var(--bg-cream);
+        padding: 4px 10px;
+        border: 1px solid var(--border-faint);
+        border-radius: 2px;
+        transition: background 0.2s;
+      }
+
+      .recommended-list a:hover {
+        background: var(--blood-wine);
+        color: var(--bg-cream);
+        border-color: var(--blood-wine);
+      }
+
+      .offer-card ul {
+        padding-left: 24px;
+        margin: 16px 0;
+      }
+
+      .offer-card li {
+        padding: 6px 0;
+        line-height: 1.6;
+      }
+
+      .offer-soc-proof {
+        background: var(--bg-cream);
+        padding: 14px 18px;
+        border-left: 3px solid var(--sepia-gold);
+        font-style: italic;
+        margin: 16px 0;
+        font-size: 15px;
+      }
+
+      .contact-block {
+        background: var(--bg-cream);
+        padding: 18px;
+        border-radius: 4px;
+        margin-top: 20px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--sepia-gold);
+      }
+
+      /* ========== SPEECH VIEW ========== */
+      .speech-view {
+        max-width: 880px;
+        margin: 0 auto;
+      }
+
+      body.stage-mode {
+        background: #e8e8e5;
+      }
+
+      body.stage-mode .site-header {
+        background: #e8e8e5;
+      }
+
+      .speech-controls {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 20px;
+        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        position: sticky;
+        top: 80px;
+        z-index: 50;
+        box-shadow: 0 4px 12px rgba(42, 42, 42, 0.06);
+      }
+
+      .control-btn {
+        padding: 8px 14px;
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        background: var(--bg-cream);
+        border: 1px solid var(--border-faint);
+        color: var(--ink-charcoal);
+        border-radius: 2px;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .control-btn:hover,
+      .control-btn.active {
+        background: var(--blood-wine);
+        color: var(--bg-cream);
+        border-color: var(--blood-wine);
+      }
+
+      .tone-diagram {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+        padding: 24px;
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+      }
+
+      .tone-chip {
+        text-align: center;
+        padding: 16px;
+        border-radius: 4px;
+        background: var(--bg-cream);
+        border: 1px solid var(--border-faint);
+      }
+
+      .tone-chip .tone-label {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--blood-wine);
+        margin-bottom: 6px;
+      }
+
+      .tone-chip .tone-duration {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--sepia-gold);
+        letter-spacing: 0.05em;
+      }
+
+      .speech-section {
+        background: var(--card-paper);
+        border: 1px solid var(--border-faint);
+        border-radius: 4px;
+        padding: 40px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px rgba(42, 42, 42, 0.06);
+      }
+
+      body.stage-mode .speech-section {
+        background: #deddd9;
+      }
+
+      .speech-section h2 {
+        font-size: 32px;
+        color: var(--blood-wine);
+        margin-bottom: 8px;
+      }
+
+      .speech-section .tone-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        color: var(--sepia-gold);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      .speech-text {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        line-height: 1.65;
+        color: var(--ink-charcoal);
+        font-weight: 400;
+      }
+
+      .speech-text p {
+        margin-bottom: 20px;
+      }
+
+      .speech-text strong {
+        color: var(--blood-wine);
+        font-weight: 700;
+      }
+
+      .speech-text em {
+        font-style: italic;
+        color: var(--sepia-gold);
+      }
+
+      .speech-stage-direction {
+        display: inline-block;
+        background: var(--bg-cream);
+        border-left: 2px solid var(--sepia-gold);
+        padding: 4px 10px;
+        margin: 0 2px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        font-style: italic;
+        color: var(--sepia-gold);
+      }
+
+      .speech-annotation {
+        font-family: "Inter", sans-serif;
+        font-style: italic;
+        font-size: 14px;
+        color: var(--sepia-gold);
+        margin-top: 16px;
+        padding: 12px 16px;
+        background: var(--bg-cream);
+        border-radius: 2px;
+        line-height: 1.5;
+      }
+
+      body.annotations-off .speech-annotation {
+        display: none;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 1024px) {
+        .participants-grid,
+        .yurii-tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        h1 {
+          font-size: 44px;
+        }
+        .hero h1 {
+          font-size: 48px;
+        }
+        .offer-hero h1 {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .participants-grid,
+        .yurii-tools-grid {
+          grid-template-columns: 1fr;
+        }
+        main {
+          padding: 32px 16px 64px;
+        }
+        .site-header-inner {
+          padding: 0 16px;
+        }
+        .site-nav {
+          gap: 16px;
+        }
+        .site-nav a {
+          font-size: 11px;
+        }
+        h1 {
+          font-size: 32px;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+        .offer-hero h1 {
+          font-size: 32px;
+        }
+        .focus-hero h1 {
+          font-size: 32px;
+        }
+        .hero-subtitle {
+          font-size: 20px;
+        }
+        .speech-text {
+          font-size: 18px;
+        }
+        .focus-hero,
+        .focus-section,
+        .speech-section,
+        .offer-card {
+          padding: 24px;
+        }
+        .tone-diagram {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .focus-nav {
+          flex-direction: column;
+        }
+      }
+
+      /* ========== PRINT ========== */
+      @media print {
+        .site-header,
+        .site-nav,
+        .focus-nav,
+        .speech-controls,
+        .hero-cta {
+          display: none;
+        }
+        body {
+          background: white;
+          color: black;
+        }
+        .focus-section,
+        .participant-card,
+        .speech-section,
+        .offer-card {
+          box-shadow: none;
+          border: 1px solid #ccc;
+          page-break-inside: avoid;
+        }
+        a {
+          color: black;
+          text-decoration: none;
+        }
+        .denys-quote {
+          border-left-color: #666;
+        }
+      }
+
+      /* ========== ACCESSIBILITY ========== */
+      .btn:focus,
+      .control-btn:focus,
+      .site-nav a:focus,
+      .back-link:focus,
+      .participant-card:focus {
+        outline: 2px solid var(--blood-wine);
+        outline-offset: 2px;
+      }
+
+      .participant-card:focus-visible {
+        outline: 3px solid var(--blood-wine);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="site-header-inner">
+        <a
+          href="#/home"
+          class="site-logo"
+          aria-label="MCMM Ораторське — головна"
+        >
+          MCMM ОРАТОРСЬКЕ
+          <small>Подарунок класу</small>
+        </a>
+        <nav class="site-nav" role="navigation" aria-label="Головна навігація">
+          <a href="#/home" data-nav="home">Головна</a>
+          <a href="#/home#cards" data-nav="cards">Всі карти</a>
+          <a href="#/offer" data-nav="offer">Оффер</a>
+          <a href="#/speech" data-nav="speech">Мій виступ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="app" role="main" aria-live="polite"></main>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // ========== DATA ==========
+        const PARTICIPANTS = [
+          {
+            slug: "alina-velihina",
+            name: "Аліна Велігіна",
+            initials: "АВ",
+            lessons: "L1 + L2 + L3",
+            headline_quote:
+              "Структуру розповіла з прологом, кульмінацією і розв’язкою",
+            identity:
+              "Магістр психології, коуч-ментор, власниця успішного бізнесу, менторка платформи «Жінки у бізнесі».",
+            status: "full",
+            quotes: [
+              {
+                text: "Аліна, ти дуже чітко її по структурі розповіла. Там був і пролог, і путь, як ця грибка потрапила до тебе, і конфлікт внутрішній цієї грибки... Там була і кульмінація, і внутрішній розворот, і розв’язка, і фінал",
+                ref: "C-l05-049",
+              },
+              {
+                text: "Вперше, класно ти зробила в початку, що обозначила паузу, не одразу типу поїхали-погнали, ні, ти взяла паузу, видихнула, взяла своє пространство і почала говорити. Ти почала з стихотворення, це дуже класний хук. Я собі на заміточку візьму. Не думав, що так можна зробити",
+                ref: "C-l07-059",
+              },
+              {
+                text: "Мені сподобалося, що ти не сказала «приходь до мене, я допоможу», а сказала «обирайте собі спеціаліста по душі». Це прям дуже розполагає на самому ділі",
+                ref: "C-l07-072",
+              },
+            ],
+            strengths: [
+              "Природна Арка Героя в impromptu — побудувала на ходу повну структуру з прологом, кульмінацією і розв’язкою",
+              "Прийом «пауза перед стартом + вірш як хук» — Денис прямо записав це собі в арсенал",
+              "Анти-самореклама — «обирай свого спеціаліста» — рідкісна етична позиція",
+              "Самосвідомість масок — чітко артикулює свого «спасателя» / «причинить добро»",
+              "Готовність до драйв-практики — 1 березня MCMM, наступне ефір; «я хочу ще»",
+            ],
+            grow_area:
+              "Денис помітив патерн «я не готувалась» — оправдання після виступу. Це не для аудиторії, це для себе. Лікується через 3-5 повторів на камеру, після яких структура стає внутрішньою, і не треба про неї думати. Також — займай весь свій час на сцені (ти зробила 3.5 хв з 7).",
+            exercises: [
+              {
+                code: "ex-L2-Бутерброд",
+                desc: "переробка self-feedback (визнання → точка росту → закріплення сили) замість «я не готувалась»",
+              },
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру → структура зникає в підсвідомість",
+              },
+              {
+                code: "ex-15 L3",
+                desc: "прямі ефіри як «актуальні рілси» (Денис підтримав твою інтуїцію)",
+              },
+            ],
+            denys_offer: {
+              title: "Курс «Глибина Героя» (44-й потік)",
+              body: "Твій рівень готовності до Арки + досвід офлайн-виступів = ідеальна точка входу в персональну глибину. Денис веде це 43 потоки поспіль; коли учасники повертаються — це і є справжній proof.",
+            },
+            yurii_tools: [
+              "AI-аналіз твого live-ефіру за Бутерброд-протоколом",
+              "Карта 4 архетипів — твої переходи мудрець → воїн → чарівник на основі L3 drill’у",
+            ],
+          },
+          {
+            slug: "anastasiia-vynohradova",
+            name: "Анастасія Виноградова",
+            initials: "АВ",
+            lessons: "L2 + L3",
+            headline_quote: "Здоровенна сила і яркість в живій імпровізації",
+            identity:
+              "Підприємець 29 років («не з особистого бренду, а через систему, команду і відповідальність»).",
+            status: "full",
+            quotes: [
+              {
+                text: "Ця яркість, ця суперсила, ця живість — я реально, у мене був дисонанс до твоєї виступління. Ти багатьом давала повернуту зв’язку, прямо така жива, аутентична, настояща, класна. І коли ти почала читати — це зовсім інший людина",
+                ref: "C-l07-051",
+              },
+              { text: "Де страшно, там йдемо і робимо", ref: "C-l07-058" },
+              {
+                text: "Категоричність буває доброю, а буває догматичною злою. Добра категоричність — коли ми чітко розуміємо свої цінності і смисли... якщо ми не категоричні — скоріш за все ми хочемо вгодити всім, а не своїй аудиторії",
+                ref: "C-l08-058",
+              },
+            ],
+            strengths: [
+              "«Здоровенна сила і яркість» в живій імпровізації — «аутентична, настояща»",
+              "Самосвідомість блокатора — чітко знаєш «у мене з системою не дуже, в структурі зжимаюсь»",
+              "Стратегічний підприємницький мозок — 29 років бізнесу, мислення системами",
+              "Активна у чаті L3 — кидала 3 інсайт-питання (категоричність, мат, розрив шаблону), Денис відповів на кожне як на цінне",
+            ],
+            grow_area:
+              "Денис побачив дисонанс між живою харизмою і читанням GPT-тексту — коли вирвешся з структури і слайдів, працює зовсім інший рівень. Антипатерн «починаю з оправдань» — кидай. Для тебе індивідуальний підхід критичний (Денис прямо: «у тебе унікальний випадок, шукаємо як виступати без блокатора-структури»).",
+            exercises: [
+              {
+                code: "ex-08 L3",
+                desc: "одна фраза у 4 тонах (для калібрування твого Воїн-діапазону)",
+              },
+              {
+                code: "ex-12 L2",
+                desc: "PA-техніка без слайдів, лише з адресатом",
+              },
+              {
+                code: "ex-self",
+                desc: "імпровізаційний 3-хв виступ без підготовки → запис → послухати",
+              },
+            ],
+            denys_offer: {
+              title: "1-on-1 коучинг з Денисом",
+              body: "Твій профіль — кейс для індивідуального коучингу з Денисом. Структура-як-блокатор не лікується груповим форматом, потрібна персональна 1-on-1 робота. Денис теж приймає 1-on-1 клієнтів.",
+            },
+            yurii_tools: [
+              "AI-аналіз твого імпровізаційного виступу vs читання — конкретна diff",
+              "МАЙСТЕРНЯ Mastermind — груповий формат для AI-експертів, де структури не блокують, а підсилюють",
+            ],
+          },
+          {
+            slug: "anna",
+            name: "Анна (психолог)",
+            initials: "А",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Перша артикулювала харизму як «енергію присутності + блиск в очах»",
+            identity: "Психолог. Учасниця L1 + L3.",
+            status: "full",
+            quotes: [
+              {
+                text: "Помітте, коли ми слухаємо зараз Анну, наскільки у нас змінюється розуміння Анни. Тобто це абсолютно різна енергія",
+                ref: "C-l08-063",
+              },
+              {
+                text: "Я не даю людям нові знання. Я нагадую людям те, що вони забули в хаосі багатозадачності",
+                ref: "C-l08-034",
+              },
+              {
+                text: "Хотілося ще до цієї конкурентості додати енергію, яку несе людина. Енергію впевненості, енергію опори, оцей блеск в очах. Іноді він навіть може мовчати, але коли він входить, оцю енергію впитують всі",
+                ref: "C-l05-018",
+              },
+            ],
+            strengths: [
+              "Перша, хто артикулювала харизму як «енергію присутності + блиск в очах»",
+              "Здатна ставити ключові питання — про скептиків і про перші 30 секунд (Денис розгорнув на тому цілі секції)",
+              "Тонкий патерн самоспостереження — «несвідомого дублювання інтонації» — це глибока самокритика",
+              "L3 drill переключення тонів мудрець ↔ воїн — Денис каже «абсолютно різна енергія» (PROOF тонової динаміки)",
+            ],
+            grow_area:
+              "Блок експерта: «У мене немає смислу. Все вже у GPT». Денис відповів на цей блок прямо: «я не даю нові знання — я нагадую забуте». Це не теорія, це твоя робоча відповідь на власний блок. Юлія тебе підтримала: «Ань, ти як особистість цікава. Люди йдуть на особистість, Ань».",
+            exercises: [
+              {
+                code: "ex-tone-switch L3",
+                desc: "продовжуй переключення мудрець ↔ воїн (Денис вже бачить твій діапазон)",
+              },
+              {
+                code: "ex-02 L3",
+                desc: "Live-ефір на тему «що я забула, бо все у GPT» (поверни собі вагу слова)",
+              },
+              {
+                code: "ex-хук L1",
+                desc: "тренувати трігерний 30-сек хук типу «Усі ми з дитинства недолюблені»",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій блок «у мене немає смислу» лікується через 4 елементи глибини героя (хто я · де я · мої закони · що для мене щастя). Це не курс ораторства, це робота з ідентичністю. Денис сам це назвав «не контент-маркетинг, а робота з глибиною героя слухача».",
+            },
+            yurii_tools: [
+              "AI-аналіз твоєї імпровізації — побачити твою унікальну подачу яку ти не помічаєш",
+              "4-елементна карта глибини героя під Юрієвим Detective-протоколом",
+            ],
+          },
+          {
+            slug: "kateryna",
+            name: "Катерина",
+            initials: "К",
+            lessons: "L2 + L3",
+            headline_quote:
+              "Прекрасна, проста, аутентична природа — коли немає доспіхів",
+            identity:
+              "Дитячий психолог. #2 ROLE MODEL виступу за всі 3 уроки (Денис не критикував жодного слова в L2).",
+            status: "full",
+            quotes: [
+              {
+                text: "Ось Катерина — прекрасна, проста, аутентична природа. Наскільки ось ця настояча, коли немає доспіхів — я теж знімаю доспіхи, я проникаюся, хочу слухати",
+                ref: "C-l07-083",
+              },
+              {
+                text: "Її настояча — суперсила, найважливіше. Це найважливіше, це суперсила. Аліна, Анастасія взаємодіють з виступом — кожне слово впитуємо",
+                ref: "C-l07-056",
+              },
+              {
+                text: "Дуже сильна імпатка, відчуває людей, не навчилася працювати з станом щоб не брати на себе",
+                ref: "C-l07-090",
+              },
+            ],
+            strengths: [
+              "ОДНА З 3 НАЙСИЛЬНІШИХ виступів за всі 3 уроки (поруч з Лерою і офлайн-виступом Аліни)",
+              "Природна простота, аутентичність — «коли немає доспіхів»",
+              "Висока імпатичність — клієнти відчуваються глибоко",
+              "Магнетизм через правду — «впитуємо кожне слово»",
+              "Тема як її день — «вийти з болота» = твій реальний кейс цього дня. Це і є те, що Денис називає експертною темою",
+            ],
+            grow_area:
+              "Імпатичність без захисту — ти береш на себе. Потрібно навчитися знімати доспіхи в гостя, але не пропускати у себе. У L3 drill — переключення тонів соблазнітель ↔ чарівник: Денис рекомендує тренувати тайну («тільки я почув») окремо від інтимного шепоту.",
+            exercises: [
+              {
+                code: "ex-04 PA L2",
+                desc: "навчитися PA з захистом (адресат + бар’єр енергетичний)",
+              },
+              {
+                code: "ex-tone-tayna L3",
+                desc: "drill «розповідь тайни» окремо від інтимного шепоту",
+              },
+              {
+                code: "ex-self-care expert",
+                desc: "після кожного клієнта — 5-хв ритуал розідентифікації",
+              },
+            ],
+            denys_offer: {
+              title: "Курс «Глибина Героя» + 1-on-1 з Денисом",
+              body: "Твій рівень настоячості вже на TEDx-рівні. У «Глибині Героя» це переростає у роботу з 4 архетипами + захист імпатки. Денис сам згадував твій виступ як приклад магнетизму через правду — це означає, що його персональна 1-on-1 робота з тобою буде швидка і глибока.",
+            },
+            yurii_tools: [
+              "AI-фіксація твоїх клієнтських сесій для self-care boundaries",
+              "ВЛАСНИК ПЕРСНЯ (€5469 12-міс) — для повної архітектури твоєї публічності, бо твоя готовність вже на high level",
+            ],
+          },
+          {
+            slug: "lera-reznyk",
+            name: "Лера Резник",
+            initials: "ЛР",
+            lessons: "L2 + L3",
+            headline_quote:
+              "З мінусів — нічого не виписав. Немає там сира, зелені, салату",
+            identity:
+              "Поетеса, коуч, ментор з Хайфи (Ізраїль). 2 тижні тому стала мамою. ROLE MODEL #1 виступу за всі 3 уроки — Денис не знайшов жодного мінусу.",
+            status: "full",
+            quotes: [
+              {
+                text: "У неї є якась неподдільна правда в голосі, в словах. Не в логіці, не в структурі мови, а в тому, як вона спілкується. Авторитетно дуже, аристократично. Створила свій світ, виключила контекст до неї і ввела всіх у свій",
+                ref: "C-l07-053",
+              },
+              {
+                text: "З мінусів я нічого не виписав, з якоїсь зони росту, немає там сира, зелені, салату",
+                ref: "C-l07-085",
+              },
+              {
+                text: "Прекрасно простроєні логічні мостики, переходи з однієї теми до іншої. Вона все час говорить, використовує техніку я-сообщення, я відчуваю, як мені... видно, мабуть багато в терапії була",
+                ref: "C-l07-054",
+              },
+            ],
+            strengths: [
+              "ROLE MODEL #1 ВИСТУПУ — Денис не знайшов мінусів",
+              "«Неподдільна правда в голосі», «авторитетно», «аристократично»",
+              "Природний мудрець — «умудрена життєвим опитом»",
+              "Я-сообщення замість «вам треба» (терапевтична школа)",
+              "Створює власний світ, виключає попередній контекст",
+              "Висока культура мови (вірші, чужі поети)",
+              "Cross-lesson послідовність — у L3 при питанні Ані повторила тезу Дениса",
+            ],
+            grow_area:
+              "«В кінці голос сідає вниз. Не сідай вниз. В кінці чіткий відкритий знак» [C-l08-071]. Все. Більше нічого. Денис сказав «у вас усе є — просто продовжуйте».",
+            exercises: [
+              {
+                code: "ex-tone-open L3",
+                desc: "drill «відкритий знак у кінці фрази»",
+              },
+              {
+                code: "ex-Куніна",
+                desc: "Денис рекомендував книгу Куніна «I go to Haifa» (під твою Хайфу)",
+              },
+              {
+                code: "ex-publish daily",
+                desc: "твій стиль готовий до публічних виступів. Просто публікуй регулярно",
+              },
+            ],
+            denys_offer: {
+              title: "Персональний 1-on-1 з Денисом",
+              body: "Стандартний курс «Глибина Героя» тобі не потрібен — у тебе вже працює. Що Денис може дати — персональний фідбек на твої публічні виступи (1-on-1) для тонкої калібровки. Це інший формат, не курс.",
+            },
+            yurii_tools: [
+              "AI-аналіз твоїх відео для відстеження «голос не сідає вниз»",
+              "Колаборація на спільні живі ефіри з Юрієм (експерт-консультант на AI-теми, ти — на presence-теми)",
+            ],
+          },
+          {
+            slug: "nataliia",
+            name: "Наталія",
+            initials: "Н",
+            lessons: "L1 + L2 + L3",
+            headline_quote:
+              "Чітко, ясно і конкретно — за формулу про голос як інструмент стану",
+            identity:
+              "Коуч, енергопрактик, працює з жінками. Ведуча жіночого клубу.",
+            status: "full",
+            quotes: [
+              {
+                text: "Чітко, ясно і конкретно. Дякую велике, Наталія",
+                ref: "C-l05-087",
+              },
+              {
+                text: "Так, ми можемо думати по одному, а світ чує по-іншому. І взагалі ось цей чарівник на рівні карми і езотерики — чим м’якше річ, тим більше грошей, чим більше воїнственності, тим більше конфліктів в житті",
+                ref: "C-l08-065",
+              },
+              {
+                text: "Не бачу ніяких проблем, щоб ви відділено провели індивідуальний ефір по якоїсь структурі. Коли ви будете вести прямий ефір, ви будете інтуїтивно взаємодіюватися, і це буде живе спілкування. А структура більше дана для індивідуальних виступлінь",
+                ref: "C-l08-117",
+              },
+            ],
+            strengths: [
+              "Готовий «безпечний» жіночий клуб як якір PA — досвід ведення жіночих груп",
+              "Запит на голос як інструмент стану — артикулюєш краще за більшість",
+              "Активно бере участь у drill’ах (chosen чарівником)",
+              "Здатна до колаборацій (партнерство з Оленою Сідок)",
+            ],
+            grow_area:
+              "Розрив між self-perception (я думала — чарівник) і receiver-perception (звучить як воїн). Денис м’яко: «чим більше воїнственності, тим більше конфліктів в житті» — натяк, що варто пом’якшувати тон у твоїй ніші (жінки). Це лікується через self-record + listen для калібрування.",
+            exercises: [
+              {
+                code: "ex-self-record L3",
+                desc: "кожен drill записувати і слухати з боку",
+              },
+              {
+                code: "ex-soft tone L3",
+                desc: "drill м’якого чарівника (без воїн-агресії)",
+              },
+              {
+                code: "ex-02 L3",
+                desc: "соло ефір замість парного з Оленою (Денис рекомендував)",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твоя ніша (жінки) ідеально лягає на 4-архетипну роботу. Денис прямо сказав, що у твоїй ніші м’якший тон = більше грошей. Це не теорія, це його астрологічне+психологічне спостереження за роками практики.",
+            },
+            yurii_tools: [
+              "AI-аналіз твоїх ефірів — об’єктивне дзеркало self-perception vs receiver-perception",
+              "Тренування м’якого тону через 25+ персонажів drill-track",
+            ],
+          },
+          {
+            slug: "olena-sidok",
+            name: "Олена Сідок",
+            initials: "ОС",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Прекрасний волшебник був, Альона. Просто прекрасний",
+            identity:
+              "Учасниця Zoom-сесії. Природний домінуючий тон — Чарівник (рідкість серед учасниць).",
+            status: "full",
+            quotes: [
+              {
+                text: "О, от це прекрасний волшебник був, Альона. Просто прекрасний",
+                ref: "C-l08-068",
+              },
+              { text: "Не такі етичні, як Олена", ref: "transcript 02:07:01" },
+              {
+                text: "Ми запланували зробити колаборацію з Оленою Сідок, і якраз ви даєте домашнє завдання",
+                ref: "C-l08-125",
+              },
+            ],
+            strengths: [
+              "Природний домінуючий тон — Чарівник (рідкість серед учасниць)",
+              "Висока етичність — Денис використав твоє ім’я як приклад",
+              "Виходила волонтером — мотивація своя, не з зобов’язання",
+              "Бачить трансфер структур у Instagram-маркетинг — «стільки класних структур, котрі підходять і під прогрів, і під сторітелл, і під карусель, під рілс»",
+            ],
+            grow_area:
+              "Денис у L3 рекомендував: СОЛО ефір для домашки замість парного з Наталією [C-l08-117]. Не тому що щось не так з партнерством — а щоб ти могла тренувати СВОЮ структуру самостійно перш ніж колаборувати.",
+            exercises: [
+              {
+                code: "ex-11 L3",
+                desc: "Тон у Живому колі (40 хв) — твій природний Чарівник + інші 3 тони послідовно",
+              },
+              {
+                code: "ex-02 L3",
+                desc: "Домашка живий ефір 15-25 хв (90 хв з підготовкою) — соло, як Денис рекомендував",
+              },
+              {
+                code: "ex-15 L3",
+                desc: "Рефлексія головного завдання оратора (5 хв) — кріпити твою чарівникову візію",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Ти вже володієш ВЛАДНИМ тоном Чарівника, у «Глибині Героя» це переростає у повну палітру 4 архетипів. Денис прямо назвав тебе «прекрасний волшебник» — це означає, що у його персональній роботі з тобою буде кайфово, бо стартовий рівень високий.",
+            },
+            yurii_tools: [
+              "AI-аналіз твого Live-ефіру за Бутерброд-протоколом",
+              "Карта 4 архетипів — твої налаштування Чарівник → Мудрець → Воїн → Друг",
+            ],
+          },
+          {
+            slug: "snizhana",
+            name: "Сніжана",
+            initials: "С",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Конгруентність = щирість = харизма. ТИ ПЕРША це артикулювала",
+            identity:
+              "Коуч «реальних змін» (бере відповідальність за результати клієнта), бізнес-вуменша, викладач Львівської політехніки.",
+            status: "full",
+            quotes: [
+              {
+                text: "Абсолютно, благодарю, Сніжана, просто прекрасно сказали. Це саме про ту конгруєнтність",
+                ref: "C-l05-017",
+              },
+              {
+                text: "Коли ти услишала фразу професора нашого українського Олега Чабана... мені дуже перегукується з тою концепцією",
+                ref: "C-l05-029",
+              },
+              {
+                text: "Структура питання-відповідь-доказ. Це її проявленість, її цінність",
+                ref: "C-l08-055",
+              },
+            ],
+            strengths: [
+              "Конгруентність як ядро харизми — ТИ ПЕРША артикулювала це в L1",
+              "Цитаційна культура (Олег Чабан + готовність зробити Арку Героя на ходу)",
+              "Сильна структура питання-відповідь-доказ у захисті его",
+              "Глибокі цінності — «бажання жити серед щасливих, успішних і драйвових людей»",
+              "Швидке мислення — у warmup вже видавала готову Арку",
+            ],
+            grow_area:
+              "Денис не дав явних зон росту. Ти — одна з найвпевненіших учасниць курсу. Якщо щось — продовжуй у вибраній траєкторії: Арка Героя під коуч-його сесії, конгруентність як ядро.",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "Арка Героя під коучингові сесії (твоя природна структура)",
+              },
+              {
+                code: "ex-конгруентність L1",
+                desc: "drill «один посил на виступ» (як ти вже інтуїтивно робиш)",
+              },
+              {
+                code: "ex-его-захист L3",
+                desc: "продовжуй питання-відповідь-доказ як свою структуру",
+              },
+            ],
+            denys_offer: {
+              title: "1-on-1 з Денисом — для МАЙСТЕР-рівня",
+              body: "Ти ймовірно вже готова до МАЙСТЕР-рівня у Дениса. «Глибина Героя» може бути для тебе повторенням того, що ти інтуїтивно знаєш. Краще варіант — 1-on-1 з Денисом для виходу на наступний рівень (книга? курс власний? публічний бренд?).",
+            },
+            yurii_tools: [
+              "AI-документація твоїх Арок Героя (для майбутньої книги/курсу)",
+              "ВЛАСНИК ПЕРСНЯ (€5469) — для повної архітектури твоєї експертності, оскільки ти вже на high level",
+            ],
+          },
+          {
+            slug: "yuliia-nutritsiolog",
+            name: "Юлія (нутриціолог)",
+            initials: "Ю",
+            lessons: "L2 + L3",
+            headline_quote:
+              "PA 9/10 — мудро вибираєш ідеальну аудиторію для тренування",
+            identity:
+              "Сертифікований нутриціолог, провела медитацію впевненості у виступі (L2). PA 9/10 при виступі про ранкові ритуали.",
+            status: "full",
+            quotes: [
+              {
+                text: "Во-первых, я сразу поняла про що виступление, ты сразу попала в боль конкретной аудитории, ты сразу начала взаимодействовать с аудиторией, ее включила в моменте 30-40 секунд, яркое сильное начало, начало прям супер яркое",
+                ref: "C-l07-070",
+              },
+              {
+                text: "Юлія молодець, вона вже запостила рілс по AIDA. Коли встигла Юлія? Умничка, молодець",
+                ref: "C-l08-091",
+              },
+              {
+                text: "Подержите Юлію. Давайте похлопаємо. А то в залі ж ми хлопаємо, коли людина починає. А тут вона сама сидить на стресі",
+                ref: "C-l07-076",
+              },
+            ],
+            strengths: [
+              "PA 9/10 — мудро вибираєш ідеальну аудиторію для тренування",
+              "Яскравий початок виступу — Денис: «супер яркий, експертність відчувається»",
+              "Real-time application — запостила рілс по AIDA одразу під час лекції",
+              "Виконавча — «8 березня пригласили — не задумалася ні на хвилину»",
+              "Поддержка інших — підтримала Анну у L3: «люди йдуть на особистість, Ань»",
+            ],
+            grow_area:
+              "Антипатерн «починаю з оправдань» — Денис прямо. Кульмінація просіла, енергія в кінці впала (L2 виступ про ранки). Сегментуєш аудиторію («ходять в зал» vs «домашні») — забанила частину (Василь засвідчив). Лікувальний лайфхак — слайди-як-структура — Денис прямо підтвердив, що це робить виступ легшим.",
+            exercises: [
+              {
+                code: "ex-Бутерброд L2",
+                desc: "переробити self-feedback (без оправдань)",
+              },
+              {
+                code: "ex-кульмінація L2",
+                desc: "drill «енергія в кінці» (не просідати)",
+              },
+              {
+                code: "ex-real-time L3",
+                desc: "продовжуй слайди-як-структуру + публікації одразу під час уроку",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій рівень publish-готовності вже видно (рілс одразу). У «Глибині Героя» це переростає в твою власну експертну тему (самоцінність, кордони, опори — твоя ж формулювання). Як нутриціолог ти знаєш — але твоя справжня тема глибша.",
+            },
+            yurii_tools: [
+              "AI-аналіз кульмінацій твоїх виступів — конкретні таймкоди де енергія просідає",
+              "МАЙСТЕРНЯ Mastermind — груповий формат де можна тестувати темпи виступу",
+            ],
+          },
+          {
+            slug: "yuliia-kravchuk",
+            name: "Юлія Кравчук",
+            initials: "ЮК",
+            lessons: "L2 + L3",
+            headline_quote: "Денис прямо: «Браво! Ось це мудрець!»",
+            identity:
+              "Учасниця L2 + L3. У L2 — давала фідбек Василю. У L3 — Денис використав твій drill як приклад «спікер передає СТАН».",
+            status: "full",
+            quotes: [
+              {
+                text: "Я добіг до кінця і зрозумів, що межі існують тільки в голові... І ще раз, мудрець, трохи медленніше, ще більше паузи... Ось це мудрець! Браво!",
+                ref: "C-l08-072",
+              },
+              {
+                text: "Хто ще хоче поділитися відповідальною зв’язкою про Василя? Давайте Юлія Кравчук",
+                ref: "L2 transcript 59:04",
+              },
+            ],
+            strengths: [
+              "Природний мудрець — Денис прямо «Браво!»",
+              "Здатна перемикати темп у середині фрази — це важко для пограничних типів",
+              "Активна в дисципліні фідбеку",
+            ],
+            grow_area:
+              "Денис не дав явних мінусів. Якщо щось — продовжуй у мудреці, експериментуй з темпом (медленніше = глибше).",
+            exercises: [
+              {
+                code: "ex-tempo L3",
+                desc: "drill «одна фраза в різних темпах»",
+              },
+              { code: "ex-mudrets L3", desc: "drill «мудрець з паузами»" },
+              {
+                code: "ex-Бутерброд L2",
+                desc: "продовжуй чесний peer-фідбек (це твоя сильна сторона)",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій природний мудрець потребує матеріалу. У «Глибині Героя» ти отримуєш 4 елементи глибини героя як інструменти для контенту.",
+            },
+            yurii_tools: [
+              "AI-фіксація твоїх Бутерброд-фідбеків (як база для майбутнього курсу)",
+              "4-архетипи drill — тренування переходу мудрець → інші 3",
+            ],
+          },
+          {
+            slug: "vasyl",
+            name: "Василь",
+            initials: "В",
+            lessons: "L2 + L3",
+            headline_quote: "Регулярна практика — 4 виступи МЧП за 2 тижні",
+            identity:
+              "Учасник L2 + L3. Виступав партнером з Аліною Велігіною 1 березня в МЧП (live, офлайн).",
+            status: "full",
+            quotes: [
+              {
+                text: "Какие у кого есть инсайти пока что по виступленню по темі Василія, Дневник Благодарності",
+                ref: "C-l07-077",
+              },
+              {
+                text: "Загалом мав два виступи в МЧП. Завтра теж маю виступ, післязавтра. Найбільше, що мені запам’яталося, це починати з класного хуку. Оце всі ми недолюблені, і пішло-поїхало",
+                ref: "C-l08-052",
+              },
+            ],
+            strengths: [
+              "Регулярна практика — 4 виступи за 2 тижні (МЧП-актив)",
+              "Запам’ятав хук «недолюблені» з L1 і застосував",
+              "Активно дає live-фідбек — корисний голос в аудиторії",
+            ],
+            grow_area:
+              "Темп виступу — Валерія сказала «швидкий», Денис уточнив: причина в адресаті, а не у темпі. L3: не вмієш продавати послугу у фіналі виступу — це маркетингова проблема, не ораторська. Денис: «Можна через ораторське це легше створити». Міксуєш сегментацію аудиторії з критикою — треба X→Y→Z формула.",
+            exercises: [
+              {
+                code: "ex-PA L2",
+                desc: "тренувати конкретного адресата (не темп — а кому говориш)",
+              },
+              {
+                code: "ex-XYZ L2",
+                desc: "формула конструктивної критики (тренувати на партнерах)",
+              },
+              {
+                code: "ex-Sales L3",
+                desc: "продаж послуги через ораторське (перші слайди продаж — теж сторітелл)",
+              },
+            ],
+            denys_offer: {
+              title: "МАЙСТЕРНЯ-формат",
+              body: "Твій профіль — кейс для МАЙСТЕРНЯ-формату, де ти отримуєш peer-feedback від інших мотивованих практиків. «Глибина Героя» — теж добре, але групова динаміка для тебе важливіша за персональну.",
+            },
+            yurii_tools: [
+              "AI-аналіз твоїх 4 виступів МЧП — паттерни що повторюються",
+              "Юрієва підтримка через Detective FM для маркетингу-як-наслідку-ораторства",
+            ],
+          },
+          {
+            slug: "olha-bohdanovska",
+            name: "Ольга Богдановська",
+            initials: "ОБ",
+            lessons: "L1 + L3",
+            headline_quote:
+              "Чесний intro — не приховуєш величезний страх проявленості",
+            identity:
+              "Соучередитель сімейного рибоконсервного виробництва. Навчається коучингу.",
+            status: "full",
+            quotes: [
+              {
+                text: "Ольга, дякую, дякую. Чувствую і розумію. Дякую",
+                ref: "L1 transcript 13:33",
+              },
+              {
+                text: "Так, дійсно, ми інтуїтивно її і використовуємо, бо вона абсолютно адекватна, зріла",
+                ref: "C-l08-105",
+              },
+            ],
+            strengths: [
+              "Інтуїтивно вже використовуєш структури в житті — це показник «здорової емпатії»",
+              "Чесний intro — не приховуєш величезний страх проявленості, ком в горлі (≠ оправдання)",
+            ],
+            grow_area:
+              "Величезний страх проявленості перед незнайомою аудиторією. Не реалізовуєш внутрішній голос «помагати людям». Лікується через ex-04 L1 (5 повторів на камеру) + ex-PA L2 (один безпечний адресат).",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру (трансформувати страх через repetition)",
+              },
+              {
+                code: "ex-12 PA L2",
+                desc: "один безпечний адресат для зняття страху",
+              },
+              {
+                code: "ex-15 L3",
+                desc: "рефлексія «для чого я хочу проявлятися» (твій внутрішній голос)",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Твій страх проявленості і конфлікт «бізнес-родина / помагати людям» — це центральна тема «Глибини Героя». Денис прямо у цьому курсі працює з 4 елементами (хто я · де я · мої закони · що для мене щастя), що знімає такі ступор-блоки.",
+            },
+            yurii_tools: [
+              "Перша сесія Detective FM (€39) для зняття страху перед першим публічним виступом",
+            ],
+          },
+          {
+            slug: "iryna",
+            name: "Ірина",
+            initials: "І",
+            lessons: "L1",
+            headline_quote: "Фокус на скептиках руйнує впевненість",
+            identity:
+              "Учасниця L1. Денис прийняв як клінічний приклад патерну «фокус на скептиках руйнує впевненість».",
+            status: "partial",
+            quotes: [
+              {
+                text: "Я почала працювати на скептиків... типу вразь мене, і я хотіла їх вразити. І через то цей збій пішов в впевненості у виступах офлайн",
+                ref: "C-l05-094",
+              },
+            ],
+            strengths: [
+              "Самосвідомість — артикулюєш свій патерн чітко",
+              "Готова до self-correction (це сильна сторона)",
+            ],
+            grow_area:
+              "Ловити себе на «вразь мене» думці; повертати у класифікацію аудиторії (5-10% скептиків — не твій клієнт).",
+            exercises: [
+              {
+                code: "ex-аудиторії L1",
+                desc: "класифікація аудиторії 5-10% скептиків vs твій клієнт",
+              },
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру для відновлення впевненості",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом (у форматі 1-on-1 або «Глибина Героя») дасть більше, ніж обмежені дані з курсу.",
+            },
+            yurii_tools: [
+              "AI-аналіз твоїх виступів для відстеження «фокусу на скептиках»",
+            ],
+          },
+          {
+            slug: "svitlana",
+            name: "Світлана",
+            initials: "Св",
+            lessons: "L1",
+            headline_quote: "25 років в бізнесі, оборот понад мільярд",
+            identity: "25 років в бізнесі, оборот понад мільярд.",
+            status: "partial",
+            quotes: [
+              {
+                text: "Ті люди, які щось хочуть тебе запитати, на що ти не маєш для них відповіді",
+                ref: "C-l05-103",
+              },
+            ],
+            strengths: [
+              "High-status position — 25 років бізнесу",
+              "Здатна формулювати тонкі питання про скептиків",
+            ],
+            grow_area:
+              "Денис: відповідь тільки для своїх. Не намагатися переконувати скептиків. Класифікація аудиторії працює навіть на high-status рівні.",
+            exercises: [
+              {
+                code: "ex-аудиторії L1",
+                desc: "класифікація аудиторії — твої клієнти, а не скептики",
+              },
+            ],
+            denys_offer: {
+              title: "1-on-1 з Денисом",
+              body: "Твій рівень high-status — особистий розбір 1-on-1 з Денисом буде ефективніший за груповий курс.",
+            },
+            yurii_tools: [
+              "AI-документація твоїх виступів — для майбутніх публікацій/книги",
+            ],
+          },
+          {
+            slug: "oksana",
+            name: "Оксана",
+            initials: "О",
+            lessons: "L1",
+            headline_quote:
+              "Зроби без перфекціонізму, на конкретиці знайдемо рішення",
+            identity:
+              "Учасниця L1. 3 практичні питання (планшет, мостик до теми, лайфхаки).",
+            status: "partial",
+            quotes: [
+              {
+                text: "Зроби без перфекціонізму, на конкретиці знайдемо рішення",
+                ref: "C-l05-097",
+              },
+            ],
+            strengths: [
+              "3 практичні питання за один урок — operationally-minded",
+              "Готова до експериментів",
+            ],
+            grow_area:
+              "5 повторів на камеру → текст стає твоїм. Антидот перфекціонізму — Денисів наскрізний меседж.",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру → текст стає твоїм",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+            yurii_tools: ["AI-аналіз твоїх 5 повторів — відстеження зростання"],
+          },
+          {
+            slug: "viktoriia",
+            name: "Вікторія",
+            initials: "Вк",
+            lessons: "L1",
+            headline_quote: "Запит на українську ораторську практику",
+            identity: "Учасниця L1. Запит на українську ораторську практику.",
+            status: "partial",
+            quotes: [{ text: "Послідовно вистроїмо", ref: "L1 warmup" }],
+            strengths: [
+              "Двомовна практика",
+              "Запит на конкретну українську дисципліну",
+            ],
+            grow_area:
+              "Артикуляція + словниковий запас (паралельно практика двома мовами).",
+            exercises: [
+              {
+                code: "ex-артикуляція",
+                desc: "тренування дикції в обох мовах",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+            yurii_tools: ["AI-аналіз твоїх виступів — порівняння двох мов"],
+          },
+          {
+            slug: "valeriia",
+            name: "Валерія",
+            initials: "Вл",
+            lessons: "L2",
+            headline_quote: "Активний фідбек, читала Куніна",
+            identity:
+              "L2 — активний фідбек, читала Куніна. Денис ставив питання їй (PA 0-10).",
+            status: "partial",
+            quotes: [{ text: "Швидкий темп", ref: "L2 feedback" }],
+            strengths: [
+              "Активна у дисципліні peer-фідбеку",
+              "Літературна культура (читала Куніна)",
+            ],
+            grow_area:
+              "Копати глибше за наслідок при фідбеку («швидкий темп» — наслідок чого?).",
+            exercises: [
+              {
+                code: "ex-Бутерброд L2",
+                desc: "фідбек з причиною, не лише наслідком",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+            yurii_tools: ["AI-Бутерброд протокол для peer-фідбеку"],
+          },
+          {
+            slug: "uliana",
+            name: "Ульяна",
+            initials: "Ул",
+            lessons: "L3",
+            headline_quote: "Drill «друг → воїн без агресії»",
+            identity: "L3 drill друг → воїн з агресією.",
+            status: "partial",
+            quotes: [
+              {
+                text: "Тут може бути агресія, прямо віддільний тренінг — як говорити тоном воїна без агресії",
+                ref: "C-l08-064",
+              },
+            ],
+            strengths: [
+              "Готовність до drill’у переключення тонів",
+              "Висока активність у L3",
+            ],
+            grow_area:
+              "Окремий тренінг «воїн без агресії» (любов у серці як основа, не агресія).",
+            exercises: [
+              {
+                code: "ex-tone-warrior L3",
+                desc: "drill «воїн з любов’ю у серці»",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+            yurii_tools: ["AI-аналіз тону Воїна у твоїх виступах"],
+          },
+          {
+            slug: "yuliia-numerolog",
+            name: "Юлія (нумеролог)",
+            initials: "Юн",
+            lessons: "L1",
+            headline_quote:
+              "Парадокс — в структурі мало мене, без структури — потік несе",
+            identity:
+              "L1 warmup. Запит про парадокс «в структурі мало мене, без структури — потік несе».",
+            status: "partial",
+            quotes: [
+              {
+                text: "3-5 повторів на камеру → структура стає внутрішньою",
+                ref: "C-l05-Denys-response",
+              },
+            ],
+            strengths: [
+              "Артикулює тонкий парадокс структури",
+              "Здатна до self-reflection",
+            ],
+            grow_area: "3-5 повторів на камеру → структура стає внутрішньою.",
+            exercises: [
+              {
+                code: "ex-04 L1",
+                desc: "5 повторів на камеру до інтерналізації",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж обмежені дані з курсу.",
+            },
+            yurii_tools: [
+              "AI-фіксація твоїх повторів на камеру — progress tracking",
+            ],
+          },
+          {
+            slug: "masha",
+            name: "Маша",
+            initials: "М",
+            lessons: "L1",
+            headline_quote: "Ти була з нами — привітання класу",
+            identity: "Учасниця L1 у списку 9 студенток фінального шерингу.",
+            status: "mention",
+            quotes: [
+              {
+                text: "Без окремого фідбеку — привітання класу",
+                ref: "C-l05-082",
+              },
+            ],
+            strengths: ["Присутність у класі — частина групової динаміки"],
+            grow_area:
+              "Без розгорнутих даних — особистий розбір з Денисом дасть більше.",
+            exercises: [
+              { code: "ex-04 L1", desc: "5 повторів на камеру для старту" },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж mention-only згадка.",
+            },
+            yurii_tools: ["AI-аналіз твого першого виступу"],
+          },
+          {
+            slug: "krystyna",
+            name: "Кристина",
+            initials: "Кр",
+            lessons: "L1",
+            headline_quote:
+              "Цитата актриси — не «винайдені» скептики, у них травматичний патерн",
+            identity:
+              'L1. Денис прийняв цитату як: «не "винайдені" скептики, у них травматичний патерн поведінки».',
+            status: "mention",
+            quotes: [
+              {
+                text: "Якщо ти бачиш людину, якому потрібно щось пояснити, то пояснити не треба. Це не твій чоловік",
+                ref: "C-l05-041",
+              },
+            ],
+            strengths: [
+              "Цитаційна культура — Денис прийняв цитату",
+              "Здатна формулювати тонко",
+            ],
+            grow_area: "Продовжуй цитаційну культуру — це твоя сильна сторона.",
+            exercises: [
+              {
+                code: "ex-цитати L1",
+                desc: "збирати цитати-якорі під свої виступи",
+              },
+            ],
+            denys_offer: {
+              title: "«Глибина Героя» 44-й потік",
+              body: "Особистий розбір з Денисом дасть більше, ніж mention-only згадка.",
+            },
+            yurii_tools: [
+              "AI-картотека твоїх цитат — система для майбутніх виступів",
+            ],
+          },
+        ];
+
+        const YURII = {
+          slug: "yurii-dovhan",
+          name: "Юрій Довган",
+          initials: "ЮД",
+          lessons: "L1 + L2 + L3",
+          headline_quote:
+            "Дуже чіткий і впевнений чоловічий голос — тобі треба говорити",
+          identity: "Юрій Довган, учасник MCMM I потоку. Автор цього показу.",
+          status: "special",
+          quotes: [
+            {
+              text: "Юрій, дякую тобі. Дякую. Дякую. У тебе дуже чіткий і впевнений такий чоловічий голос. Тобі треба його використовувати. Я не знаю, чим ти займаєшся, але тобі треба говорити",
+              ref: "C-l07-074",
+            },
+            {
+              text: "Юрій, прекрасно. Я думаю, ми візьмемо ось цей відповідь як найближчий. Продати одну ідею мається вважати вдохновити слухача якомусь конкретному дію",
+              ref: "C-l08-002",
+            },
+            {
+              text: "Денис підтвердив метафору казино «щораз повишай ставку — точно виграєш»",
+              ref: "C-l08-007",
+            },
+          ],
+          strengths: [
+            "«Дуже чіткий і впевнений такий чоловічий голос» — Денис прямо",
+            "Здатність відформулювати ОДИН ідеальний концепт — «Продати одну ідею» = найточніша відповідь на головне питання L3",
+            "Готовність давати чесний фідбек — у L2 я сказав Денису «це було жахливо», і він прийняв це як корисний патерн",
+          ],
+          grow_area:
+            "Денис не дав явних зон росту (прихильний). У L2 він не знав, чим я займаюся — це натяк на упаковку публічного образу.",
+          exercises: [
+            {
+              code: "ex-голос L2",
+              desc: "продовжувати тренувати чоловічий тон Воїна+Авторитету",
+            },
+            {
+              code: "ex-публічна упаковка",
+              desc: "більше публічних виступів (як цей)",
+            },
+            {
+              code: "ex-AI-amplify",
+              desc: "AI-аналізатор моїх виступів (це я роблю в межах цього проекту)",
+            },
+          ],
+          denys_offer: {
+            title: "Інтеграція з Денисовим методом",
+            body: "Я інтегрую те, що навчив Денис, у Detective FM протокол: тріада хто/для кого/для чого як root-фрейм, 8 структур × 4 тони drill, Бутерброд-фідбек, ОДИН фокус × місяць як спорт.",
+          },
+          yurii_tools: [
+            "AI-skill «mcmm-oratorske» з 90/90 self-quiz accuracy — повторює фідбек Дениса",
+            "HTML SPA з 37 вправами + персональні карти для кожного учасника класу",
+          ],
+        };
+
+        const DENYS = {
+          slug: "denys-chernyshov",
+          name: "Денис Чернишов",
+          initials: "ДЧ",
+          lessons: "Лектор курсу",
+          headline_quote:
+            "Я не даю людям нові знання. Я нагадую людям те, що вони забули в хаосі багатозадачності",
+          identity:
+            "Лектор курсу MCMM «Ораторське мистецтво». Автор «Глибини Героя» (43 потоки). Студія «Тепло» (Одеса). «Годуй. Люби. Молись» — 4 роки безкоштовно годуєш ~100 людей/тиждень.",
+          status: "denys",
+          quotes: [
+            {
+              text: "Я не даю людям нові знання. Я нагадую людям те, що вони забули в хаосі багатозадачності",
+              ref: "C-l08-034",
+            },
+          ],
+          strengths: [
+            "11 годин contact-time → 361 atomic idea → 37 practical exercises",
+            "10 структур виступу: Арка Героя · 6+1 · AIDA · Ескалація · Живе коло · 3 контрасти · МРНП · З-В-Д · Шлях за 5 кроків · П-Р-П",
+            "4 тони голосу: Мудрець · Воїн · Друг · Чарівник",
+            "8 фокусів практики на 8 місяців прицільної дисципліни",
+            "5 концептуальних осей: стан > слова · тріада хто/для кого/для чого · структура+тон=магнетизм · антидот перфекціонізму · тільки правда дає присутність",
+          ],
+          grow_area: "",
+          exercises: [],
+          denys_offer: null,
+          yurii_tools: [],
+          gratitude: {
+            authentic_markers: [
+              "«Годуй. Люби. Молись» — 4 роки безкоштовно годуєш ~100 людей/тиждень на вулицях Одеси",
+              "43 потоки курсу «Глибина Героя» — soc proof не від маркетингу, а від людей які повертаються",
+              "Студія медитацій «Тепло» (Одеса) — стабільний фізичний бізнес на присутності",
+              "Це не контент-маркетинг — це людина, яка живе тим, чого вчить про правду",
+            ],
+            thanks_for: [
+              "43 потоки «Глибина Героя» — і ми у одному з них",
+              "4 роки «Годуй. Люби. Молись» — людина, яка живе тим, чого вчить",
+              "Студію «Тепло»",
+              "Цей курс",
+            ],
+          },
+        };
+
+        const SPEECH_SECTIONS = [
+          {
+            title: "1. HOOK",
+            duration: "45 сек",
+            tone: "ДРУГ",
+            text: "Колеги. Ми пройшли разом 11 годин з Денисом. Три уроки. L1 «Основи», L2 «Голос лідера», L3 «Сила присутності». Це багато. У мене у голові вже починає блякнути половина того, що було на першому уроці. Кому ще так? <em>(пауза)</em> AI у мене не блякне ніколи. AI запам’ятав за нас все. Я хочу показати — що з цього вийшло.",
+            annotation:
+              "Чому ДРУГ — входимо тепло, нікого не загвинчуємо. Денисів же принцип — стан > слова.",
+          },
+          {
+            title: "2. DEMO",
+            duration: "2 хв 30 сек",
+            tone: "ЧАРІВНИК",
+            text: 'Я взяв всі 3 уроки. AI прочитав 11 годин транскриптів, 361 atomic ідею, всі ваші питання у чаті, всі ваші виступи, всі фідбеки Дениса. І для кожного з нас зробив <strong>персональну карту</strong>.<br><br>Дивіться як вона виглядає. Ось карта Аліни. <span class="speech-stage-direction">[клік]</span><br><br>Що Денис побачив у ній — три verbatim цитати з курсу: про Арку Героя кицькі, про паузу перед стартом, про «обирай свого спеціаліста». Сильні сторони — природна Арка Героя в impromptu. Зона росту — не казати «я не готувалась». Наступні кроки — ex-Бутерброд, ex-04 повтори на камеру, ex-15 живі ефіри. І якщо хочеш глибше з Денисом — «Глибина Героя» 44-й потік.<br><br>Ось карта Лери. <span class="speech-stage-direction">[клік]</span><br><br>Денис сказав про неї — «у неї неподдільна правда в голосі, авторитетно, аристократично. З мінусів я нічого не виписав. Немає там сира, зелені, салату». <strong>Нуль мінусів.</strong> За весь курс — Лера єдина. Її наступний крок — не сідай голос вниз у кінці фрази. І Денис рекомендує — стандартний курс тобі не треба, краще 1-on-1 з ним персонально.<br><br>Ось карта Катерини. <span class="speech-stage-direction">[клік]</span><br><br>Дитячий психолог. «Прекрасна, проста, аутентична природа. Коли немає доспіхів — я теж знімаю доспіхи, проникаюся, хочу слухати». Зона росту — імпатичність без захисту, навчитися знімати доспіхи в гостя, але не пропускати у себе. Денис відмітив її як один з трьох найсильніших виступів за весь курс.<br><br><em>(швидко 2 ще карти — Олена Сідок «прекрасний волшебник», Сніжана «конгруентність як ядро харизми»)</em><br><br>Кожна карта — це 3 verbatim цитати Дениса про тебе. Твої сильні сторони. Твоя зона росту. Три конкретні наступні вправи з 37. І рекомендація — куди далі з Денисом.',
+            annotation:
+              "Чому ЧАРІВНИК — показ майбутнього через конкретику. Демонстрація як в L3 — «слухач сприймає тон, не текст».",
+          },
+          {
+            title: "3. REVEAL",
+            duration: "1 хв",
+            tone: "МУДРЕЦЬ",
+            text: 'А ще я зробив одну особливу карту. <strong>Денису.</strong> Бо це 11 годин — і AI запам’ятав їх за нас.<br><br><span class="speech-stage-direction">[клік на карту Дениса]</span><br><br>361 atomic ідея. 37 practical exercises. 5 концептуальних осей: стан > слова, тріада хто/для кого/для чого, структура + тон = магнетизм, антидот перфекціонізму, тільки правда дає присутність. 10 структур виступу. 4 тони голосу. 8 фокусів на 8 місяців.<br><br>Це не контент-маркетинг. Це людина, яка живе тим, чого вчить. <em>«Годуй. Люби. Молись»</em> — 4 роки безкоштовно годуєш ~100 людей на тиждень. Студія <em>«Тепло»</em>. 43 потоки <em>«Глибини Героя»</em>. Це аутентичність, яку AI згенерувати не може.',
+            annotation:
+              "Чому МУДРЕЦЬ — системна reveal. Денис у L3 говорив про парадокс GPT-епохи — «я не даю нові знання, я нагадую забуте». Цей момент — про вагу слова в епоху AI-шуму.",
+          },
+          {
+            title: "4. ЗАКРИТТЯ",
+            duration: "45 сек",
+            tone: "ДРУГ → ЧАРІВНИК",
+            text: "Це подарунок класу. <strong>Кожен з вас отримає свою карту після виступу — лінк у нашому чаті.</strong> Денису — окрема подяка за цей курс.<br><br>Що далі — у вашій карті є: 44-й потік «Глибини Героя», 1-on-1 коучинг з Денисом для тих, хто на високому рівні, «Тепло», «Годуй люби молись». Це <strong>центр.</strong><br><br>Якщо комусь корисні AI-інструменти поруч з Денисом — AI-аналіз вашого відео, Detective FM-сесія, МАЙСТЕРНЯ — я <strong>поряд</strong>. Не замість.<br><br>Дякую.",
+            annotation:
+              "Чому ДРУГ → ЧАРІВНИК — запрошення, не заклик-продаж. Закриття на «дякую» — тепло, не «купуйте». Денис у залі — Юрій — амбасадор, не competitor.",
+          },
+        ];
+
+        const ALL_CARDS = [...PARTICIPANTS, YURII, DENYS];
+
+        // ========== HELPERS ==========
+        function escHtml(s) {
+          return String(s).replace(/[&<>"']/g, function (c) {
+            return {
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            }[c];
+          });
+        }
+
+        function findBySlug(slug) {
+          return ALL_CARDS.find((c) => c.slug === slug);
+        }
+
+        function getStatusLabel(status) {
+          return (
+            {
+              full: "Повна карта",
+              partial: "Коротка карта",
+              mention: "Згадка",
+              special: "Автор показу",
+              denys: "Лектор курсу",
+            }[status] || status
+          );
+        }
+
+        function getStatusClass(status) {
+          return status === "full" ? "full" : "";
+        }
+
+        // ========== VIEW: HOME ==========
+        function renderHome() {
+          const fulls = PARTICIPANTS.filter((p) => p.status === "full");
+          const partials = PARTICIPANTS.filter((p) => p.status === "partial");
+          const mentions = PARTICIPANTS.filter((p) => p.status === "mention");
+
+          return `
+      <section class="hero">
+        <h1>11 годин лекцій.<br>361 ідея. 37 практик.</h1>
+        <p class="hero-subtitle">Те що ми починаємо забувати — AI запам’ятав за нас.</p>
+        <p class="hero-dedication">Денису — від класу. З вдячністю.</p>
+        <p class="hero-lead">
+          Ми пройшли разом 3 уроки — L1 «Основи», L2 «Голос лідера», L3 «Сила присутності». Денис відкрив нам інтегровану дисципліну, де тіло актора, психіка психолога, душа наставника і дія спортивного психолога зливаються в одну простоту: <strong>прибрати все, що між тобою і твоєю правдою.</strong> Я взяв транскрипти всіх 3 уроків, прогнав через AI, витягнув кожне ім’я, кожну цитату, кожен фідбек Дениса. Для кожного з нас — персональна карта. Для Дениса — окрема. Це наш спільний пам’ятник цьому курсу.
+        </p>
+        <div class="hero-cta">
+          <a href="#cards" class="btn btn-primary" onclick="document.getElementById('cards').scrollIntoView({behavior:'smooth'}); return false;">Перейти до карт ↓</a>
+          <a href="#/offer" class="btn btn-secondary">Подивитись оффер</a>
+        </div>
+        <div class="stats-bar">
+          22 учасники · 12 повних карт · 7 коротких · карта Дениса · карта Юрія
+        </div>
+      </section>
+
+      <section id="cards">
+        <h2 class="section-heading">Учасники MCMM I потоку</h2>
+        <div class="participants-grid">
+          ${fulls.map((p) => renderParticipantCard(p)).join("")}
+        </div>
+
+        <h2 class="section-heading" style="margin-top:64px;">Часткові карти</h2>
+        <div class="participants-grid">
+          ${partials.map((p) => renderParticipantCard(p)).join("")}
+        </div>
+
+        <h2 class="section-heading" style="margin-top:64px;">Згадки класу</h2>
+        <div class="participants-grid">
+          ${mentions.map((p) => renderParticipantCard(p)).join("")}
+        </div>
+      </section>
+
+      <section style="margin-top:96px;">
+        <h2 class="section-heading">Окремі карти</h2>
+
+        <div class="special-block" onclick="window.location.hash='#/focus/${DENYS.slug}'" role="link" tabindex="0" aria-label="Картка Дениса Чернишова">
+          <h3>${escHtml(DENYS.name)} — Лектор курсу</h3>
+          <p>${escHtml(DENYS.identity)}</p>
+          <p class="pull-quote">«${escHtml(DENYS.headline_quote)}»</p>
+        </div>
+
+        <div class="special-block" onclick="window.location.hash='#/focus/${YURII.slug}'" role="link" tabindex="0" aria-label="Картка Юрія Довгана">
+          <h3>${escHtml(YURII.name)} — Автор цього показу</h3>
+          <p>${escHtml(YURII.identity)}</p>
+          <p class="pull-quote">«${escHtml(YURII.headline_quote)}»</p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        Це SPA-демо побудоване на 361 atomic claim з 11 годин лекцій Дениса.<br>
+        Усі цитати — verbatim з курсу. AI = синтез, не вигадка.
+      </footer>
+    `;
+        }
+
+        function renderParticipantCard(p) {
+          return `
+      <article class="participant-card" onclick="window.location.hash='#/focus/${p.slug}'" role="link" tabindex="0" aria-label="Картка ${escHtml(p.name)}">
+        <div class="participant-avatar" aria-hidden="true">${escHtml(p.initials)}</div>
+        <h3 class="participant-name">${escHtml(p.name)}</h3>
+        <p class="participant-lessons">${escHtml(p.lessons)}</p>
+        <p class="participant-quote">«${escHtml(p.headline_quote)}»</p>
+        <span class="participant-tag ${getStatusClass(p.status)}">${escHtml(getStatusLabel(p.status))}</span>
+      </article>
+    `;
+        }
+
+        // ========== VIEW: FOCUS ==========
+        function renderFocus(slug) {
+          const p = findBySlug(slug);
+          if (!p) {
+            return `
+        <div class="focus-view">
+          <a href="#/home" class="back-link">← Назад до всіх карт</a>
+          <div class="focus-section">
+            <h2>Карту не знайдено</h2>
+            <p>Учасника з ідентифікатором <code>${escHtml(slug)}</code> не існує.</p>
+          </div>
+        </div>
+      `;
+          }
+
+          // Find prev/next in PARTICIPANTS (plus YURII + DENYS at end)
+          const list = [...PARTICIPANTS, YURII, DENYS];
+          const idx = list.findIndex((x) => x.slug === slug);
+          const prev = idx > 0 ? list[idx - 1] : null;
+          const next = idx < list.length - 1 ? list[idx + 1] : null;
+
+          let denysSection = "";
+          if (p.denys_offer) {
+            denysSection = `
+        <section class="focus-section">
+          <h2>Якщо хочеш глибше з Денисом</h2>
+          <div class="denys-offer-card">
+            <h4>${escHtml(p.denys_offer.title)}</h4>
+            <p>${escHtml(p.denys_offer.body)}</p>
+          </div>
+        </section>
+      `;
+          }
+
+          let yuriiSection = "";
+          if (p.yurii_tools && p.yurii_tools.length > 0) {
+            yuriiSection = `
+        <details class="yurii-tools">
+          <summary>AI-інструменти Юрія (опціонально, поряд)</summary>
+          <div class="yurii-tools-body">
+            <p>Не заміна Денису — підсилювач для домашньої практики:</p>
+            <ul>${p.yurii_tools.map((t) => `<li>${escHtml(t)}</li>`).join("")}</ul>
+          </div>
+        </details>
+      `;
+          }
+
+          let denysGratitudeSection = "";
+          if (p.gratitude) {
+            denysGratitudeSection = `
+        <section class="focus-section">
+          <h2>Маркер аутентичности — те, що ми побачили</h2>
+          <ul class="strengths-list">
+            ${p.gratitude.authentic_markers.map((m) => `<li>${escHtml(m)}</li>`).join("")}
+          </ul>
+        </section>
+        <section class="focus-section">
+          <h2>Дякуємо за</h2>
+          <ul class="strengths-list">
+            ${p.gratitude.thanks_for.map((m) => `<li>${escHtml(m)}</li>`).join("")}
+          </ul>
+        </section>
+      `;
+          }
+
+          let growSection = "";
+          if (p.grow_area) {
+            growSection = `
+        <section class="focus-section">
+          <h2>Зона росту</h2>
+          <p class="grow-area">${escHtml(p.grow_area)}</p>
+        </section>
+      `;
+          }
+
+          let exercisesSection = "";
+          if (p.exercises && p.exercises.length > 0) {
+            exercisesSection = `
+        <section class="focus-section">
+          <h2>3 наступні кроки практики</h2>
+          <ol class="exercises-list">
+            ${p.exercises.map((e) => `<li><span class="exercise-code">${escHtml(e.code)}</span> — ${escHtml(e.desc)}</li>`).join("")}
+          </ol>
+        </section>
+      `;
+          }
+
+          return `
+      <div class="focus-view">
+        <a href="#/home" class="back-link" aria-label="Назад до всіх карт">← Назад до всіх карт</a>
+
+        <header class="focus-hero">
+          <div class="lesson-chip">${escHtml(p.lessons)}</div>
+          <h1>${escHtml(p.name)}</h1>
+          <p class="focus-identity">${escHtml(p.identity)}</p>
+        </header>
+
+        <section class="focus-section">
+          <h2>Що Денис побачив у тобі</h2>
+          ${p.quotes
+            .map(
+              (q) => `
+            <blockquote class="denys-quote">
+              <p>«${escHtml(q.text)}»</p>
+              <cite>[${escHtml(q.ref)}]</cite>
+            </blockquote>
+          `,
+            )
+            .join("")}
+        </section>
+
+        <section class="focus-section">
+          <h2>Сильні сторони</h2>
+          <ul class="strengths-list">
+            ${p.strengths.map((s) => `<li>${escHtml(s)}</li>`).join("")}
+          </ul>
+        </section>
+
+        ${growSection}
+
+        ${exercisesSection}
+
+        ${denysSection}
+
+        ${denysGratitudeSection}
+
+        ${yuriiSection}
+
+        <nav class="focus-nav" aria-label="Навігація між картами">
+          ${prev ? `<a href="#/focus/${prev.slug}" class="btn btn-secondary">← ${escHtml(prev.name)}</a>` : `<span></span>`}
+          ${next ? `<a href="#/focus/${next.slug}" class="btn btn-secondary">${escHtml(next.name)} →</a>` : `<span></span>`}
+        </nav>
+      </div>
+    `;
+        }
+
+        // ========== VIEW: OFFER ==========
+        function renderOffer() {
+          const heroGlybyna = [
+            "alina-velihina",
+            "anna",
+            "olena-sidok",
+            "yuliia-nutritsiolog",
+            "yuliia-kravchuk",
+            "nataliia",
+            "olha-bohdanovska",
+            "vasyl",
+          ];
+          const oneOnOne = [
+            "kateryna",
+            "lera-reznyk",
+            "anastasiia-vynohradova",
+            "snizhana",
+          ];
+
+          function renderRecommendedList(slugs) {
+            return slugs
+              .map((s) => {
+                const p = findBySlug(s);
+                if (!p) return "";
+                return `<li><a href="#/focus/${s}">${escHtml(p.name)}</a></li>`;
+              })
+              .join("");
+          }
+
+          return `
+      <section class="offer-hero">
+        <h1>Наступний крок з Денисом</h1>
+        <p>Це не cold sales. Це 4 опції, які Денис пропонує далі для тих, хто хоче глибше.</p>
+      </section>
+
+      <article class="offer-card">
+        <div class="offer-card-number">ОПЦІЯ 01</div>
+        <h2>«Глибина Героя» — 44-й потік</h2>
+        <p><strong>Що:</strong> Розширена особистісна робота з тріадою + Аркою Героя + 4 елементами глибини героя (хто я · де я · мої закони · що для мене щастя).</p>
+        <div class="offer-soc-proof">43 потоки → люди повертаються. Soc proof не від маркетингу, а від людей які повертаються знову.</div>
+        <h4 style="margin-top:24px;font-family:'Playfair Display',serif;font-size:18px;color:var(--ink-charcoal);">Для кого з нашого класу особливо:</h4>
+        <ul class="recommended-list">${renderRecommendedList(heroGlybyna)}</ul>
+        <div class="contact-block">КОНТАКТ: запитати у Дениса прямо на занятті або через Telegram</div>
+      </article>
+
+      <article class="offer-card">
+        <div class="offer-card-number">ОПЦІЯ 02</div>
+        <h2>1-on-1 коучинг з Денисом</h2>
+        <p>Персональний формат для тих, хто вже на високому рівні або має унікальний випадок, що не лікується груповим форматом.</p>
+        <h4 style="margin-top:24px;font-family:'Playfair Display',serif;font-size:18px;color:var(--ink-charcoal);">Для кого з нашого класу особливо:</h4>
+        <ul class="recommended-list">${renderRecommendedList(oneOnOne)}</ul>
+        <div class="contact-block">КОНТАКТ: через Дениса прямо</div>
+      </article>
+
+      <article class="offer-card">
+        <div class="offer-card-number">ОПЦІЯ 03</div>
+        <h2>Студія «Тепло» (Одеса)</h2>
+        <p>Якщо ти в Одесі або плануєш приїхати — physical practice присутності. Інтегрується з 8-фокусів каталогом — «сьогодні я треную ОДНУ якість».</p>
+        <div class="contact-block">КОНТАКТ: через Дениса або сторінку студії</div>
+      </article>
+
+      <article class="offer-card">
+        <div class="offer-card-number">ОПЦІЯ 04</div>
+        <h2>«Годуй. Люби. Молись»</h2>
+        <p>4 роки безкоштовно годуємо ~100 людей/тиждень. Якщо хочеш приєднатися як волонтер або підтримати фінансово — це шлях.</p>
+        <div class="offer-soc-proof">Це не пропозиція з курсу — це запрошення в практику Дениса.</div>
+      </article>
+
+      <hr class="offer-section-divider">
+
+      <section class="subdued-section">
+        <h2>AI-інструменти Юрія</h2>
+        <h3>Поряд, для тих кому корисно. Це не заміна курсу — це підсилювач.</h3>
+        <p style="text-align:center;max-width:720px;margin:0 auto 40px;font-size:15px;line-height:1.7;">
+          Я взяв курс Дениса і збудував AI-skill, що повторює фідбек Дениса на 90/90 self-quiz accuracy. Це підсилювач для тих, хто хоче AI-аналіз своїх виступів між сесіями з Денисом або у домашній практиці.
+        </p>
+
+        <div class="yurii-tools-grid">
+          <div class="yurii-tool-card">
+            <h4>AI-аналіз твого виступу</h4>
+            <p>Завантажуєш своє 5-10 хв відео → AI прогонить через 361 claim Денисової методології → видає фідбек у Бутерброд-стилі (визнання → точка росту → закріплення сили).</p>
+            <p style="margin-top:12px;"><strong>Окрема цінність:</strong> комерційні AI-аналізатори коштують $50-150 без прив’язки до конкретної методології.</p>
+          </div>
+
+          <div class="yurii-tool-card">
+            <h4>1-on-1 сесія Detective FM</h4>
+            <p>Не як заміна Денису. Як <strong>прикладний коучинг для практики</strong> того, що Денис вчить.</p>
+            <p style="margin-top:12px;">Перша сесія <strong>€39</strong> (двостороння фільтрація) → €300 разова → 3-міс / 6-міс пакети. Сесія 2 год ± 30 хв (повноцінна, не 15 хв діагностика).</p>
+          </div>
+
+          <div class="yurii-tool-card">
+            <h4>МАЙСТЕРНЯ Mastermind</h4>
+            <p>Груповий формат де peer-feedback ключовий. Для тих кому важлива групова динаміка.</p>
+            <p style="margin-top:12px;">€500-1500 залежно від наповнення. 12 місць на потік (груп. динаміка ламається після 12).</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        Центр оффера — Денис. Юрієві AI-інструменти — поряд, не замість.
+      </footer>
+    `;
+        }
+
+        // ========== VIEW: SPEECH ==========
+        function renderSpeech() {
+          return `
+      <div class="speech-view">
+        <a href="#/home" class="back-link" aria-label="Назад на головну">← Назад на головну</a>
+
+        <header style="text-align:center;margin-bottom:32px;">
+          <h1 style="color:var(--blood-wine);font-size:42px;">5-хв СКРИПТ ДЛЯ ВИСТУПУ</h1>
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--sepia-gold);">Структура: Hook → Demo → Reveal → Закриття · ~720 слів · 5 хв з 30-сек люфтом</p>
+        </header>
+
+        <div class="tone-diagram" role="region" aria-label="Тонова діаграма виступу">
+          ${SPEECH_SECTIONS.map(
+            (s) => `
+            <div class="tone-chip">
+              <div class="tone-label">${escHtml(s.tone)}</div>
+              <div class="tone-duration">${escHtml(s.duration)}</div>
+            </div>
+          `,
+          ).join("")}
+        </div>
+
+        <div class="speech-controls" role="region" aria-label="Контроли виступу">
+          <button class="control-btn" id="toggle-annotations" type="button" aria-pressed="false">Без анотацій</button>
+          <button class="control-btn" id="toggle-stage" type="button" aria-pressed="false">Темний фон сцени</button>
+          <button class="control-btn" id="font-bigger" type="button" aria-label="Збільшити шрифт">A+</button>
+          <button class="control-btn" id="font-smaller" type="button" aria-label="Зменшити шрифт">A−</button>
+          <button class="control-btn" id="font-reset" type="button" aria-label="Скинути шрифт">A</button>
+        </div>
+
+        ${SPEECH_SECTIONS.map(
+          (s) => `
+          <section class="speech-section">
+            <h2>${escHtml(s.title)}</h2>
+            <div class="tone-tag">${escHtml(s.duration)} · Тон ${escHtml(s.tone)}</div>
+            <div class="speech-text">${s.text}</div>
+            <div class="speech-annotation">${escHtml(s.annotation)}</div>
+          </section>
+        `,
+        ).join("")}
+
+        <footer class="site-footer">
+          Тон-фрейм: ПОДАРУНОК класу. Не cold sales. Денис у залі — Юрій амбасадор не competitor.
+        </footer>
+      </div>
+    `;
+        }
+
+        // ========== ROUTER ==========
+        function renderRoute() {
+          const hash = window.location.hash || "#/home";
+          const app = document.getElementById("app");
+          let html = "";
+
+          // Reset stage mode unless we're in speech
+          if (!hash.startsWith("#/speech")) {
+            document.body.classList.remove("stage-mode");
+            document.body.classList.remove("annotations-off");
+          }
+
+          if (
+            hash === "#/home" ||
+            hash === "#" ||
+            hash === "" ||
+            hash === "#/" ||
+            hash.startsWith("#/home") ||
+            hash === "#cards"
+          ) {
+            html = renderHome();
+            setActiveNav("home");
+          } else if (hash.startsWith("#/focus/")) {
+            const slug = hash.replace("#/focus/", "");
+            html = renderFocus(slug);
+            setActiveNav("cards");
+          } else if (hash === "#/offer") {
+            html = renderOffer();
+            setActiveNav("offer");
+          } else if (hash === "#/speech") {
+            html = renderSpeech();
+            setActiveNav("speech");
+          } else {
+            html = renderHome();
+            setActiveNav("home");
+          }
+
+          app.innerHTML = html;
+          window.scrollTo({ top: 0, behavior: "instant" });
+
+          // Bind speech controls if present
+          if (hash === "#/speech") bindSpeechControls();
+
+          // Keyboard accessibility for card clicks
+          document.querySelectorAll('[role="link"]').forEach((el) => {
+            el.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                el.click();
+              }
+            });
+          });
+        }
+
+        function setActiveNav(active) {
+          document.querySelectorAll(".site-nav a").forEach((a) => {
+            a.classList.toggle("active", a.getAttribute("data-nav") === active);
+          });
+        }
+
+        // ========== SPEECH CONTROLS ==========
+        let speechFontSize = 22;
+
+        function bindSpeechControls() {
+          const tA = document.getElementById("toggle-annotations");
+          const tS = document.getElementById("toggle-stage");
+          const fB = document.getElementById("font-bigger");
+          const fS = document.getElementById("font-smaller");
+          const fR = document.getElementById("font-reset");
+
+          if (tA)
+            tA.addEventListener("click", () => {
+              const on = document.body.classList.toggle("annotations-off");
+              tA.classList.toggle("active", on);
+              tA.setAttribute("aria-pressed", String(on));
+              tA.textContent = on ? "Показати анотації" : "Без анотацій";
+            });
+
+          if (tS)
+            tS.addEventListener("click", () => {
+              const on = document.body.classList.toggle("stage-mode");
+              tS.classList.toggle("active", on);
+              tS.setAttribute("aria-pressed", String(on));
+              tS.textContent = on ? "Світлий фон" : "Темний фон сцени";
+            });
+
+          function applyFontSize() {
+            document.querySelectorAll(".speech-text").forEach((el) => {
+              el.style.fontSize = speechFontSize + "px";
+            });
+          }
+
+          if (fB)
+            fB.addEventListener("click", () => {
+              speechFontSize = Math.min(36, speechFontSize + 2);
+              applyFontSize();
+            });
+          if (fS)
+            fS.addEventListener("click", () => {
+              speechFontSize = Math.max(14, speechFontSize - 2);
+              applyFontSize();
+            });
+          if (fR)
+            fR.addEventListener("click", () => {
+              speechFontSize = 22;
+              applyFontSize();
+            });
+        }
+
+        // ========== INIT ==========
+        window.addEventListener("hashchange", renderRoute);
+        document.addEventListener("DOMContentLoaded", renderRoute);
+        // Render immediately if DOM already ready
+        if (document.readyState !== "loading") renderRoute();
+      })();
+    </script>
+  </body>
+</html>

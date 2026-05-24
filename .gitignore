@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────
+# MCMM Claude Skills — .gitignore
+# Виключаємо raw media + build артефакти. Тримаємо тільки знання (md/txt/srt).
+# ─────────────────────────────────────────────────────────────
+
+# Raw media (video / audio / wav / mp3)
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.mp4
+*.webm
+*.mov
+*.mkv
+
+# Original PDF slides (extracted у slides.md)
+*.pdf
+
+# Slides images (extracted page screenshots — у slides.md є opis)
+slides_images/
+
+# Whisper / build артефакти
+transcript.raw.*
+*.log
+*.tmp
+*.cache
+
+# raw/ директорії у lessons — там оригінали (audio + video + raw whisper output + build scripts)
+# Знання знаходиться у lessons/<lesson>/*.md + curated transcript.txt у lesson root
+**/lessons/*/raw/
+**/exam/raw/
+
+# Progress/queue dirs (telegram backup tooling — не публічне)
+_progress/
+__pycache__/
+*.pyc
+
+# Course meta API json (з payloads/tokens potentially)
+course_meta_api.json
+slides.json
+slides.meta.json
+video.meta.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
