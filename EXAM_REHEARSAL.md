@@ -1,7 +1,7 @@
 # MCMM Exam Rehearsal — Юрій Довган pre-exam 2026-05-25
 
-> Cross-skill self-quiz по 7 capstone уроках (M10 повний + M3L2 bonus). Зосереджено на M10 (заключний модуль усього курсу).
-> **66 Q з verbatim line refs** у atomized lessons (paths нижче).
+> Cross-skill self-quiz по 9 capstone уроках (M10 повний + M3L2 bonus + M7L6 Marketing capstone + M7L7 NLP capstone). Зосереджено на M10 (заключний модуль усього курсу) + 7 з 8 дисциплін.
+> **84 Q з verbatim line refs** у atomized lessons (paths нижче).
 > **Time:** ~2-3 години на повний прохід · 80%+ pass gate.
 > **Atomized:** 2026-05-24 · ~20k рядків markdown total · `/Users/detective/.claude/skills/mcmm-*/lessons/`
 
@@ -9,26 +9,25 @@
 
 ## TL;DR matrix (читай ПЕРШИМ для оглядового контексту)
 
-| Discipline            | Capstone lesson                                                            | Lecturer                                                       | Core framework                                                                              | Path                                                                            |
-| --------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **Coaching**          | M3L2 (bonus) + M10L1 + M10L3                                               | **Лана Світлана Нагорна** (Go Crisis UK, КПТ, Мексика)         | Активне слухання (4-6-3) + Шлях до майстерності (3 БЛОКИ) + Заключні сесії (3 теми)         | `mcmm-coaching/lessons/`                                                        |
-| **TA**                | M10L2                                                                      | **Влада Березянська** (КН, EATA, CTA)                          | 6 адаптацій (Kahler reframe) + Doors of Contact (Pol Ware 3×3) + 5 драйверів + 3+3 frame    | `mcmm-ta/lessons/m10l2-adaptatsii-protsesualna-model/`                          |
-| **Oratorske**         | M10L4                                                                      | **Денис [Чернишов *unverified*]** (КМС-рівень)                 | 4 рівні слухання + 5-крок ННК Розенберга з Денисовою межею + 11 помилок оратора             | `mcmm-oratorske/lessons/m10l4-mystetstvo-slukhaty/`                             |
-| **Psychiatry**        | M10L5 (Q/A)                                                                | **Бережний Герман** (Академія Ісаєнко, НЕ сам Ісаєнко)         | DSM-5 diff.diag + boundary психіатр-коуч + 7 RED FLAGS + протокол прикриття антидепресантів | `mcmm-psychiatry/lessons/m10l5-qa-isaienko/`                                    |
-| **Rozbir / capstone** | M10L6                                                                      | **Юлія Козачкова (58%) + Олексій Махонін (22%) + 22 учасники** | MCMM Pro $900/рік + MAK + AI Claude як другий мозок + sales 300 NO=1 YES + closing          | `mcmm-rozbir/lessons/m10l6-zakliuchna-mentorska/`                               |
-| Marketing (НЕ M10)    | m8l6 (Олексій capstone)                                                    | Олексій Махонін                                                | Big Idea + 7 компонентів оферу + PMF 30%                                                    | `mcmm-marketing/lessons/m8l6-offer/` (M9L6 Big Idea — BLOCKED Workspace policy) |
-| NLP (НЕ M10)          | Інші уроки — не atomized у цьому                                           | Ходяков (guess)                                                | Піраміда Ділтса, VAKOG, rapport                                                             | `mcmm-nlp/lessons/` (M10L7 Воронки + M9L6 Піраміда — BLOCKED)                   |
-| Rozbir M5L7 (НЕ M10)  | (індексовано в mcmm-rozbir)                                                | Чекальська (anti-aging endo)                                   | Гормональна-психологічна-психіатрична інтеграція; серотоніновий синдром BOUNDARY            | `mcmm-rozbir/lessons/m5l7-hormones/`                                            |
-| **BLOCKED**           | m7l6 Воронки + m7l7 Піраміда Ділтса (Розбір discipline) — Workspace policy | TBD                                                            | -                                                                                           | -                                                                               |
+| Discipline            | Capstone lesson                                      | Lecturer                                                       | Core framework                                                                              | Path                                                                         |
+| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Coaching**          | M3L2 (bonus) + M10L1 + M10L3                         | **Лана Світлана Нагорна** (Go Crisis UK, КПТ, Мексика)         | Активне слухання (4-6-3) + Шлях до майстерності (3 БЛОКИ) + Заключні сесії (3 теми)         | `mcmm-coaching/lessons/`                                                     |
+| **TA**                | M10L2                                                | **Влада Березянська** (КН, EATA, CTA)                          | 6 адаптацій (Kahler reframe) + Doors of Contact (Pol Ware 3×3) + 5 драйверів + 3+3 frame    | `mcmm-ta/lessons/m10l2-adaptatsii-protsesualna-model/`                       |
+| **Oratorske**         | M10L4                                                | **Денис [Чернишов *unverified*]** (КМС-рівень)                 | 4 рівні слухання + 5-крок ННК Розенберга з Денисовою межею + 11 помилок оратора             | `mcmm-oratorske/lessons/m10l4-mystetstvo-slukhaty/`                          |
+| **Psychiatry**        | M10L5 (Q/A)                                          | **Бережний Герман** (Академія Ісаєнко, НЕ сам Ісаєнко)         | DSM-5 diff.diag + boundary психіатр-коуч + 7 RED FLAGS + протокол прикриття антидепресантів | `mcmm-psychiatry/lessons/m10l5-qa-isaienko/`                                 |
+| **Rozbir / capstone** | M10L6                                                | **Юлія Козачкова (58%) + Олексій Махонін (22%) + 22 учасники** | MCMM Pro $900/рік + MAK + AI Claude як другий мозок + sales 300 NO=1 YES + closing          | `mcmm-rozbir/lessons/m10l6-zakliuchna-mentorska/`                            |
+| Marketing (НЕ M10)    | m7l6 (Олексій capstone marketing) + m8l6 (offer)     | **Олексій Махонін**                                            | 13 типів воронок (Махонін "11" honesty marker) + P2P не B2B/B2C + Facebook Ads Library      | `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/` + `m8l6-offer/` (atomized) |
+| NLP (НЕ M10)          | m7l7 Піраміда Ділтса (Юлин ментор-сесія, винятковий) | **Юлія Козачкова SOLO** (НЕ Ходяков)                           | Піраміда Ділтса 6 рівнів + Юлин 15 mods + 2 паралельні лінії А/Б + контр-сценарій           | `mcmm-nlp/lessons/m7l7-piramida-diltsa/` (atomized 2026-05-24)               |
+| Rozbir M5L7 (НЕ M10)  | (індексовано в mcmm-rozbir)                          | Чекальська (anti-aging endo)                                   | Гормональна-психологічна-психіатрична інтеграція; серотоніновий синдром BOUNDARY            | `mcmm-rozbir/lessons/m5l7-hormones/`                                         |
 
-### Bloom distribution actual (66 Q)
+### Bloom distribution actual (84 Q)
 
-| Bloom level    | Count | %   | Cross-skill spread                                  |
-| -------------- | ----- | --- | --------------------------------------------------- |
-| **Recall**     | 27    | 41% | факти, лектори, числа, terminology                  |
-| **Understand** | 16    | 24% | механізми, чому, диф.діагностика                    |
-| **Apply**      | 13    | 20% | як використати у Detective FM сесії                 |
-| **Analyze**    | 10    | 15% | cross-discipline integration, контрадикції, AI-стек |
+| Bloom level    | Count | %     | Cross-skill spread                                  |
+| -------------- | ----- | ----- | --------------------------------------------------- |
+| **Recall**     | 35    | 41.7% | факти, лектори, числа, terminology                  |
+| **Understand** | 21    | 25.0% | механізми, чому, диф.діагностика                    |
+| **Apply**      | 15    | 17.9% | як використати у Detective FM сесії                 |
+| **Analyze**    | 13    | 15.5% | cross-discipline integration, контрадикції, AI-стек |
 
 ---
 
@@ -199,11 +198,11 @@
 
 ---
 
-## 66 Q Exam Rehearsal — Cross-Skill Self-Quiz
+## 84 Q Exam Rehearsal — Cross-Skill Self-Quiz
 
-> **Pass gate:** 80%+ (53/66 правильних).
+> **Pass gate:** 80%+ (67/84 правильних).
 > Кожен Q має `[Bloom-level]` + `[tier]` + verbatim line ref у відповідному atomized lesson.
-> Tier mark — для розрізнення cold-public (UNIVERSAL/COLD-OK) vs warm/trusted (WARM/TRUSTED) застосувань.
+> Tier mark — для розрізнення cold-public (UNIVERSAL/COLD-OK) vs warm/trusted (WARM/TRUSTED-ONLY) застосувань.
 
 ---
 
@@ -310,6 +309,18 @@
 Що Лана каже про **дихання 4-6-3**?
 **A:** Тактика повертання коуча у **«стан нуля»**: вдих 4 / видих 6 / 3 секунди мовчання перед першою реплікою (line 1333-1337). Уповільнення внутрішнього темпу. AI може володіти рівнями слухання 1-2 (слова + смисл), АЛЕ не може створити тілесну присутність, дихання, паузу і "не-знання".
 📖 `mcmm-coaching/lessons/m3l2-active-listening/claims.md` COA-M3L2-029
+
+#### Q17a [Understand] [UNIVERSAL] (M3L2 bonus)
+
+Які **3 рівні слухання** виділяє Лана у M3L2 і як вони мапляться на 4 рівні Дениса (M10L4)?
+**A:** **3 рівні Лани (через структуру 2 практик + демо):** (1) **Рівень 1 — слова** — Практика 1: 1-й ділиться 2-3 хв, 2-й повертає тільки те що почув, без вопросів і інтерпретації; (2) **Рівень 2 — смисл, метафори, відзеркалення** — з Практик 1+2; (3) **Рівень 3 — тіло, голос, стан, поле** — Practice 2 + Демо. **Мапінг на Дениса (4 рівні):** Лана Рівень 1 (слова) ≈ Денис Рівень 2 (Інформаційне); Лана Рівень 2 (смисл) — частина Дениса Рівня 2-3 (Емпатичне); Лана Рівень 3 (поле) ≈ Денис Рівень 4 (Інтеграційне). **Денис явно включає Рівень 1 (Закрите = failure state) у нумерацію — Лана НЕ виділяє це як рівень** (для Лани це просто "не слухаю"). **Унікальний внесок Дениса:** "третій елемент" (проєкт/інсайт народжується від contact). **Унікальний внесок Лани:** practice operationalization (дихання 4-6-3 + 2 практики).
+📖 `mcmm-coaching/lessons/m3l2-active-listening/claims.md` COA-M3L2-010, COA-M3L2-011, COA-M3L2-012 · cross-ref Q63
+
+#### Q17b [Understand] [UNIVERSAL] (M3L2 bonus)
+
+Як Лана **метафорою шовкопряда** описує роль коуча — і чому це CORE INSIGHT M3L2?
+**A:** **Метафора шовкопряда — Ланина оригінальна** (Лана: «**мне пришла сейчас думка такая** вы знаете метафору мы как мы коучи мы как **шовкопряди**... це **шовковое паутиня** которое мы строим, оно **невидимое** в отношениях с нашим співбеседником... как ось цей **шовкопоряд як метафора того, як ми коучи як ми тендитно можем и умеем вибудовывать ци стосунки** с клиентом») [Лана, M3L2, line 2645-2649]. **Чому CORE:** (1) шовкопряд тче **невидиму але міцну** павутину — точно описує характер active listening field; (2) робота тендiтна — потрібна mindfulness + safety; (3) "виблискувать просто на сонечку" — поле стає видимим лише у певний момент (демо-сесія резонує). **Cross-ref:** corresponds with Денисовою метафорою "чоловік+жінка → дитина" (M10L4) — обидва описують rівень "третього елементу", але Лана через сировинно-структурну метафору (павутина) vs Денис через креативно-біологічну (запліднення).
+📖 `mcmm-coaching/lessons/m3l2-active-listening/claims.md` COA-M3L2-076
 
 ---
 
@@ -596,7 +607,7 @@
 **A:** Якщо немає booking на поточній ціні — поле тебе ще не бачить як coach worth more. Повишення без зайнятості = **signaling без backing** → **3-6 міс падіння без recovery**. Юлія L2340-2347.
 📖 `mcmm-rozbir/lessons/m10l6-zakliuchna-mentorska/claims.md` C-47, C-49
 
-#### Q60 [Understand] [UNIVERSAL] [TRUSTED-OK]
+#### Q60 [Understand] [UNIVERSAL] [TRUSTED-ONLY]
 
 Чому Олексій каже що **«клієнти у травмі → притягуєш у травмі»**?
 **A:** **Energetic-marker формує тип нових клієнтів**. Перехід у нішу заможніших одразу зникають "вижити" проблеми. Олексій L2290-2311: "як тільки я перешов в нишу, де люди, для них оплата моєго консалтинга 1,5-2 в місяць — це не то, що не послідний день... перестали появляться вообще какие-то либо проблемы". **Application для Detective FM:** Юрієва audience-tier strategy — підвищувати чек не лише economically, але і energetically.
@@ -725,6 +736,124 @@
 
 ---
 
+### Block 7 — Marketing capstone (Олексій Махонін, m7l6 «Спокусливі воронки») — 8 Q
+
+#### Q67 [Recall] [UNIVERSAL]
+
+Скільки типів воронок Махонін **заявляє** і скільки реально перелічує у m7l6? Що це за honesty marker?
+**A:** Махонін у вступі до блоку каже **"типа собирали 11"**, але далі живо перелічує **13 типів**. Не correction, не explain — лектор просто йде далі. Це **canonical honesty marker** уроку: Махонін не перевіряє власні numerical claims live. Перерахунок 13: (1) Low Ticket, (2) High Ticket, (3) Evergreen, (4) Webinar, (5) Free Trial, (6) Product Launch, (7) Membership, (8) Hybrid, (9) Free+Shipping, (10) Affiliate, (11) Event, (12) Content, (13) Gamified.
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-18 · L2202-2380
+
+#### Q68 [Recall] [UNIVERSAL]
+
+Що таке **воронка** за Махоніном і з яких 3 шарів вона складається?
+**A:** **Воронка = система, яка опускає шлях клієнта від моменту першого дотику до завершення продукту** (НЕ автоматизація, НЕ матеріали). **3 шари:** (1) **КРОКИ** (CJM-архітектура per M6L5); (2) **ІНСАЙТИ/ІДЕЇ** (психологічні гачки per M5L5); (3) **МАТЕРІАЛИ** (контент виданий клієнту — те що люди звикли називати "воронкою"). Verbatim Махонін: "Воронка вона багатофакторна і вона складається з трьох частин. Це кроки... Інсайти та ідеї... і матеріали" (L106-110).
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-02, C-03
+
+#### Q69 [Recall] [UNIVERSAL]
+
+Що Махонін стверджує про географію **найбільших грошей** на 5-tier сходинці свідомості?
+**A:** **Найбільші конверсії і найбільші гроші лежать на сегменті "Не знає про проблему"** (counterintuitive). Cold reach до прогрітих = висока конкуренція + низька маржа; cold reach до тих хто ще не розуміє проблеми = низька конкуренція + висока маржа + захоплюєш одразу 2 аудиторії (знаючих + не знаючих). Verbatim: "Найбільші конверсії, найбільші гроші лежать отут — не знають про проблему... Якщо ви свій контент і рекламу повернете на етап не знають про проблему, то ви захопите одразу дві аудиторії" (L255-261).
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-11
+
+#### Q70 [Understand] [UNIVERSAL]
+
+Чому Махонін каже що **продукт первинний, воронка вторинна** і яким кейсом це підтверджує?
+**A:** Маркетингова система може мати 50 клієнтів/годину, але якщо за нею не стоїть якісний продукт + розуміння експерта чому це працює — експерт кидає бізнес. Verbatim: "За нею стояв класний продукт, цікавий. І коли за тобою стоїть класний продукт... оце якраз і зробить цей вау-ефект в воронках, в продажах... Все буде працювати, якщо за вами буде стояти продукт" (L91-99). Anti-pattern Каті (€2500 курс → €15, 50 запитів/день, 0 продажів) = **продуктова лінійка неправильно побудована**, занадто багато цінності в одному продукті (C-48). Завершує урок Махонін: "Да, усі схемы, оці воронки, это всё гарно, да, но это всё схемы, они ничего не имеют... За ней стоит продукт, который подстроен под эту систему. И важно наполнение" (L2264-2270).
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-01, C-94
+
+#### Q71 [Understand] [UNIVERSAL]
+
+Поясни Махонінський аксіом **«не існує B2B/B2C/B2G, є тільки P2P»** і його application для Анастасіїної бази 28K.
+**A:** Махонінська axiomatic position: **People to People** — будь-який бізнес у фінальному рахунку = людина продає людині. Розбити illusion сегментації. Verbatim: "Не існує бізнесу B2B, B2C, B2G. Є P2P, People to People. А з 28 000 аудиторії буде цікаво п'яти людям. Опять людям... Ми робимо заради цих п'яти чоловік, кому реально це цікаво" (L4181-4191). **Application:** Анастасія (косметичний бренд, 14 років, 28K база) → загальні пости про "бізнес як з іншого боку", "як подивитися на свій бізнес" — публікувати на обох сторінках. Якщо 5 з 28K зацікавиться — це successful pattern, не fail.
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-88, C-87
+
+#### Q72 [Apply] [UNIVERSAL]
+
+Який **single most actionable heuristic** з Facebook Ads Library Махонін дає і як Юрій може його юзати для Detective FM позиціонування?
+**A:** **Heuristic:** якщо реклама в Facebook Ads Library показується **≥2 місяці активно** — скоріше за все вона працює (інакше б її вимкнули). Verbatim: "Якщо реклама працює два місяці, скоріш за все вона працює" (L2603). **Application для Detective FM:** (1) facebook.com/ads/library → фільтр "Україна" + search "консультація психолога" / "коуч" / "psycholog Kyiv"; (2) фільтр "активні оголошення" + max date range; (3) виокремити ads ≥60 днів = working creatives; (4) деconstrukt: гачок / hero / CTA / target awareness level; (5) написати власні Detective FM варіанти **same structure, different identity** (детектив-нуар замість generic psy). Махонін додає threshold правило: CTR >3-4% = bad sign (неякісний трафік). Optimal CTR 1-2%.
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-67, C-68, C-62
+
+#### Q73 [Apply] [UNIVERSAL]
+
+Як Олексій would set up funnel для Аліни (тест → відео → консультація €50) і чому це template для Юрієвої €39 першої сесії?
+**A:** **Махонінська 4-step micro-funnel Аліни (L3476-3578):** (1) **Тест** з інтерпретацією — "як відділити свої думки від чужих" → quick win + новий self-insight; (2) **5-хв відео** — explain результат тесту; (3) **Soft pitch:** "за вами заброньована знижка $50 на рік на першу сесію" (замість $100); (4) **Перша вводна консультація** — не про особисте життя, а про deepening результату тесту. **Template для Detective FM €39:** (a) AI-quiz "Який ти Детектив?" (entry archetype quiz on landing); (b) автоматичне відео 5 хв з інтерпретацією; (c) Soft CTA "перша сесія Розслідування €39 замість €300, забронюй цей місяць"; (d) booking calendar з 6-question screening intake (sleep/food/sport/meds/state/crisis). Інкорпорує і **Махонінську mechanics** і **Ланиний redirect** (Q13).
+📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-81
+
+#### Q74 [Analyze] [UNIVERSAL]
+
+Як Махонінська **«конкуренти психолога ≠ інші психологи»** thesis перекликається з ICF coaching boundary і чому це CORE marketing insight для Detective FM?
+**A:** Махонін: **реальні конкуренти психолога/коуча = МакДональдс, алкоголь, куриння, погані звички, тарологи** ("карта випала, життя налади"). Verbatim: "Це сходити в Мак, заїсти свою проблему заіданням, напитися, куритися — і всі погані звички — це якраз конкуренти основні психологів-коучів... А вот карти Таро прийшов — тобі карта випала, все понятно, життя налади" (L3392-3406). **Cross-disciplinary integration:**
+
+- **ICF Coaching parallel:** коучинг конкурує не з іншими коучами за market share, а з **avoidance strategies** клієнта (Лана M10L1 функціонуючий-коуч pattern — коли коуч стає сам частиною avoidance системи)
+- **TA-frame (Влада M10L2):** alcohol/food/Таро = **driver-soothing** (Be Strong → drink to numb; Please Others → eat to comfort)
+- **Psychiatry (Бережний M10L5):** короткострокове self-medication = serotonin-quick-fix без долгосрочного efektu
+- **Detective FM positioning:** не "ще один коуч серед 100", а **alternative до Мака + алкоголю + Таро** для людей які хочуть **проникнути у власну справу** (детективна метафора). Це reframe категорії, не позиція внутри категорії
+- **Юлин-rule (m7l7 C-28):** валюта впливу — ДОСТУП, не позиція; Detective FM позиціонує себе як **доступ до власної правди** vs **доступ до короткого зняття болю** (Мак/алкоголь)
+  📖 `mcmm-marketing/lessons/m7l6-spokuslyvi-voronky/claims.md` C-78 + cross-ref m7l7 C-28
+
+---
+
+### Block 8 — NLP capstone (Юлія Козачкова SOLO, m7l7 «Менторська сесія. Піраміда Ділтса») — 8 Q
+
+#### Q75 [Recall] [UNIVERSAL]
+
+Хто веде m7l7 і чому це винятковий випадок для NLP-arc? Скільки рівнів у класичному Ділтсі?
+**A:** **Юлія Козачкова SOLO** — підприємиця, засновниця MCMM (НЕ Ходяков). **Винятковий випадок:** єдиний з 5 NLP-уроків де лектор не Ходяков. m7l7 — **ментор-сесія з технікою NLP (Піраміда Ділтса) як інструментом інтеграції** методологій, не дисциплінарна лекція. **6 рівнів Ділтса** (per Юлин-структура): (1) Оточення/Environment, (2) Поведінка/Behavior, (3) Здібності/Capability, (4) Переконання-Цінності/Beliefs-Values (Юлин об'єднує), (5) Ідентичність/Identity, (6) Місія/Mission. Primary-source verification — 13+ verbatim addresses by name. `grep -i "ходяков" transcript.txt` → 0 results across 3250 lines.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-01, C-02
+
+#### Q76 [Recall] [UNIVERSAL]
+
+Назви **3 правила** Юлин-навігації пірамідою Ділтса.
+**A:** **Правило 1 (керує):** кожен наступний рівень керує попереднім. Місія керує ідентичністю, ідентичність керує цінностями, цінності керують поведінкою. Verbatim: "Кожен наступний рівень керує попереднім" (L1286-1290). **Правило 2 (не вирішується):** проблема не вирішується на тому ж рівні, де виникла. Якщо клієнт застряг на поведінці — піднятися до здібностей; якщо на цінностях — до ідентичності (L1271-1274, paraphrase Einstein). **Правило 3 (alignment):** зміни тримаються лише коли ВСІ 6 рівнів узгоджені. Verbatim: "Зміни стіки лише тоді, коли рівні всі узгоджені" (L1292-1294). Класичний Robert Dilts формулює як implicit principles, Юлин explicitly формулює як 3 правила.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-14, C-15, C-16
+
+#### Q77 [Recall] [UNIVERSAL]
+
+Скільки модифікацій класичного Ділтса вводить Юлин і яка #1 critical?
+**A:** **15 mods** перелічено явно у Section I claims.md (C-75 — C-89). **#1 critical mod — 2 паралельні лінії А+Б на КОЖНОМУ з 6 рівнів** замість класичної однієї лінії "what you want". = **6 рівнів × 2 колонки = 12 точок діагностики** за 1 сесію. Verbatim Юлин: "на каждом уровне просматриваем сразу две парадигмы. Что есть в А, кем я должна быть в Б и что я должна делать в Б. То есть это две параллельные линии, два параллельных, да, там столба, которые вы выписываете себе" (L1430-1442). У m4l6 Ходяков викладав 6 рівнів без 2-колонкової логіки.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-17, C-75
+
+#### Q78 [Understand] [UNIVERSAL]
+
+Що означає Юлин-axiom **«константа не на терезах»** і чому це safety frame?
+**A:** **Юлин-CORE safety-rule:** те що у клієнта **вже працює та цінне** (приоритети) — НЕ ставиться на терези А/Б. Це **константа = база**, не torkatися. Тільки delta А→Б розглядається. Якщо клієнт каже "хочу стати ярчим коучем, але не хочу втратити роль мами" — мама-роль = константа. Verbatim: "первые позиции, как точка А и точка Б, не не попадают, потому что там есть уже реализация... Поэтому мы это оставляем как константу. Константу мы не рассматриваем как точку А и точку Б. Константу мы рассматриваем как базу. Зачем база, если хорошая? Зачем её ставить под удар вообще ставить? Значит, есть такая фраза, что приоритеты то, что мне действительно важно, я никогда не ставлю на весы" (L1418-1426). **Чому safety:** запобігає collateral damage коли клієнт у пошуку нового зруйнує те що вже працює.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-18, C-76
+
+#### Q79 [Understand] [UNIVERSAL]
+
+Поясни Юлин-thesis **«контр-сценарій = той самий сценарій»** на прикладі Кристини.
+**A:** **CORE INSIGHT m7l7 — Юлин-authored TA-integration** (НЕ Eric Berne verbatim). Кристини мама була "**бизнесовая мама**" → Кристина "**шла в контрсценарий**" (відмова від бізнесу за родину). Юлин ловить: «Это контрсценарий. Вот это сценарий быть в точно в семье. Но контрсценарий — это тот же сценарий. То есть ты взяла мамин сценарий от чего-то отказаться. **Мама отказалась от личного, а ты отказалась от бизнеса**. Поэтому вы в две в отказе, в частичном неразрешении. Поэтому это тот же сценарий, просто ты переиграла его по-своему» (L2515-2540). **CORE Юлин-вихід:** не "ще одна інверсія" (другий рівень контр-script'а), а **третій варіант** — integration двох протилежностей. Eric Berne у Games People Play (1964) описує counter-script як **opposite** script, але **не як "той самий сценарій"** — це Юлин-extended insight, compatible з Goulding & Goulding redecision theory.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-45, C-46
+
+#### Q80 [Understand] [UNIVERSAL] [Personal-insight-Yurii]
+
+Що Юлин публічно говорить про **ChatGPT/AI** як coaching partner і чому це critical primary-source для Юрієвого виступу на Conference 23-24.05.2026?
+**A:** Юлин у opening m7l7 **САМА** валідує AI як партнера для побудови питань коуча: «**А ще, якщо чат GPT, котрий може допомагам будувати якісь, да, ось таки красиві малюнки цих питань**, якщо вам це буде, ну, цікаво» (L35-38). **Critical для Юрія:** (a) лекторка-засновниця MCMM **explicitly** валідує AI у coaching workflow → double authority для Юрієвого AI-стек thesis; (b) опosition "AI vs живий коуч" знімається — це **complementary tool**, не replacement; (c) **direct quote для Conference slide** — primary-source цитата НЕ зовнішньої authority, а **лекторки самого Юрієвого курсу**; (d) **single unique transcript mention** "чат GPT" у 3250 рядках — ground-truth value highest. Парується з Юрієвим $10/тиждень AI use case на M10L1 (Лана valid'ує "Юр, не ниряй, там токенів не вистачає") = double authority readiness.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-05 + cross-ref `mcmm-coaching/.../m10l1` C-97
+
+#### Q81 [Apply] [UNIVERSAL]
+
+Як використати **«сценарну клітку» Юрія + Юлин-rule "константа не на терезах"** у Detective FM €1469 пакеті для коуча-клієнта?
+**A:** Юрій уже public-demonstrate cross-disciplinary integration на m7l7 (L215-244): взяв TA-матрицю Влади Березянської → зробив мини-продукт "сценарна клітка" → одне питання на тиждень → клієнтка з МЧП пройшла від мінусу до "100 побачень = жирний плюс". Юлин public-validates: "І плюс це для наших десь от така фішечка". **Як інтегрувати з Дилсом на €1469:** (1) **Sesію 1 (€39):** базова звірка + констант-mapping (що працює зараз, чого не торкаємось); (2) **Sesію 2-3 (€1469 enter):** Дилс А/Б 2 паралельні лінії на 6 рівнях — клієнт виписує що є + чого хоче; (3) **Сесія 4-5:** TA-сценарна клітка — діагностика контр-сценарію на рівні переконань (Юлин-mod #6 m7l7 C-80); (4) **Сесія 6:** alignment ritual 6→1 (top-down з нового стану) + ідентифікація minimum viable Дилса (Юлин: до Ідентичності обов'язково, до Місії за бажанням); (5) **6 підтримуючих 9 міс:** одне питання на тиждень з відповідного рівня Дилса — automated через бота, manual deep-dive за запитом. **Це integration ICF Coaching + TA Влади + NLP Юлин + Detective FM packaging** — те що Юлин в m7l7 L29-32 називає "якісний діалог + якісні питання" як основний інструмент.
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-09, C-04, C-17, C-25, C-76
+
+#### Q82 [Analyze] [UNIVERSAL]
+
+Як Юлин-3 правила Ділтса інтегруються з Vladиними **3 типами дверей контакту** (M10L2) і Денисовими **4 рівнями слухання** (M10L4)?
+**A:** **3-cross-discipline integration на одній клієнтській сесії:**
+
+| Юлин (Дилс)                         | Влада (Doors of Contact)                          | Денис (4 рівні слухання)                                                 |
+| ----------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------ |
+| Правило 1: рівень керує попереднім  | Open → Target → Trap door (sequence)              | Рівень 2 (Інформаційне) → Рівень 3 (Емпатичне) → Рівень 4 (Інтеграційне) |
+| Правило 2: не вирішується на тому ж | Trap door має найглибші зміни (не входити одразу) | Рівень 4 народжує "третій елемент" (не на рівнях 1-2)                    |
+| Правило 3: alignment всіх рівнів    | Coach має enter через open + target sequence      | Coach має пройти всі рівні слухання послідовно                           |
+
+**Integration insight:** Юлин-piramida = **content frame** (де клієнт застряг по рівнях життя); Vlada Doors = **entry frame** (через який канал коуч заходить — behavior/feelings/thinking); Денис рівні слухання = **listening frame** (на якій глибині коуч приймає сигнали). **Workflow для Detective FM:** (1) Юлин-Дилс діагностика — де клієнт; (2) Vlada-Doors — як зайти у цей рівень безпечно (через open door, не trap); (3) Денис-Listening — на рівні 3-4 щоб resonant change. **Юлин-CORE rule (C-73):** Дилс не масло — не "беремо тільки рівень де є проблема". Те саме у Vlada (Doors): не входити одразу через trap. Те саме у Дениса: не лишатися на рівні 1-2, дотягувати до 4 = **спільна meta-rule** "complete sequence > fragment".
+📖 `mcmm-nlp/lessons/m7l7-piramida-diltsa/claims.md` C-73, C-14, C-15, C-16 + cross-ref Q21, Q33
+
+---
+
 ## Personal-insight-Yurii cornerstone (TRUSTED-ONLY) ⚠️
 
 > ⚠️ **TRUSTED-ONLY material** per `feedback_audience_trust_tier.md` — НЕ для public Detective FM marketing.
@@ -767,7 +896,7 @@
 
 ## Pre-exam checklist (за 60 хв до екзамену)
 
-- [ ] **Read TL;DR matrix** (5 хв) — оглядовий контекст 5 disciplines + lectures
+- [ ] **Read TL;DR matrix** (5 хв) — оглядовий контекст 7 disciplines + lectures
 - [ ] **Засвоїти 12 Quick-Reference Tables** (20 хв):
   - Table 1 (6 адаптацій) ⭐
   - Table 2 (4 рівні слухання) ⭐
@@ -781,7 +910,7 @@
   - Table 10 (6 категорій НЕ для коучингу)
   - Table 11 (4 рівні спеціалістів)
   - Table 12 (5-точкова базова звірка)
-- [ ] **Пройти 66 Q exam** — стримати 80%+ (53/66)
+- [ ] **Пройти 84 Q exam** — стримати 80%+ (67/84)
 - [ ] **Read Personal-insight-Yurii cornerstone** (10 хв, TRUSTED-ONLY)
 - [ ] **Refresher на 2-3 weakest blocks** з помилок 66 Q
 - [ ] **Pre-exam pause** — 4-6-3 дихання × 3 рази (M3L2 protocol)
@@ -822,25 +951,48 @@
 - **Ціна підвищується тільки коли є зайнятість** + 3-6 міс window падіння
 - **Юрієве "$5K = найкайфовіша інвестиція"**
 
+**Marketing (Олексій Махонін, m7l6):**
+
+- **13 типів воронок** (Махонін заявляє "11" — honesty marker)
+- **Не B2B/B2C/B2G, а P2P** (People to People)
+- **Найбільші гроші на сегменті "Не знає про проблему"** (counterintuitive)
+- **Реклама ≥2 міс активна = working creative** (Facebook Ads Library heuristic)
+- **CTR >3-4% = bad sign** (неякісний трафік)
+- **Конкуренти психолога = Мак + алкоголь + Таро** (не інші коучі)
+- **Воронка = шлях клієнта, НЕ матеріали** (3 шари: кроки + інсайти + матеріали)
+- **Продукт первинний, воронка вторинна**
+
+**NLP (Юлія Козачкова SOLO, m7l7):**
+
+- **Юлин SOLO, НЕ Ходяков** (винятковий випадок NLP-arc)
+- **6 рівнів Ділтса** — Оточення / Поведінка / Здібності / Цінності-Переконання / Ідентичність / Місія
+- **3 правила** — керує / не вирішується / alignment
+- **15 Юлин-mods** класичного Ділтса
+- **2 паралельні лінії А+Б на КОЖНОМУ з 6 рівнів** = 12 точок діагностики
+- **Контр-сценарій = той самий сценарій** (3-й варіант, не 2-й рівень інверсії)
+- **До ідентичності обов'язково, до місії за бажанням**
+- **Константа не на терезах** (safety frame)
+- **ChatGPT валідовано Юлин** як coaching partner ([Personal-insight-Yurii])
+
 ---
 
 ## Метадані файлу
 
-- **Total Q:** 66 (Recall 27 / Understand 16 / Apply 13 / Analyze 10)
-- **Bloom distribution actual:** 41% / 24% / 20% / 15% (близько до target 40/25/20/15)
-- **Lessons cross-referenced:** 7 atomized (M3L2 + M10L1 + M10L2 + M10L3 + M10L4 + M10L5 + M10L6)
-- **Disciplines covered:** 5/8 (Coaching / TA / Oratorske / Psychiatry / Rozbir)
+- **Total Q:** 84 (Recall 35 / Understand 21 / Apply 15 / Analyze 13)
+- **Bloom distribution actual:** 41.7% / 25.0% / 17.9% / 15.5% (близько до target 40/25/20/15 ±5%)
+- **Lessons cross-referenced:** 9 atomized (M3L2 + M7L6 + M7L7 + M10L1 + M10L2 + M10L3 + M10L4 + M10L5 + M10L6)
+- **Disciplines covered:** 7/8 (Coaching / TA / Oratorske / Psychiatry / Rozbir / Marketing / NLP)
 - **Disciplines NOT fully covered у capstone:**
-  - Marketing (M10L? — не atomized; capstone у m8l6 Олексія, що НЕ M10)
-  - NLP / Ходяков (M10L? — не atomized; m9l6 Піраміда Ділтса BLOCKED Workspace policy)
   - Бізнес-стратегія / Юлія Гончар (M10L? — не atomized у цій сесії)
   - Філософія / Прохасько (M10L? — не atomized у цій сесії)
-- **Blocked М10 lessons:** Marketing M10L? + NLP M10L? + Business M10L? + Philosophy M10L? (Workspace policy блокує деякі менторські)
-- **TRUSTED-ONLY content:** 3 cornerstone sections + 2 Q (Q29 + Q60 partially) — НЕ для public marketing
+- **Blocked М10 lessons:** Business M10L? + Philosophy M10L? (Workspace policy блокує деякі менторські)
+- **TRUSTED-ONLY content:** 3 cornerstone sections + 3 Q (Q29 + Q60 + Q80 Personal-insight-Yurii) — НЕ для public marketing
 - **Lecturer corrections noted:**
   - mcmm-psychiatry M10L5: **Бережний Герман** (НЕ сам Ісаєнко)
   - mcmm-oratorske M10L4: **Денис [Чернишов *unverified прізвище*]** (whisper hesitates)
   - mcmm-ta M10L2: CAPSTONE shifted з M9L3 до M10L2
+  - mcmm-nlp M7L7: **Юлія Козачкова SOLO** (НЕ Ходяков — винятковий випадок NLP-arc)
+  - mcmm-marketing M7L6: **Олексій Махонін** capstone marketing (100% per recon.md)
 
 ---
 

@@ -284,13 +284,18 @@
 **Falsifiability:** Юлин-authored framework, не attributed до зовнішнього автора — high confidence Юлин-original.
 **Audience tier:** [HIDDEN-IN-WARM] — Юлин-frame який вимагає попередньої довіри до її методології
 
-## C-29: Зворотний відлік 6→1 як alignment-ритуал
+## C-29: Зворотний відлік 6→1 як alignment-ритуал (concept_synthesis)
 
-**Source:** transcript.txt:L2737-2792 · timestamp 02:48:00 approx
+**Source:** transcript.txt:L2737-2792 (process-flow location); L2747-2750 anchor verbatim; L2762-2792 top-down sequence
 **Speaker:** Юлія Козачкова
+**Type:** [concept_synthesis] — НЕ direct verbatim, а process-description Юлин-mod ритуалу. Observable у живій сесії з Кристиною: bottom-up + top-down sequence.
+**Approximate location:** L2737-2792 (top-down walk back); anchor moment L2747 "А вот теперь закрывая глаза, идём с обратной обратный отчёт"
 **Claim:** **Юлин-mod ритуал**: після проходження bottom-up (1→6), повернутися **top-down** з нового стану (Королева+Мировий масштаб): Місія → Ідентичність → Цінності → Переконання → Здібності → Поведінка → Оточення. Без цього **alignment ritual** зміни не "проходять вниз" до поведінки, і клієнт повертається у попередній стан через тиждень.
-**Verbatim:** Юлин у L2737-2792 walking Кристину back through 6 levels з нового стану — observable у transcript flow.
-**Falsifiability:** класичний Robert Dilts — або bottom-up, або top-down. Юлин-mod = **обидва послідовно** = unique enhancement.
+**Verbatim L2747-2750 (анкор зворотного відліку):** "А вот теперь закрывая глаза, идём с обратной обратный отчёт. Ты вот прямо ощущаешь никаких, блин, этих сценариев. Всё, вы сейчас не на транзактном анализе. Всё, ты в точке мирового даяния, любви, добра, твоего ресурса."
+**Verbatim L2762 (identity рівень у top-down):** "На уровне идентичности. Кто ты из этого состояния? Что ты скажешь? Королева."
+**Concept summary:** Юлин-extension класичного Dilts. Замість тільки bottom-up (1→6) або тільки top-down (6→1), Юлин робить **обидва послідовно**: спочатку клієнт піднімається 1→6 (Оточення→Місія), знаходить новий стан на верху, потім спускається 6→1 з новим станом, "розливаючи" його на нижні рівні.
+**Falsifiability:** класичний Robert Dilts — або bottom-up, або top-down (вибір). Юлин-mod = **обидва послідовно** = unique enhancement. Якщо examiner вимагає direct quote "alignment ritual" — посилатися на анкор L2747 + identity-tier verbatim L2762, НЕ цитувати "Юлин walking back" як verbatim (це process-description автора claims).
+**Tier:** [WARM-CONDITIONAL]
 **Audience tier:** [UNIVERSAL]
 
 ## C-30: Опціональні елементи демо — energy-знак + якори
