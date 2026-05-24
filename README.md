@@ -127,16 +127,43 @@ git clone https://github.com/youdovhan/mcmm-claude-skills.git mcmm
 > - **Філософія лектор** — continuity verified (арістотеліанець-феноменолог), прізвище unverified
 > - **Multi-lecturer sessions** (m1l7, m10l6) — per-turn attribution за speaker patterns + sub-discipline matching
 
-> ⚠️ **TRUSTED-tier claims (Personal-insight-Yurii) включені.**
-> Деякі claims містять Юрієві власні рефлексії з сесій (наприклад m10l2, m7l7) — це **TRUSTED-only** контент, не для cold marketing у вашу аудиторію. Це memos з менторських розмов, тримати у внутрішній практиці.
+## ⚠️ Audience tier disclaimer
 
-> ⚠️ **Деякі уроки BLOCKED (Workspace policy):**
+Деякі lessons містять content tagged як **TRUSTED-ONLY** (Personal-insight Юрія Довгана) — НЕ для public reuse:
+
+- **m3l2** (active-listening, Лана) — C-068 Yurii German police self-disclosure (real-life невербаліка кейс)
+- **m10l1** (coaching capstone, Лана) — C-41 Yurii resource state 60% + AI co-discussion + інші Yurii Q&A моменти
+- **m10l2** (TA capstone, Влада) — Personal-insight-Yurii cornerstone (Q29 стіна L2933-2938)
+- **m10l3** (closing capstone, Лана) — 🚫 **HIGHEST RISK**: C-031 / C-032 Yurii therapist self-disclosure ("emotionally cold / dissociated / antisocial pattern"). НЕ цитувати publicly under any circumstances — потенційна professional defamation exposure якщо surfaced без TRUSTED gate.
+- **m10l6** (rozbir capstone, Юлія + Олексій) — C-17/C-18 Yurii MAK-demos intimate (relationships + financial coaching), C-59 $5K investment testimonial
+- **m7l7** (NLP, Юлія Козачкова solo) — Юлин private mentor-session content + 5 BLOCKED quotes per CRM-bias warnings
+
+Кожен claims.md тепер має `**Tier:**` field на per-claim рівні: `[UNIVERSAL]` / `[WARM-CONDITIONAL]` / `[WARM-BLOCKED-COLD-BREAK]` / `[HIDDEN-IN-WARM]` / `[TRUSTED-ONLY]`. Reference taxonomy: `Rules/Feedback/feedback_audience_trust_tier.md` + `Rules/Feedback/feedback_sales_critique_default.md` (у Юрієвому Obsidian vault).
+
+### CRM-bias warnings
+
+Деякі testimonial claims містять survivorship bias — особисті результати конкретних учасників, не template для всіх:
+
+- "**300 NO → 1 YES**" (Аніта Соловій / Дубилет, m10l6 C-54/C-56) — outliers (Fintech Family ecosystem), не average для коучів-початківців
+- "**823K UAH coaching revenue**" (Маша Граб, m10l6 C-57) — 1-учасник result з MCMM-context, не guarantee
+- "**$5K найкайфовіша інвестиція**" (Yurii, m10l6 C-59) — особиста testimonial, не promise
+
+Усі ці testimonial claims tagged `[WARM-CONDITIONAL]` з explicit CRM-bias note — безпечні у warm-MCMM context, ризиковані у cold marketing.
+
+### Medical safety (m10l5 psychiatry)
+
+Бережний Герман явно warning'ує: **коуч НЕ діагностує і НЕ призначає** медикаменти. Specific dosing examples (наприклад C-24 — Atarax 25→100 mg titration) tagged `[TRUSTED-ONLY] + [MED]` — інформативно для маршрутизації клієнта до психіатра, НЕ для self-prescription у coaching practice.
+
+m10l5 використовує власну medical taxonomy: `[MED]` / `[AWARE]` / `[ROUTE]` / `[BOUND]` / `[NEURO]` + audience tier overlay.
+
+> ⚠️ **Workspace BLOCKED:**
 >
-> - `mcmm-marketing/m9l6` (Big Idea)
-> - `mcmm-rozbir/m7l6` (Воронки)
-> - `mcmm-rozbir/m7l7` (Піраміда Ділтса)
+> - `mcmm-marketing/m9l6` (Big Idea) — Workspace platform відмовила у whisper transcription
 >
-> Ці уроки не включені — Workspace platform відмовила у whisper transcription.
+> Інші lessons spočátku planовані як BLOCKED — **повністю atomized** і доступні в інших skill-namespaces:
+>
+> - **mcmm-marketing/m7l6-voronky** — повністю atomized (96 claims, 52 cards, 4606-line transcript)
+> - **mcmm-nlp/m7l7-piramida-diltsa** — повністю atomized (95 claims, 55 cards, 3250-line transcript) — Юлія Козачкова SOLO EXCEPTION у Ходяковському NLP arc
 
 ---
 
